@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://dgir3likowdob"]
+[gd_scene load_steps=81 format=3 uid="uid://dgir3likowdob"]
 
 [ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_ppefo"]
 [ext_resource type="Script" uid="uid://2bk2ygphkd2f" path="res://Level.gd" id="1_ryrrj"]
@@ -8,17 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="5_j6ct1"]
 [ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="7_nk2aw"]
 [ext_resource type="PackedScene" uid="uid://c3ybqdv5lbrvm" path="res://assets/models/characters/tori/tori.glb" id="8_3aulr"]
-[ext_resource type="PackedScene" uid="uid://b5ic5qbupvg6i" path="res://assets/models/characters/dima_tori/dima tori.glb" id="8_ek4pc"]
 [ext_resource type="Texture2D" uid="uid://lwwwk6tvl46s" path="res://assets/models/characters/tori/tori_mBody_Alb.png" id="9_ek4pc"]
-[ext_resource type="Texture2D" uid="uid://if5n0eulwfyb" path="res://assets/models/characters/dima_tori/dima tori_mBody_Alb.png" id="9_yplng"]
 [ext_resource type="Texture2D" uid="uid://bltop7spfuw0g" path="res://assets/models/characters/tori/tori_mEye_Alb.png" id="10_ah6xd"]
-[ext_resource type="Texture2D" uid="uid://brvicxxx1jss6" path="res://assets/models/characters/dima_tori/dima tori_mEye_Alb.png" id="10_no4we"]
-[ext_resource type="Texture2D" uid="uid://cb21dl5fe0riu" path="res://assets/models/characters/dima_tori/dima tori_mMouth_Alb.png" id="11_1lhp3"]
 [ext_resource type="Texture2D" uid="uid://cj3y8dgiiwdw" path="res://assets/models/characters/tori/tori_mMouth_Alb.png" id="11_2wgub"]
 [ext_resource type="PackedScene" uid="uid://crk531vtqs1w4" path="res://assets/models/characters/nastya semen/nastya semen.glb" id="12_2dgcx"]
 [ext_resource type="Texture2D" uid="uid://bxxpipopnj0cn" path="res://assets/models/characters/nastya semen/nastya semen_mBody_Alb.png" id="13_3un6r"]
 [ext_resource type="Texture2D" uid="uid://bhbvkykvkgdfw" path="res://assets/models/characters/nastya semen/nastya semen_mEye_Alb.png" id="14_n6m4d"]
 [ext_resource type="Texture2D" uid="uid://blv71ocufdlbg" path="res://assets/models/characters/nastya semen/nastya semen_mMouth_Alb.png" id="15_sqhep"]
+[ext_resource type="PackedScene" uid="uid://xw45vy1ecg34" path="res://assets/models/characters/dima_tori/dima tori.glb" id="16_no4we"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h87hw"]
 
@@ -203,15 +200,6 @@ sky_material = SubResource("ProceduralSkyMaterial_j6ct1")
 [sub_resource type="Environment" id="Environment_ryrrj"]
 background_mode = 2
 sky = SubResource("Sky_j8v0v")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_swh7w"]
-albedo_texture = ExtResource("9_yplng")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dgcx"]
-albedo_texture = ExtResource("10_no4we")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3un6r"]
-albedo_texture = ExtResource("11_1lhp3")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_881ni"]
 albedo_texture = ExtResource("13_3un6r")
@@ -653,9 +641,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_dews6")
 transform = Transform3D(-1, -1.70568e-07, 7.45058e-09, -4.37114e-08, 3.90214, 3.49691e-08, -2.98023e-08, 1.36454e-06, -0.1, 16.0699, 1, 17.9371)
 isDoor = true
 nextScenePath = "res://CafeInterior.tscn"
-nextSceneName = "Coffee Shop"
+nextSceneName = "Kuca Specialty Coffee"
 nextSceneTime = "9:32"
-nextSceneMessage = "-buy coffee-"
+nextSceneMessage = "-купи кофе-"
 initialSpawn = true
 player = NodePath("../../Player")
 
@@ -1186,28 +1174,6 @@ environment = SubResource("Environment_ryrrj")
 transform = Transform3D(0.943662, -0.161876, 0.288613, 0, 0.87218, 0.489185, -0.33091, -0.461625, 0.823044, 0, 4, 0)
 shadow_enabled = true
 
-[node name="Dima" parent="." instance=ExtResource("7_nk2aw")]
-transform = Transform3D(0.623361, 0, 0.781934, 0, 1, 0, -0.781934, 0, 0.623361, 15.6718, 1, 5.28864)
-charId = "Dima"
-hasText = true
-isCharacter = true
-message = "test"
-
-[node name="dima tori" parent="Dima/ModelScene" index="0" instance=ExtResource("8_ek4pc")]
-transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 0, 0, 0)
-
-[node name="Body__mBody" parent="Dima/ModelScene/dima tori/Armature_001/Skeleton3D" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_swh7w")
-
-[node name="Body__mEye" parent="Dima/ModelScene/dima tori/Armature_001/Skeleton3D" index="2"]
-surface_material_override/0 = SubResource("StandardMaterial3D_2dgcx")
-
-[node name="Body__mMouth" parent="Dima/ModelScene/dima tori/Armature_001/Skeleton3D" index="3"]
-surface_material_override/0 = SubResource("StandardMaterial3D_3un6r")
-
-[node name="Model" parent="Dima" index="1"]
-visible = false
-
 [node name="Nastya Semen" parent="." instance=ExtResource("7_nk2aw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 1, 17)
 charId = "Nastya Semen"
@@ -1255,6 +1221,22 @@ visible = false
 [node name="InteractArea" parent="Tori/Model" index="0"]
 visible = false
 
+[node name="Dima Tori" parent="." instance=ExtResource("7_nk2aw")]
+transform = Transform3D(0.996035, 0, 0.0889638, 0, 1, 0, -0.0889638, 0, 0.996035, 15.3385, 1, 5.29941)
+charId = "Dima"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="dima tori" parent="Dima Tori/ModelScene" index="0" instance=ExtResource("16_no4we")]
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 0, 0, 0)
+
+[node name="Model" parent="Dima Tori" index="1"]
+visible = false
+
+[node name="InteractArea" parent="Dima Tori/Model" index="0"]
+visible = false
+
 [connection signal="body_entered" from="BusStop/CafeBusStopCamera/CameraArea1" to="BusStop/CafeBusStopCamera/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="BusStop/CafeBusStopCamera/CameraArea1" to="BusStop/CafeBusStopCamera/CameraArea1" method="exitTrigger"]
 [connection signal="body_entered" from="Alley/CafeAlleyCamera/CameraArea1" to="Alley/CafeAlleyCamera/CameraArea1" method="enterTrigger"]
@@ -1266,9 +1248,8 @@ visible = false
 
 [editable path="BusStop/CafeBusStop"]
 [editable path="Entrance/Door2Cafe"]
-[editable path="Dima"]
-[editable path="Dima/ModelScene/dima tori"]
 [editable path="Nastya Semen"]
 [editable path="Nastya Semen/ModelScene/nastya semen"]
 [editable path="Tori"]
 [editable path="Tori/ModelScene/tori"]
+[editable path="Dima Tori"]

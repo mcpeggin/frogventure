@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=3 uid="uid://bbiqpd7pqhyal"]
+[gd_scene load_steps=146 format=3 uid="uid://bbiqpd7pqhyal"]
 
 [ext_resource type="Texture2D" uid="uid://b4w300ovhwnv8" path="res://addons/kenney_prototype_textures/orange/wall.png" id="1_1jjsj"]
 [ext_resource type="Script" uid="uid://2bk2ygphkd2f" path="res://Level.gd" id="1_iut70"]
@@ -7,6 +7,21 @@
 [ext_resource type="PackedScene" uid="uid://dhd0u2o78dsh7" path="res://Door.tscn" id="4_j0om3"]
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="5_hwjw1"]
 [ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="7_j0om3"]
+[ext_resource type="PackedScene" uid="uid://cc07hu6caorqp" path="res://assets/models/characters/sasha/sasha velichko.glb" id="8_57cgh"]
+[ext_resource type="PackedScene" uid="uid://dcpikfej0jww4" path="res://assets/models/characters/nastya lexa/nastya lexa.glb" id="8_dqfdg"]
+[ext_resource type="Texture2D" uid="uid://drxeh8qnmn6f5" path="res://assets/models/characters/nastya lexa/nastya lexa_mBody_Alb.png" id="9_4spt0"]
+[ext_resource type="Texture2D" uid="uid://coyyjlmufrgvj" path="res://assets/models/characters/sasha/sasha velichko_mBody_Alb.png" id="9_i1law"]
+[ext_resource type="Texture2D" uid="uid://b14acgabgqw8u" path="res://assets/models/characters/nastya lexa/nastya lexa_mEye_Alb.png" id="10_57cgh"]
+[ext_resource type="Texture2D" uid="uid://drnhlvnm6qfa8" path="res://assets/models/characters/sasha/sasha velichko_mEye_Alb.png" id="10_i1law"]
+[ext_resource type="Texture2D" uid="uid://mpv66ma7ac4" path="res://assets/models/characters/sasha/sasha velichko_mBeak_Alb.png" id="11_htv5e"]
+[ext_resource type="PackedScene" uid="uid://buvrfxl4uhqoy" path="res://assets/models/characters/lesya/lesya.glb" id="12_oc8qu"]
+[ext_resource type="Texture2D" uid="uid://c7pc5831m81re" path="res://assets/models/characters/lesya/lesya_mBody_Alb.png" id="13_f1rlg"]
+[ext_resource type="Texture2D" uid="uid://28rosvg0uyb2" path="res://assets/models/characters/lesya/lesya_mEye_Alb.png" id="14_f1rlg"]
+[ext_resource type="Texture2D" uid="uid://cl2mmikpqus7m" path="res://assets/models/characters/lesya/lesya_mBeak_Alb.png" id="15_0dltx"]
+[ext_resource type="PackedScene" uid="uid://dk1om1kckxk50" path="res://assets/models/characters/hel/hel.glb" id="19_wtm0f"]
+[ext_resource type="Texture2D" uid="uid://ctnel8ah5pird" path="res://assets/models/characters/hel/hel_mBody_Alb.png" id="20_0lh24"]
+[ext_resource type="Texture2D" uid="uid://b7xjxpgq8bxm1" path="res://assets/models/characters/hel/hel_mEye_Alb.png" id="21_7kdrm"]
+[ext_resource type="Texture2D" uid="uid://c4rkeq6n0641b" path="res://assets/models/characters/hel/hel_mMouth_Alb.png" id="22_pemhm"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_upo72"]
 
@@ -353,6 +368,39 @@ points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ot1p"]
 size = Vector3(1.19971, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aquda"]
+albedo_texture = ExtResource("9_i1law")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oc8qu"]
+albedo_texture = ExtResource("10_i1law")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1rlg"]
+albedo_texture = ExtResource("11_htv5e")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0dltx"]
+albedo_texture = ExtResource("13_f1rlg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wtm0f"]
+albedo_texture = ExtResource("14_f1rlg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0lh24"]
+albedo_texture = ExtResource("15_0dltx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i1law"]
+albedo_texture = ExtResource("9_4spt0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_htv5e"]
+albedo_texture = ExtResource("10_57cgh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7kdrm"]
+albedo_texture = ExtResource("20_0lh24")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pemhm"]
+albedo_texture = ExtResource("21_7kdrm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ciw4d"]
+albedo_texture = ExtResource("22_pemhm")
 
 [node name="BusStop" type="Node3D" node_paths=PackedStringArray("player1", "player2")]
 script = ExtResource("1_iut70")
@@ -2431,6 +2479,20 @@ hasText = true
 isCharacter = true
 message = "test"
 
+[node name="sasha velichko" parent="Sasha/ModelScene" index="0" instance=ExtResource("8_57cgh")]
+
+[node name="Body__mBody" parent="Sasha/ModelScene/sasha velichko/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aquda")
+
+[node name="Body__mEye" parent="Sasha/ModelScene/sasha velichko/Armature_001/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_oc8qu")
+
+[node name="FaceGood__mBeak" parent="Sasha/ModelScene/sasha velichko/Armature_001/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_f1rlg")
+
+[node name="Model" parent="Sasha" index="1"]
+visible = false
+
 [node name="Lesya" parent="." instance=ExtResource("7_j0om3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.82365, 1, 0.821919)
 charId = "Lesya"
@@ -2438,19 +2500,58 @@ hasText = true
 isCharacter = true
 message = "test"
 
+[node name="lesya" parent="Lesya/ModelScene" index="0" instance=ExtResource("12_oc8qu")]
+
+[node name="Body__mBody" parent="Lesya/ModelScene/lesya/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0dltx")
+
+[node name="Body__mEye" parent="Lesya/ModelScene/lesya/Armature/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wtm0f")
+
+[node name="FaceGood__mBeak" parent="Lesya/ModelScene/lesya/Armature/Skeleton3D" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0lh24")
+
+[node name="Model" parent="Lesya" index="1"]
+visible = false
+
 [node name="Nastya Lexa" parent="." instance=ExtResource("7_j0om3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17635, 1, 14.8219)
+transform = Transform3D(0.334827, 0, 0.94228, 0, 1, 0, -0.94228, 0, 0.334827, -7.17635, 1, 14.8219)
 charId = "Nastya Lexa"
 hasText = true
 isCharacter = true
 message = "test"
 
+[node name="nastya lexa" parent="Nastya Lexa/ModelScene" index="0" instance=ExtResource("8_dqfdg")]
+
+[node name="Body__mBody" parent="Nastya Lexa/ModelScene/nastya lexa/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_i1law")
+
+[node name="Body__mEye" parent="Nastya Lexa/ModelScene/nastya lexa/Armature_001/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_htv5e")
+
+[node name="Model" parent="Nastya Lexa" index="1"]
+visible = false
+
 [node name="Hel" parent="." instance=ExtResource("7_j0om3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8237, 1, 6.82192)
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 34.8237, 1, 6.82192)
 charId = "Hel"
 hasText = true
 isCharacter = true
 message = "test"
+
+[node name="hel" parent="Hel/ModelScene" index="0" instance=ExtResource("19_wtm0f")]
+
+[node name="Body__mBody" parent="Hel/ModelScene/hel/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7kdrm")
+
+[node name="Body__mEye" parent="Hel/ModelScene/hel/Armature/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pemhm")
+
+[node name="Body__mMouth" parent="Hel/ModelScene/hel/Armature/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ciw4d")
+
+[node name="Model" parent="Hel" index="1"]
+visible = false
 
 [connection signal="body_entered" from="Camera10/CameraArea1" to="Camera10/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Camera10/CameraArea1" to="Camera10/CameraArea1" method="exitTrigger"]
@@ -2466,6 +2567,10 @@ message = "test"
 [editable path="Door9"]
 [editable path="Entrance/EntranceDoor"]
 [editable path="Sasha"]
+[editable path="Sasha/ModelScene/sasha velichko"]
 [editable path="Lesya"]
+[editable path="Lesya/ModelScene/lesya"]
 [editable path="Nastya Lexa"]
+[editable path="Nastya Lexa/ModelScene/nastya lexa"]
 [editable path="Hel"]
+[editable path="Hel/ModelScene/hel"]

@@ -1,9 +1,21 @@
+@tool
+
 extends Area3D
+
+@export var bgNode: TextureRect
+@export var bgImage: Texture
+@export var cam: Camera3D
 
 var isTrigger = false
 
+func setBg() -> void:
+	bgNode.texture = bgImage
+	cam.current = true
+
 func enterTrigger(body):
 	if body.is_in_group('player'):
+		if bgImage and bgNode:
+			bgNode.texture = bgImage
 		isTrigger = true
 
 func exitTrigger(body):

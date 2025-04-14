@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://ds8lc7x5wibyn"]
+[gd_scene load_steps=61 format=3 uid="uid://ds8lc7x5wibyn"]
 
 [ext_resource type="Script" uid="uid://2bk2ygphkd2f" path="res://Level.gd" id="1_7r7a3"]
 [ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_38a4v"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d4cmfw78iwi32" path="res://assets/backgrounds/apartments/bedroom.jpg" id="9_lha0y"]
 [ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="10_ixlry"]
 [ext_resource type="PackedScene" uid="uid://b8l51v35rihga" path="res://assets/models/characters/mitya/mitya.glb" id="11_gqrfj"]
+[ext_resource type="Script" uid="uid://biu7k7ygvjmsx" path="res://CameraManager.gd" id="12_ecno4"]
 [ext_resource type="Texture2D" uid="uid://cg176py50dv2h" path="res://assets/backgrounds/apartments/livingroom1.jpg" id="13_jbiuj"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_gmnia"]
@@ -807,7 +808,7 @@ transform = Transform3D(0.307755, -0.209325, 0.485389, 0.146903, 0.937294, 0.064
 shape = SubResource("BoxShape3D_5rsw4")
 
 [node name="Player" parent="." instance=ExtResource("6_u26aq")]
-transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 42.9921, 0, 5.27516)
+transform = Transform3D(-0.985494, 0, -0.169711, 0, 1, 0, 0.169711, 0, -0.985494, 13.8524, 0, -23.6563)
 
 [node name="Player2" parent="." instance=ExtResource("6_u26aq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
@@ -898,37 +899,235 @@ bones/63/rotation = Quaternion(0.287433, 0.0380703, -0.0114345, 0.956976)
 [node name="Model" parent="Mitya" index="1"]
 visible = false
 
-[node name="test" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 0)
+[node name="test2" type="Node3D" parent="." node_paths=PackedStringArray("cameras")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
+script = ExtResource("12_ecno4")
+cameras = [NodePath("SubViewportContainer/Geometry/Camera7/CameraArea1"), NodePath("SubViewportContainer/Geometry/Camera8/CameraArea1")]
 
-[node name="Camera2" type="Camera3D" parent="test"]
-transform = Transform3D(0.997746, 0, 0.0671094, -0.0173692, 0.965926, 0.258236, -0.0648227, -0.258819, 0.963748, 16.3482, 3, 11.5699)
+[node name="SubViewportContainer" type="SubViewportContainer" parent="test2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
 
-[node name="Sprite3D" type="Sprite3D" parent="test/Camera2"]
-transform = Transform3D(2.72628, 0, -2.23517e-08, -1.86265e-08, 2.52216, 2.98023e-08, 1.63913e-07, 0, 1.11718, 0.683224, -2.68221e-07, -11.5615)
+[node name="Canvas" type="SubViewport" parent="test2/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="test2/SubViewportContainer/Canvas"]
+
+[node name="TextureRect" type="TextureRect" parent="test2/SubViewportContainer/Canvas/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("9_lha0y")
 
-[node name="CameraArea1" type="Area3D" parent="test/Camera2"]
-transform = Transform3D(19.8915, 0, -0.382847, -2.6077e-08, 5.1, -1.19209e-07, 1.11072, 0, 6.85637, 0.513485, -2.38419e-07, -5.45048)
-script = ExtResource("7_jbiuj")
+[node name="Geometry" type="SubViewport" parent="test2/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="test/Camera2/CameraArea1"]
+[node name="Camera7" type="Camera3D" parent="test2/SubViewportContainer/Geometry"]
+transform = Transform3D(0.997746, 0, 0.0671094, -0.0174484, 0.965609, 0.259413, -0.0648014, -0.259999, 0.963432, 16.3482, 4.13837, -18)
+current = true
+
+[node name="CameraArea1" type="Area3D" parent="test2/SubViewportContainer/Geometry/Camera7" node_paths=PackedStringArray("bgNode", "cam")]
+transform = Transform3D(7.10439, 0, -0.375163, 0, 5.1, 0, 0.396701, 0, 6.71876, 0.513487, 0, -5.45048)
+script = ExtResource("7_jbiuj")
+bgNode = NodePath("../../../Canvas/CanvasLayer/TextureRect")
+bgImage = ExtResource("9_lha0y")
+cam = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test2/SubViewportContainer/Geometry/Camera7/CameraArea1"]
 shape = SubResource("BoxShape3D_gqrfj")
 
-[node name="Camera3" type="Camera3D" parent="test"]
-transform = Transform3D(-0.0671094, -2.97937e-08, 0.997746, 7.70611e-09, 1, 3.03793e-08, -0.997746, 9.72748e-09, -0.0671094, 35.8742, 1, 3.56988)
+[node name="Camera8" type="Camera3D" parent="test2/SubViewportContainer/Geometry"]
+transform = Transform3D(-0.0648015, -0.259999, 0.963432, -0.0174484, 0.965609, 0.259413, -0.997746, 1.12011e-08, -0.0671094, 29.0787, 4.13837, -28.0222)
+current = true
 
-[node name="Sprite3D" type="Sprite3D" parent="test/Camera3"]
-transform = Transform3D(2.72586, 0.0438079, 0.00254888, -0.0473532, 2.43622, 0.288496, 0.00622028, -0.651311, 1.07928, 0.347676, -4.17233e-07, -6.57277)
-texture = ExtResource("13_jbiuj")
-
-[node name="CameraArea1" type="Area3D" parent="test/Camera3"]
-transform = Transform3D(-14.261, 7.86023e-08, 0.788327, 2.68176e-07, 5.1, 8.45644e-07, -0.796317, 3.09869e-07, -14.1181, 0.513484, -3.57628e-07, -5.45048)
+[node name="CameraArea1" type="Area3D" parent="test2/SubViewportContainer/Geometry/Camera8" node_paths=PackedStringArray("bgNode", "cam")]
+transform = Transform3D(14.3215, -0.114473, -0.353193, 0.0545919, 4.80628, -2.27656, 0.809111, 1.70193, 6.40532, -0.293356, -4.76837e-07, -5.50476)
 script = ExtResource("7_jbiuj")
+bgNode = NodePath("../../../Canvas/CanvasLayer/TextureRect")
+bgImage = ExtResource("13_jbiuj")
+cam = NodePath("..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="test/Camera3/CameraArea1"]
-transform = Transform3D(1, 0, 0, 0, 1, 6.245e-16, 0, -7.49401e-16, 1, 0, 0, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test2/SubViewportContainer/Geometry/Camera8/CameraArea1"]
 shape = SubResource("BoxShape3D_gqrfj")
+
+[node name="walls" type="Node3D" parent="test2"]
+visible = false
+
+[node name="WallTile22" type="MeshInstance3D" parent="test2/walls"]
+transform = Transform3D(-5.73206e-15, 1.31134e-07, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, 1.31134e-07, 17.312, 1, 5.52065)
+mesh = SubResource("PlaneMesh_hiu1g")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="test2/walls/WallTile22"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test2/walls/WallTile22/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_knbq8")
+
+[node name="WallTile25" type="MeshInstance3D" parent="test2/walls"]
+transform = Transform3D(4.37114e-08, -1, -8.74226e-08, -1, -4.37114e-08, 0, -3.82137e-15, 8.74226e-08, -1, 18.312, 1, 6.52065)
+mesh = SubResource("PlaneMesh_hiu1g")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="test2/walls/WallTile25"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test2/walls/WallTile25/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_knbq8")
+
+[node name="WallTile26" type="MeshInstance3D" parent="test2/walls"]
+transform = Transform3D(-5.73206e-15, 1.31134e-07, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, 1.31134e-07, 19.312, 0, 7.52065)
+mesh = SubResource("PlaneMesh_hiu1g")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="test2/walls/WallTile26"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test2/walls/WallTile26/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_knbq8")
+
+[node name="WallTile27" type="MeshInstance3D" parent="test2/walls"]
+transform = Transform3D(-5.73206e-15, 1.31134e-07, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, 1.31134e-07, 21.312, -1, 7.52065)
+mesh = SubResource("PlaneMesh_hiu1g")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="test2/walls/WallTile27"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test2/walls/WallTile27/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_knbq8")
+
+[node name="WallTile23" type="MeshInstance3D" parent="test2/walls"]
+transform = Transform3D(-5.73206e-15, 1.31134e-07, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, 1.31134e-07, 15.312, 1, 5.52065)
+mesh = SubResource("PlaneMesh_hiu1g")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="test2/walls/WallTile23"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test2/walls/WallTile23/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_knbq8")
+
+[node name="WallTile24" type="MeshInstance3D" parent="test2/walls"]
+transform = Transform3D(-5.73206e-15, 1.31134e-07, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, 1.31134e-07, 13.312, 1, 5.52065)
+mesh = SubResource("PlaneMesh_hiu1g")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="test2/walls/WallTile24"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test2/walls/WallTile24/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_knbq8")
+
+[node name="WallTile28" type="MeshInstance3D" parent="test2/walls"]
+transform = Transform3D(-4.37114e-08, 1, 1.74845e-07, -1, -4.37114e-08, 0, 7.64275e-15, -1.74845e-07, 1, 12.312, 0, 6.52065)
+mesh = SubResource("PlaneMesh_hiu1g")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="test2/walls/WallTile28"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test2/walls/WallTile28/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_knbq8")
+
+[node name="WallTile29" type="MeshInstance3D" parent="test2/walls"]
+transform = Transform3D(-4.37114e-08, 1, 1.74845e-07, -1, -4.37114e-08, 0, 7.64275e-15, -1.74845e-07, 1, 12.312, 0, 8.52065)
+mesh = SubResource("PlaneMesh_hiu1g")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="test2/walls/WallTile29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test2/walls/WallTile29/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_knbq8")
+
+[node name="WallTile30" type="MeshInstance3D" parent="test2/walls"]
+transform = Transform3D(-5.73206e-15, 1.31134e-07, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, 1.31134e-07, 11.312, 0, 9.52065)
+mesh = SubResource("PlaneMesh_hiu1g")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="test2/walls/WallTile30"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test2/walls/WallTile30/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_knbq8")
+
+[node name="WallTile31" type="MeshInstance3D" parent="test2/walls"]
+transform = Transform3D(-4.37114e-08, 1, 1.74845e-07, -1, -4.37114e-08, 0, 7.64275e-15, -1.74845e-07, 1, 10.312, 0, 10.5206)
+mesh = SubResource("PlaneMesh_hiu1g")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="test2/walls/WallTile31"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test2/walls/WallTile31/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_knbq8")
+
+[node name="WallTile32" type="MeshInstance3D" parent="test2/walls"]
+transform = Transform3D(9.55343e-15, -2.18557e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -2.18557e-07, 11.312, 0, 11.5206)
+mesh = SubResource("PlaneMesh_hiu1g")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="test2/walls/WallTile32"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test2/walls/WallTile32/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_knbq8")
+
+[node name="WallTile33" type="MeshInstance3D" parent="test2/walls"]
+transform = Transform3D(9.55343e-15, -2.18557e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -2.18557e-07, 13.312, 0, 11.5206)
+mesh = SubResource("PlaneMesh_hiu1g")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="test2/walls/WallTile33"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test2/walls/WallTile33/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_knbq8")
+
+[node name="WallTile34" type="MeshInstance3D" parent="test2/walls"]
+transform = Transform3D(9.55343e-15, -2.18557e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -2.18557e-07, 15.312, 0, 11.5206)
+mesh = SubResource("PlaneMesh_hiu1g")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="test2/walls/WallTile34"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test2/walls/WallTile34/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_knbq8")
+
+[node name="WallTile35" type="MeshInstance3D" parent="test2/walls"]
+transform = Transform3D(9.55343e-15, -2.18557e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -2.18557e-07, 17.312, 0, 11.5206)
+mesh = SubResource("PlaneMesh_hiu1g")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="test2/walls/WallTile35"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test2/walls/WallTile35/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_knbq8")
+
+[node name="WallTile36" type="MeshInstance3D" parent="test2/walls"]
+transform = Transform3D(9.55343e-15, -2.18557e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -2.18557e-07, 19.312, 0, 11.5206)
+mesh = SubResource("PlaneMesh_hiu1g")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="test2/walls/WallTile36"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test2/walls/WallTile36/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_knbq8")
 
 [connection signal="body_entered" from="Camera1/CameraArea1" to="Camera1/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Camera1/CameraArea1" to="Camera1/CameraArea1" method="exitTrigger"]
@@ -936,10 +1135,10 @@ shape = SubResource("BoxShape3D_gqrfj")
 [connection signal="body_exited" from="Camera2/CameraArea1" to="Camera2/CameraArea1" method="exitTrigger"]
 [connection signal="body_entered" from="Camera3/CameraArea1" to="Camera3/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Camera3/CameraArea1" to="Camera3/CameraArea1" method="exitTrigger"]
-[connection signal="body_entered" from="test/Camera2/CameraArea1" to="test/Camera2/CameraArea1" method="enterTrigger"]
-[connection signal="body_exited" from="test/Camera2/CameraArea1" to="test/Camera2/CameraArea1" method="exitTrigger"]
-[connection signal="body_entered" from="test/Camera3/CameraArea1" to="test/Camera3/CameraArea1" method="enterTrigger"]
-[connection signal="body_exited" from="test/Camera3/CameraArea1" to="test/Camera3/CameraArea1" method="exitTrigger"]
+[connection signal="body_entered" from="test2/SubViewportContainer/Geometry/Camera7/CameraArea1" to="test2/SubViewportContainer/Geometry/Camera7/CameraArea1" method="enterTrigger"]
+[connection signal="body_exited" from="test2/SubViewportContainer/Geometry/Camera7/CameraArea1" to="test2/SubViewportContainer/Geometry/Camera7/CameraArea1" method="exitTrigger"]
+[connection signal="body_entered" from="test2/SubViewportContainer/Geometry/Camera8/CameraArea1" to="test2/SubViewportContainer/Geometry/Camera8/CameraArea1" method="enterTrigger"]
+[connection signal="body_exited" from="test2/SubViewportContainer/Geometry/Camera8/CameraArea1" to="test2/SubViewportContainer/Geometry/Camera8/CameraArea1" method="exitTrigger"]
 
 [editable path="Bedroom/Bed"]
 [editable path="Hall/Door2Floor"]

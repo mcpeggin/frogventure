@@ -1,4 +1,4 @@
-[gd_scene load_steps=176 format=3 uid="uid://dombqdayqvxai"]
+[gd_scene load_steps=183 format=3 uid="uid://dombqdayqvxai"]
 
 [ext_resource type="Script" uid="uid://2bk2ygphkd2f" path="res://Level.gd" id="1_0v4eb"]
 [ext_resource type="Texture2D" uid="uid://b4w300ovhwnv8" path="res://addons/kenney_prototype_textures/orange/wall.png" id="1_ncoxp"]
@@ -15,6 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://dyw3gccjur8ev" path="res://assets/models/characters/anya_haustova/anya_hautova_mMouth_Alb.png" id="11_ab3tf"]
 [ext_resource type="Texture2D" uid="uid://dbiipayi85i4g" path="res://assets/models/characters/anya_koroleva/mMouth_Alb.0.png" id="11_ccqoi"]
 [ext_resource type="PackedScene" uid="uid://d1t5ejipginf1" path="res://assets/models/characters/irene_test/irene_new_anim.glb" id="12_e2bcq"]
+[ext_resource type="PackedScene" uid="uid://ch5bsv3u4ldbn" path="res://assets/models/characters/polina mayrudova/polina mayrudova.glb" id="16_477pq"]
+[ext_resource type="Texture2D" uid="uid://c4waw6ertrxlk" path="res://assets/models/characters/polina mayrudova/polina mayrudova_mBody_Alb.png" id="17_isgsq"]
+[ext_resource type="Texture2D" uid="uid://jubmgyqq4386" path="res://assets/models/characters/polina mayrudova/polina mayrudova_mEye_Alb.png" id="18_ml6y2"]
+[ext_resource type="Texture2D" uid="uid://dsryfvfgom8y3" path="res://assets/models/characters/polina mayrudova/polina mayrudova_mMouth_Alb.png" id="19_8mv4t"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_upo72"]
 
@@ -499,6 +503,15 @@ albedo_texture = ExtResource("10_477pq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_isgsq"]
 albedo_texture = ExtResource("9_isqau")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfx46"]
+albedo_texture = ExtResource("17_isgsq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycnx1"]
+albedo_texture = ExtResource("18_ml6y2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c7cy1"]
+albedo_texture = ExtResource("19_8mv4t")
 
 [node name="Interior" type="Node3D" node_paths=PackedStringArray("player1")]
 script = ExtResource("1_0v4eb")
@@ -3236,6 +3249,21 @@ hasText = true
 isCharacter = true
 message = "test"
 
+[node name="polina mayrudova" parent="Polina Mayrudova/ModelScene" index="0" instance=ExtResource("16_477pq")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 0, 0, 0)
+
+[node name="Body__mBody" parent="Polina Mayrudova/ModelScene/polina mayrudova/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mfx46")
+
+[node name="Body__mEye" parent="Polina Mayrudova/ModelScene/polina mayrudova/Armature_001/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ycnx1")
+
+[node name="Body__mMouth" parent="Polina Mayrudova/ModelScene/polina mayrudova/Armature_001/Skeleton3D" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c7cy1")
+
+[node name="Model" parent="Polina Mayrudova" index="1"]
+visible = false
+
 [connection signal="body_entered" from="Camera15/CameraArea1" to="Camera15/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Camera15/CameraArea1" to="Camera15/CameraArea1" method="exitTrigger"]
 [connection signal="body_entered" from="Camera16/CameraArea1" to="Camera16/CameraArea1" method="enterTrigger"]
@@ -3259,3 +3287,4 @@ message = "test"
 [editable path="Anya Koroleva"]
 [editable path="Anya Koroleva/ModelScene/irene_new_anim"]
 [editable path="Polina Mayrudova"]
+[editable path="Polina Mayrudova/ModelScene/polina mayrudova"]

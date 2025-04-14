@@ -282,6 +282,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_cxr5p")
 
 [node name="ControlClue" type="Label" parent="UI/StartScreen"]
+layout_mode = 0
 offset_left = 369.0
 offset_top = 380.0
 offset_right = 800.0

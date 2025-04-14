@@ -14,11 +14,12 @@ var canFinish = false
 var isKeyClueVisible: bool = false
 
 func _ready():	
-	$AudioStreamPlayer3D.stream.loop = true
-	$AudioStreamPlayer3D.play()
-
-	$AudioStreamPlayer3D2.stream.loop = true
-	$AudioStreamPlayer3D2.play()
+	pass
+	#$AudioStreamPlayer3D.stream.loop = true
+	#$AudioStreamPlayer3D.play()
+#
+	#$AudioStreamPlayer3D2.stream.loop = true
+	#$AudioStreamPlayer3D2.play()
 
 func toggleUi(state: bool) -> void:
 	if player:

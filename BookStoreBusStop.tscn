@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cuh4kuy4sxye8"]
+[gd_scene load_steps=72 format=3 uid="uid://cuh4kuy4sxye8"]
 
 [ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_3uufb"]
 [ext_resource type="Script" uid="uid://2bk2ygphkd2f" path="res://Level.gd" id="1_ihgxq"]
@@ -7,6 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="4_aopcv"]
 [ext_resource type="Script" uid="uid://6dodax6ltd41" path="res://CameraTrigger.gd" id="5_8uu2w"]
 [ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="7_dv71b"]
+[ext_resource type="PackedScene" uid="uid://dvkv1hymx76ek" path="res://assets/models/characters/manas/manas.glb" id="8_nl6it"]
+[ext_resource type="Texture2D" uid="uid://cayvgosp1251i" path="res://assets/models/characters/manas/manas_mBody_Alb.png" id="9_71el0"]
+[ext_resource type="Texture2D" uid="uid://brqqjdwsyqivw" path="res://assets/models/characters/manas/manas_mEye_Alb.png" id="10_fbdhn"]
+[ext_resource type="Texture2D" uid="uid://jpshk35kyyx2" path="res://assets/models/characters/manas/manas_mBeak_Alb.png" id="11_fbdhn"]
+[ext_resource type="PackedScene" uid="uid://njicmcjcdc1m" path="res://assets/models/characters/semen/semen.glb" id="12_yry8e"]
+[ext_resource type="Texture2D" uid="uid://cbcywacl5ambi" path="res://assets/models/characters/semen/semen_mEye_Alb.png" id="13_1itl6"]
+[ext_resource type="Texture2D" uid="uid://cbkiwrwp6rj4v" path="res://assets/models/characters/semen/semen_mBody_Alb.png" id="13_mp8ua"]
+[ext_resource type="Texture2D" uid="uid://cf8ld7qvj14lv" path="res://assets/models/characters/semen/semen_mBeak_Alb.png" id="13_ssmx8"]
+[ext_resource type="PackedScene" uid="uid://dbcnxirm2y5gq" path="res://assets/models/characters/stolik/stolik.glb" id="16_bfad2"]
+[ext_resource type="Texture2D" uid="uid://1vj3j0p6rvsv" path="res://assets/models/characters/stolik/stolik_mBody_Alb.png" id="17_gisw4"]
+[ext_resource type="Texture2D" uid="uid://xboly0x508dx" path="res://assets/models/characters/stolik/stolik_mEye_Alb.png" id="18_gisw4"]
+[ext_resource type="Texture2D" uid="uid://bc7suh8yl6qmj" path="res://assets/models/characters/stolik/stolik_mBeak_Alb.png" id="19_n5nnt"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dpdcy"]
 
@@ -144,6 +156,33 @@ sky_material = SubResource("ProceduralSkyMaterial_8uu2w")
 [sub_resource type="Environment" id="Environment_ihgxq"]
 background_mode = 2
 sky = SubResource("Sky_2m36c")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_huk3m"]
+albedo_texture = ExtResource("9_71el0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yry8e"]
+albedo_texture = ExtResource("10_fbdhn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ssmx8"]
+albedo_texture = ExtResource("11_fbdhn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfad2"]
+albedo_texture = ExtResource("13_mp8ua")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mp8ua"]
+albedo_texture = ExtResource("13_1itl6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1itl6"]
+albedo_texture = ExtResource("13_ssmx8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5nnt"]
+albedo_texture = ExtResource("17_gisw4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25s4y"]
+albedo_texture = ExtResource("18_gisw4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8v83j"]
+albedo_texture = ExtResource("19_n5nnt")
 
 [node name="BookStoreBusStop" type="Node3D" node_paths=PackedStringArray("player1", "player2")]
 script = ExtResource("1_ihgxq")
@@ -903,19 +942,61 @@ hasText = true
 isCharacter = true
 message = "test"
 
+[node name="manas" parent="Manas/ModelScene" index="0" instance=ExtResource("8_nl6it")]
+
+[node name="Body__mBody" parent="Manas/ModelScene/manas/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_huk3m")
+
+[node name="Body__mEye" parent="Manas/ModelScene/manas/Armature/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yry8e")
+
+[node name="FaceGood__mBeak" parent="Manas/ModelScene/manas/Armature/Skeleton3D" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ssmx8")
+
+[node name="Model" parent="Manas" index="1"]
+visible = false
+
 [node name="Semen" parent="." instance=ExtResource("7_dv71b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8237, 1, 7.66973)
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 14.8237, 1, 7.66973)
 charId = "Semen"
 hasText = true
 isCharacter = true
 message = "test"
 
+[node name="semen" parent="Semen/ModelScene" index="0" instance=ExtResource("12_yry8e")]
+
+[node name="Body__mBody" parent="Semen/ModelScene/semen/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_bfad2")
+
+[node name="Body__mEye" parent="Semen/ModelScene/semen/Armature_001/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mp8ua")
+
+[node name="FaceGood__mBeak" parent="Semen/ModelScene/semen/Armature_001/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1itl6")
+
+[node name="Model" parent="Semen" index="1"]
+visible = false
+
 [node name="Stolik" parent="." instance=ExtResource("7_dv71b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8237, 1, 5.66973)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.8237, 1, 5.66973)
 charId = "Stolik"
 hasText = true
 isCharacter = true
 message = "test"
+
+[node name="stolik" parent="Stolik/ModelScene" index="0" instance=ExtResource("16_bfad2")]
+
+[node name="Body__mBody" parent="Stolik/ModelScene/stolik/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_n5nnt")
+
+[node name="Body__mEye" parent="Stolik/ModelScene/stolik/Armature_001/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_25s4y")
+
+[node name="FaceGood__mBeak" parent="Stolik/ModelScene/stolik/Armature_001/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8v83j")
+
+[node name="Model" parent="Stolik" index="1"]
+visible = false
 
 [connection signal="body_entered" from="Camera12/CameraArea1" to="Camera12/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Camera12/CameraArea1" to="Camera12/CameraArea1" method="exitTrigger"]
@@ -925,5 +1006,8 @@ message = "test"
 [editable path="Door9"]
 [editable path="BookStoreEntrance/BookStoreDoor"]
 [editable path="Manas"]
+[editable path="Manas/ModelScene/manas"]
 [editable path="Semen"]
+[editable path="Semen/ModelScene/semen"]
 [editable path="Stolik"]
+[editable path="Stolik/ModelScene/stolik"]
