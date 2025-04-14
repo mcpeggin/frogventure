@@ -13,7 +13,8 @@ config_version=5
 config/name="frogventure"
 run/main_scene="uid://ds8lc7x5wibyn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://assets/icons/projectIcon.png"
+config/icon="uid://c18jy2dusx8i3"
+config/windows_native_icon="res://assets/logo/фрог-финал-02-02.ico"
 
 [autoload]
 
@@ -74,7 +75,13 @@ accept={
 }
 restart={
 "deadzone": 0.2,
-"events": []
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":114,"location":0,"echo":false,"script":null)
+]
+}
+dance={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":70,"key_label":0,"unicode":102,"location":0,"echo":false,"script":null)
+]
 }
 
 [layer_names]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=3 uid="uid://bxogrvxcmo63y"]
+[gd_scene load_steps=140 format=3 uid="uid://bxogrvxcmo63y"]
 
 [ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_sfe08"]
 [ext_resource type="Texture2D" uid="uid://ym4vjiitfyb6" path="res://addons/kenney_prototype_textures/orange/texture_07.png" id="2_t2ugw"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="4_diijv"]
 [ext_resource type="Script" uid="uid://6dodax6ltd41" path="res://CameraTrigger.gd" id="5_fjnki"]
 [ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="6_klbtq"]
+[ext_resource type="PackedScene" uid="uid://d1t5ejipginf1" path="res://assets/models/characters/irene_test/irene_new_anim.glb" id="7_ghxum"]
+[ext_resource type="Texture2D" uid="uid://1ekdefha1x4o" path="res://assets/models/characters/anya_syrovatskaya/mMouth_Alb.0.png" id="8_mgq87"]
+[ext_resource type="Texture2D" uid="uid://beh2ncuto0kuq" path="res://assets/models/characters/anya_syrovatskaya/mBody_Alb.png" id="9_odww2"]
+[ext_resource type="Texture2D" uid="uid://d38hemde6whs" path="res://assets/models/characters/anya_syrovatskaya/mEye_Alb.0.png" id="10_gkpsb"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_sfe08"]
 
@@ -377,6 +381,10 @@ points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6v42l"]
 points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
 
+[sub_resource type="BoxMesh" id="BoxMesh_gmnia"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ekklr"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_klbtq"]
 size = Vector3(1.19971, 1, 1)
 
@@ -390,6 +398,15 @@ sky_material = SubResource("ProceduralSkyMaterial_fjnki")
 [sub_resource type="Environment" id="Environment_5342k"]
 background_mode = 2
 sky = SubResource("Sky_fjnki")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w14f4"]
+albedo_texture = ExtResource("8_mgq87")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71kbe"]
+albedo_texture = ExtResource("9_odww2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ajxo"]
+albedo_texture = ExtResource("10_gkpsb")
 
 [node name="Interior" type="Node3D"]
 
@@ -3414,8 +3431,12 @@ nextSceneTime = "10:31"
 nextSceneMessage = "-go to the museum-"
 player = NodePath("../Player")
 
-[node name="Model" parent="BookStoreDoor" index="0"]
+[node name="Model" parent="BookStoreDoor" index="1"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="BookStoreDoor/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
 
 [node name="ExitZone" parent="BookStoreDoor" index="2"]
 transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.42109e-14, 1.13687e-13, 0, 9.9792, -1.42678, 0, 12.1291)
@@ -3424,8 +3445,12 @@ transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.421
 transform = Transform3D(1, 1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, -1.36454e-06, 0.1, 24.1391, 1, 0.28326)
 hasText = true
 
-[node name="Model" parent="BookShelf" index="0"]
+[node name="Model" parent="BookShelf" index="1"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="BookShelf/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
 
 [node name="ExitZone" parent="BookShelf" index="2"]
 transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.42109e-14, 1.13687e-13, 0, 9.9792, -1.42678, 0, 12.1291)
@@ -3434,8 +3459,12 @@ transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.421
 transform = Transform3D(1, 1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, -1.36454e-06, 0.1, 30.1391, 1, 0.28326)
 hasText = true
 
-[node name="Model" parent="BookShelf2" index="0"]
+[node name="Model" parent="BookShelf2" index="1"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="BookShelf2/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
 
 [node name="ExitZone" parent="BookShelf2" index="2"]
 transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.42109e-14, 1.13687e-13, 0, 9.9792, -1.42678, 0, 12.1291)
@@ -3444,8 +3473,12 @@ transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.421
 transform = Transform3D(1, 1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, -1.36454e-06, 0.1, 36.1391, 1, 0.28326)
 hasText = true
 
-[node name="Model" parent="BookShelf3" index="0"]
+[node name="Model" parent="BookShelf3" index="1"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="BookShelf3/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
 
 [node name="ExitZone" parent="BookShelf3" index="2"]
 transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.42109e-14, 1.13687e-13, 0, 9.9792, -1.42678, 0, 12.1291)
@@ -3454,8 +3487,12 @@ transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.421
 transform = Transform3D(1, 1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, -1.36454e-06, 0.1, 40.1391, 1, 0.28326)
 hasText = true
 
-[node name="Model" parent="BookShelf4" index="0"]
+[node name="Model" parent="BookShelf4" index="1"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="BookShelf4/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
 
 [node name="ExitZone" parent="BookShelf4" index="2"]
 transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.42109e-14, 1.13687e-13, 0, 9.9792, -1.42678, 0, 12.1291)
@@ -3464,8 +3501,12 @@ transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.421
 transform = Transform3D(1, 1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, -1.36454e-06, 0.1, 44.1391, 1, 0.28326)
 hasText = true
 
-[node name="Model" parent="BookShelf5" index="0"]
+[node name="Model" parent="BookShelf5" index="1"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="BookShelf5/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
 
 [node name="ExitZone" parent="BookShelf5" index="2"]
 transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.42109e-14, 1.13687e-13, 0, 9.9792, -1.42678, 0, 12.1291)
@@ -3475,8 +3516,12 @@ transform = Transform3D(-1.74846e-07, 1.36454e-06, -0.1, -4.37114e-08, 3.90214, 
 hasText = true
 books = true
 
-[node name="Model" parent="BookShelf6" index="0"]
+[node name="Model" parent="BookShelf6" index="1"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="BookShelf6/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
 
 [node name="ExitZone" parent="BookShelf6" index="2"]
 transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.42109e-14, 1.13687e-13, 0, 9.9792, -1.42678, 0, 12.1291)
@@ -3572,7 +3617,24 @@ hasText = true
 isCharacter = true
 message = "test"
 
-[node name="Stolik2" parent="." instance=ExtResource("6_klbtq")]
+[node name="irene_new_anim" parent="Anya Syrovatskaya/ModelScene" index="0" instance=ExtResource("7_ghxum")]
+
+[node name="Irene" parent="Anya Syrovatskaya/ModelScene/irene_new_anim/Irene_Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_w14f4")
+surface_material_override/1 = SubResource("StandardMaterial3D_71kbe")
+surface_material_override/2 = SubResource("StandardMaterial3D_2ajxo")
+
+[node name="Model" parent="Anya Syrovatskaya" index="1"]
+visible = false
+
+[node name="Asya" parent="." instance=ExtResource("6_klbtq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.8237, 1, 0.669731)
+charId = "Asya"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="Artyom" parent="." instance=ExtResource("6_klbtq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.8237, 1, 0.669731)
 charId = "Artyom"
 hasText = true
@@ -3602,4 +3664,6 @@ message = "test"
 [editable path="BookShelf5"]
 [editable path="BookShelf6"]
 [editable path="Anya Syrovatskaya"]
-[editable path="Stolik2"]
+[editable path="Anya Syrovatskaya/ModelScene/irene_new_anim"]
+[editable path="Asya"]
+[editable path="Artyom"]

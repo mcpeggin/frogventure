@@ -188,22 +188,25 @@ isDoor = true
 hasText = true
 finishDoor = true
 nextScenePath = "res://Floor5.tscn"
-nextSceneName = "5th Floor"
+nextSceneName = "Пятый этаж"
 nextSceneTime = "12:50"
-nextSceneMessage = "-go home-"
+nextSceneMessage = "-иди домой-"
 player = NodePath("../Player")
 
-[node name="Door2" parent="." instance=ExtResource("1_lrjmk")]
+[node name="SnowmanDoor" parent="." instance=ExtResource("1_lrjmk")]
 transform = Transform3D(-8.74228e-08, -1.36454e-06, 0.1, -4.37114e-08, 3.90214, 3.49691e-08, -1, -1.70568e-07, -8.74228e-09, -12.003, 1, -6.03246)
 hasText = true
+message = "Кажется тут салон красоты, но самое забавное, что на новый год тут вешают снеговика, как и на двери напротив, они смотрят друг на друга через весь коридор."
 
-[node name="Door6" parent="." instance=ExtResource("1_lrjmk")]
+[node name="UnknownDoor" parent="." instance=ExtResource("1_lrjmk")]
 transform = Transform3D(1, 1.70568e-07, 4.37114e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37114e-08, -1.36454e-06, 0.1, -10.003, 1, -8.03246)
 hasText = true
+message = "Без понятия что тут."
 
-[node name="Door3" parent="." instance=ExtResource("1_lrjmk")]
+[node name="ElevatorDoor" parent="." instance=ExtResource("1_lrjmk")]
 transform = Transform3D(-1, -1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, 1.36454e-06, -0.1, 5.99702, 1, -4.03246)
 hasText = true
+message = "Лифт не работает. Надо идти пешком."
 
 [node name="DoorOutside" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_lrjmk")]
 transform = Transform3D(-1, -1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, 1.36454e-06, -0.1, -1.00298, 1, 7.96754)
@@ -211,17 +214,19 @@ isDoor = true
 nextScenePath = "res://Entrance.tscn"
 nextSceneName = "Cvetanova Cuprija"
 nextSceneTime = "09:03"
-nextSceneMessage = "-check the bus stop-"
+nextSceneMessage = "-иди на оставку автобуса (тут она напротив рампы)-"
 initialSpawn = true
 player = NodePath("../Player")
 
-[node name="Door4" parent="." instance=ExtResource("1_lrjmk")]
+[node name="ConstructionDoor" parent="." instance=ExtResource("1_lrjmk")]
 transform = Transform3D(1, 1.70568e-07, 4.37114e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37114e-08, -1.36454e-06, 0.1, 5.99702, 1, -8.03246)
 hasText = true
+message = "Я так и не поняла, кажется что это административная часть стоматологии справа, но там сейчас ремонт, может еще какое-то коммерческое помещение."
 
-[node name="Door5" parent="." instance=ExtResource("1_lrjmk")]
+[node name="DentistDoor" parent="." instance=ExtResource("1_lrjmk")]
 transform = Transform3D(-2.4869e-14, 1.36454e-06, -0.1, -4.37114e-08, 3.90214, 3.49691e-08, 1, 1.70568e-07, -4.44089e-16, 7.99702, 1, -6.03246)
 hasText = true
+message = "Тут стомоталогия с чудесным названием Dr. S. Ну поняли, как ASS. У них еще был стенд с зубом на улице, но он сейчас просто валяется на обочине из-за ремонта."
 
 [node name="Camera5" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.878355, 1.37699, -1.05619)
@@ -271,37 +276,20 @@ shape = SubResource("BoxShape3D_5rsw4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.16822, 0, -3.51072)
 script = ExtResource("3_0u17q")
 
-[node name="Poster" parent="." instance=ExtResource("1_lrjmk")]
+[node name="Kućni red" parent="." instance=ExtResource("1_lrjmk")]
 transform = Transform3D(7.15256e-08, 2.55852e-07, -0.1, 2.62268e-08, -0.585321, -4.37113e-08, -0.6, -2.55852e-08, -1.11759e-08, 0.935593, 1, -3.46537)
 hasText = true
+message = "Kućni red"
 
 [node name="MessageBoard" parent="." instance=ExtResource("1_lrjmk")]
 transform = Transform3D(7.15256e-08, 2.55852e-07, -0.1, 2.62268e-08, -0.585321, -4.37113e-08, -0.6, -2.55852e-08, -1.11759e-08, 0.938503, 1.00695, -2.47257)
 hasText = true
-
-[node name="PostBox" parent="." instance=ExtResource("1_lrjmk")]
-transform = Transform3D(7.15256e-08, 2.55852e-07, -0.1, 2.62268e-08, -0.585321, -4.37113e-08, -0.6, -2.55852e-08, -1.11759e-08, 0.935593, 1, -0.46537)
-hasText = true
-
-[node name="PostBox2" parent="." instance=ExtResource("1_lrjmk")]
-transform = Transform3D(7.15256e-08, 2.55852e-07, -0.1, 2.62268e-08, -0.585321, -4.37113e-08, -0.6, -2.55852e-08, -1.11759e-08, 0.935593, 1, 0.53463)
-hasText = true
-
-[node name="PostBox3" parent="." instance=ExtResource("1_lrjmk")]
-transform = Transform3D(7.15256e-08, 2.55852e-07, -0.1, 2.62268e-08, -0.585321, -4.37113e-08, -0.6, -2.55852e-08, -1.11759e-08, 0.935593, 1, 1.53463)
-hasText = true
-
-[node name="PostBox4" parent="." instance=ExtResource("1_lrjmk")]
-transform = Transform3D(7.15256e-08, 2.55852e-07, -0.1, 2.62268e-08, -0.585321, -4.37113e-08, -0.6, -2.55852e-08, -1.11759e-08, 0.935593, 1, 2.53463)
-hasText = true
-
-[node name="PostBox5" parent="." instance=ExtResource("1_lrjmk")]
-transform = Transform3D(7.15256e-08, 2.55852e-07, -0.1, 2.62268e-08, -0.585321, -4.37113e-08, -0.6, -2.55852e-08, -1.11759e-08, 0.935593, 1, 3.53463)
-hasText = true
+message = "Тут обычно висят всякие петиции, но обычно Митя мне просто пересказывает, то что обсуждают в домовом чате в вайбере."
 
 [node name="PostBox6" parent="." instance=ExtResource("1_lrjmk")]
 transform = Transform3D(7.15256e-08, 2.55852e-07, -0.1, 2.62268e-08, -0.585321, -4.37113e-08, -0.6, -2.55852e-08, -1.11759e-08, 0.935593, 1, 4.53463)
 hasText = true
+message = "Наш почтовый ящик. Живем тут почти 2 года, а поменять фамилию никак рука не доходит. Митя говорит, что в ящике приходит только плохое, он имеет в виду счета, которые нужно оплачивать. Но в прошлом году мне присылали открытки со всего мира с поздравлениями, они еще приходили с задержкой после др, это было очень мило."
 
 [node name="Floor" type="Node3D" parent="."]
 
@@ -1004,17 +992,12 @@ shadow_enabled = true
 [connection signal="body_exited" from="Camera8/CameraArea1" to="Camera8/CameraArea1" method="exitTrigger"]
 
 [editable path="StairsGround"]
-[editable path="Door2"]
-[editable path="Door6"]
-[editable path="Door3"]
+[editable path="SnowmanDoor"]
+[editable path="UnknownDoor"]
+[editable path="ElevatorDoor"]
 [editable path="DoorOutside"]
-[editable path="Door4"]
-[editable path="Door5"]
-[editable path="Poster"]
+[editable path="ConstructionDoor"]
+[editable path="DentistDoor"]
+[editable path="Kućni red"]
 [editable path="MessageBoard"]
-[editable path="PostBox"]
-[editable path="PostBox2"]
-[editable path="PostBox3"]
-[editable path="PostBox4"]
-[editable path="PostBox5"]
 [editable path="PostBox6"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://cf01h5g6b1kkn"]
+[gd_scene load_steps=98 format=3 uid="uid://cf01h5g6b1kkn"]
 
 [ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_h8026"]
 [ext_resource type="Script" uid="uid://2bk2ygphkd2f" path="res://Level.gd" id="1_j8v0v"]
@@ -8,6 +8,15 @@
 [ext_resource type="Script" uid="uid://6dodax6ltd41" path="res://CameraTrigger.gd" id="5_v7acf"]
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="6_cxqx6"]
 [ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="8_b3hrg"]
+[ext_resource type="PackedScene" uid="uid://df1or4ytiw34j" path="res://assets/models/characters/vasya/vasya.glb" id="9_v7acf"]
+[ext_resource type="PackedScene" uid="uid://cx4su73xkiijq" path="res://assets/models/characters/kostya/kostya.glb" id="10_uvivk"]
+[ext_resource type="PackedScene" uid="uid://6jhexrly4w34" path="res://assets/models/characters/polya kostya/polya kostya.glb" id="10_vyf1x"]
+[ext_resource type="Texture2D" uid="uid://pnf3jvw8vb3w" path="res://assets/models/characters/kostya/kostya_mBody_Alb.png" id="11_0wtwy"]
+[ext_resource type="Texture2D" uid="uid://5jyj1q3un2ko" path="res://assets/models/characters/kostya/kostya_mEye_Alb.png" id="12_0js7t"]
+[ext_resource type="Texture2D" uid="uid://b4migmi8lpell" path="res://assets/models/characters/kostya/kostya_mMouth_Alb.png" id="13_g2ihs"]
+[ext_resource type="Texture2D" uid="uid://cefyeh8cjelwn" path="res://assets/models/characters/polya kostya/polya kostya_mBody_Alb.png" id="15_6blho"]
+[ext_resource type="Texture2D" uid="uid://b80fwxpg4vgwt" path="res://assets/models/characters/polya kostya/polya kostya_mEye_Alb.png" id="16_3jcse"]
+[ext_resource type="Texture2D" uid="uid://f6c5ajmlav87" path="res://assets/models/characters/polya kostya/polya kostya_mMouth_Alb.png" id="17_l4pq7"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hiu1g"]
 
@@ -237,6 +246,24 @@ sky_material = SubResource("ProceduralSkyMaterial_cxqx6")
 [sub_resource type="Environment" id="Environment_b3hrg"]
 background_mode = 2
 sky = SubResource("Sky_cxqx6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6blho"]
+albedo_texture = ExtResource("11_0wtwy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jcse"]
+albedo_texture = ExtResource("12_0js7t")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4pq7"]
+albedo_texture = ExtResource("13_g2ihs")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pun1y"]
+albedo_texture = ExtResource("15_6blho")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ucsv0"]
+albedo_texture = ExtResource("16_3jcse")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5k36e"]
+albedo_texture = ExtResource("17_l4pq7")
 
 [node name="Entrance" type="Node3D" node_paths=PackedStringArray("player1", "player2")]
 script = ExtResource("1_j8v0v")
@@ -1679,19 +1706,55 @@ hasText = true
 isCharacter = true
 message = "test"
 
+[node name="vasya" parent="Vasya/ModelScene" index="0" instance=ExtResource("9_v7acf")]
+transform = Transform3D(0.594261, 0, -0.804272, 0, 1, 0, 0.804272, 0, 0.594261, 0, 0, 0)
+
+[node name="Model" parent="Vasya" index="1"]
+visible = false
+
 [node name="Kostya" parent="." instance=ExtResource("8_b3hrg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 1, 31)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 1, 28.24)
 charId = "Kostya"
 hasText = true
 isCharacter = true
 message = "test"
 
+[node name="kostya" parent="Kostya/ModelScene" index="0" instance=ExtResource("10_uvivk")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 0, 0, 0)
+
+[node name="Body__mBody" parent="Kostya/ModelScene/kostya/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6blho")
+
+[node name="Body__mEye" parent="Kostya/ModelScene/kostya/Armature_001/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_3jcse")
+
+[node name="Body__mMouth" parent="Kostya/ModelScene/kostya/Armature_001/Skeleton3D" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_l4pq7")
+
+[node name="Model" parent="Kostya" index="1"]
+visible = false
+
 [node name="Polya" parent="." instance=ExtResource("8_b3hrg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 1, 29)
+transform = Transform3D(0.762826, 0, -0.646603, 0, 1, 0, 0.646603, 0, 0.762826, 40.3762, 1, 29.7154)
 charId = "Polya"
 hasText = true
 isCharacter = true
 message = "test"
+
+[node name="polya kostya" parent="Polya/ModelScene" index="0" instance=ExtResource("10_vyf1x")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 0, 0, 0)
+
+[node name="Body__mBody" parent="Polya/ModelScene/polya kostya/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pun1y")
+
+[node name="Body__mEye" parent="Polya/ModelScene/polya kostya/Armature/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ucsv0")
+
+[node name="Body__mMouth" parent="Polya/ModelScene/polya kostya/Armature/Skeleton3D" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_5k36e")
+
+[node name="Model" parent="Polya" index="1"]
+visible = false
 
 [connection signal="body_entered" from="Parking/Camera9/CameraArea1" to="Parking/Camera9/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Parking/Camera9/CameraArea1" to="Parking/Camera9/CameraArea1" method="exitTrigger"]
@@ -1706,4 +1769,6 @@ message = "test"
 [editable path="BusStop/Door9"]
 [editable path="Vasya"]
 [editable path="Kostya"]
+[editable path="Kostya/ModelScene/kostya"]
 [editable path="Polya"]
+[editable path="Polya/ModelScene/polya kostya"]

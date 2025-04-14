@@ -3,6 +3,8 @@ class_name Prop extends Interactable
 @export var charId: String = ""
 @export_enum("first", "second") var lineKey: String = "first"
 
+@onready var modelScene: Node3D = $ModelScene
+
 @export var isDoor: bool
 @export var hasText: bool
 @export var finishDay: bool
@@ -30,28 +32,47 @@ class_name Prop extends Interactable
 
 @export var initialSpawn: bool
 
-#func _ready():
-	#if Game.player:
-		#var shouldBeVisible = (
-			#(isVisibleForPlayer2 and Game.player.name == "Player2") or
-			#(!isVisibleForPlayer2 and Game.player.name == "Player1")
-		#)
-		#self.visible = shouldBeVisible
-
 func showKeyClue(message: String) -> void:
-	Game.player.ui.visible = true
-	Game.player.dialogBox.visible = true
 	Game.player.label.text = message
+	Game.player.labelName.text = ""
+	Game.isKeyClueVisible = true
+	Game.player.dialogBox.visible = true
+	Game.player.ui.visible = true
 	Game.player.isFrozen = true
 	Game.player.pressCue.visible = false
-	await get_tree().create_timer(0.5).timeout
-	Game.player.dialogBox.visible = false
-	Game.player.ui.visible = false
-	Game.player.isFrozen = false
+
+func _ready():
+	var modelSceneChild = modelScene.get_child(0)
+	if modelSceneChild:
+		var animPlayer = modelSceneChild.get_node("AnimationPlayer")
+		if animPlayer:
+			animPlayer.play("IDLE")
 
 func interact(currentInteractable):
 	if !Game.player:
 		return
+	
+	if isDoor and nextScenePath:
+		if keysDoor and !Game.hasKeys:
+			var message = 'Надо захватить ключи перед тем поеду в центр. Они обычно висят справа от двери.'
+			showKeyClue(message)
+			return
+		if coffeeDoor and !Game.hasCoffee:
+			var message = 'Как-то тупо зайти в кофейню и не купить кофе. Надо спросить у баристы.'
+			await showKeyClue(message)
+			return
+		if bookDoor and !Game.hasBooks:
+			var message = 'Надо забрать свой заказ. Я думаю он уже лежит собранный на кассе.'
+			await showKeyClue(message)
+			return
+		if museumDoor and !Game.museumVisited:
+			var message = 'Время еще есть. Можно сходить в музей и скоротать время.'
+			await showKeyClue(message)
+			return
+		if finishDoor and !Game.canFinish:
+			var message = 'Я только вышла. Надо сделать все дела и потом уже сидеть дома.'
+			await showKeyClue(message)
+			return
 	
 	if hasText:
 		Game.player.dialogBox.visible = true
@@ -69,55 +90,34 @@ func interact(currentInteractable):
 		
 		if keys:
 			Game.hasKeys = true
-			var message = 'Got keys now. Ready to go outside.'
-			await showKeyClue(message)
+			var message = 'Вот и ключи. Можно выходить.'
+			showKeyClue(message)
 			return
 		if coffee:
 			Game.hasCoffee = true
-			var message = 'Dobar dan, moze za mene Rwanda Ghetsi jadan komac, hvala, videmo se, cao'
+			var message = 'Dobar dan, može jedno pakovanje Rwande Ghetsi za mene, hvala. Vidimo se, ćao.'
 			await showKeyClue(message)
 			return
 		if books:
 			Game.hasBooks = true
-			var message = 'Здраствуйте, я за своим заказом. Ага, спасибо, всего доброго.'
+			var message = 'Здраствуйте, я за своим заказом. Номер 0451. Ага, спасибо.'
 			await showKeyClue(message)
 			return
 		if museumVisited:
 			Game.museumVisited = true
-			var message = 'Mmmmm. Intresting. Well, i guess thats enough for today'
+			var message = 'Это было занятно. Кажется я утомилась, пора двигать домой.'
 			await showKeyClue(message)
 			return
 		if finishKeys:
 			Game.museumVisited = true
-			var message = 'Mmmmm. Intresting. Well, i guess thats enough for today'
+			var message = 'Кажется, я сделала все что хотела, пора ехать домой.'
 			await showKeyClue(message)
 			return
 			
-	if isDoor and nextScenePath:
-		if keysDoor and !Game.hasKeys:
-			var message = 'Cant leave without keys. They should be on the right of the door.'
-			await showKeyClue(message)
-			return
-		if coffeeDoor and !Game.hasCoffee:
-			var message = 'It would be dumb to leave without some coffee. I should ask the barista.'
-			await showKeyClue(message)
-			return
-		if bookDoor and !Game.hasBooks:
-			var message = 'I am not leaving without books. No way.'
-			await showKeyClue(message)
-			return
-		if museumDoor and !Game.museumVisited:
-			var message = 'Well, i am already here, why not check the museum before going back'
-			await showKeyClue(message)
-			return
-		if finishDoor and !Game.canFinish:
-			var message = 'I just left. I need to run some errands before i can go back.'
-			await showKeyClue(message)
-			return
-			
+	if isDoor:
 		Game.initialSpawn  = initialSpawn
 		Game.player.dialogBox.visible = false
 		Transition.changeScene(nextScenePath, nextSceneName, nextSceneTime, nextSceneMessage)
-			
+		
 	if finishDay:
 			pass

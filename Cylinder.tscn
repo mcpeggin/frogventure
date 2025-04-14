@@ -8,7 +8,7 @@
 
 [node name="Cylinder" instance=ExtResource("1_gtnml")]
 
-[node name="Model" parent="." index="0"]
+[node name="Model" parent="." index="1"]
 mesh = SubResource("CylinderMesh_lgtsh")
 
 [node name="CollisionShape" parent="Model/InteractArea" index="0"]

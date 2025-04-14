@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var speed: float = 5.0
+@export var speed: float = 2.5
 @export var rotation_speed: float = 3.0
 
 @onready var questionIcon: Sprite3D = $QuestionIcon
@@ -24,12 +24,16 @@ extends CharacterBody3D
 
 @onready var animPlayer: AnimationPlayer = $AnimationPlayer
 
+@onready var modelAnim: AnimationPlayer = $model/irene_new_anim/AnimationPlayer
+
 var isInWarningArea: bool = false
 var isInInteractionZone: bool = false
 
 var currentInteractable: Node = null
 
 var isFrozen: bool = false
+
+var isDancing: bool = false
 
 func _ready():
 	Game.player = self
@@ -43,9 +47,34 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
 	
+	if Input.is_action_just_pressed("dance"):
+		if not isDancing:
+			isDancing = true
+			modelAnim.play("DANCE")
+	
+	if Game.isKeyClueVisible and Input.is_action_just_pressed("interact"):
+			Game.player.dialogBox.visible = false
+			Game.player.ui.visible = false
+			Game.player.isFrozen = false
+			Game.isKeyClueVisible = false
+			return
+	
 	if !isFrozen:
 		var move_input = Input.get_action_strength("back") - Input.get_action_strength("forward")
 		var turn_input = Input.get_action_strength("left") - Input.get_action_strength("right")
+		
+		var isMoving = move_input != 0 or turn_input != 0
+		
+		if isDancing and isMoving:
+			isDancing = false
+			modelAnim.stop()
+			modelAnim.play("WALK")
+
+		if not isDancing:
+			if isMoving:
+				modelAnim.play("WALK")
+			else:
+				modelAnim.play("IDLE")
 		
 		if turn_input != 0:
 			rotation.y += turn_input * rotation_speed * delta
@@ -96,3 +125,7 @@ func _on_interaction_zone_area_exited(area):
 		if currentInteractable == area.get_owner():
 			currentInteractable = null
 		_updateIcons()
+
+func _on_animation_player_animation_finished(anim_name) -> void:
+	if anim_name == "DANCE":
+		isDancing = false

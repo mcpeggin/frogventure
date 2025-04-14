@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bcbpvaw1it4x"]
+[gd_scene load_steps=55 format=3 uid="uid://bcbpvaw1it4x"]
 
 [ext_resource type="Script" uid="uid://2bk2ygphkd2f" path="res://Level.gd" id="1_2m36c"]
 [ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_ajnb3"]
@@ -10,6 +10,10 @@
 [ext_resource type="Script" uid="uid://cb6cclxaie4dj" path="res://Interactable.gd" id="7_qjsvv"]
 [ext_resource type="Script" uid="uid://6dodax6ltd41" path="res://CameraTrigger.gd" id="8_tceaw"]
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="9_mgcoj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gmnia"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ekklr"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hiu1g"]
 
@@ -155,31 +159,83 @@ player2 = NodePath("Player2")
 transform = Transform3D(1, 1.70568e-07, 4.37114e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37114e-08, -1.36454e-06, 0.1, -3, 1, -8)
 isDoor = true
 nextScenePath = "res://GroundFloor.tscn"
-nextSceneName = "Ground Floor"
+nextSceneName = "Подъезд"
 nextSceneTime = "09:02"
-nextSceneMessage = "-go touch grass-"
+nextSceneMessage = "-выйди на улицу-"
 initialSpawn = true
 player = NodePath("../Player")
 
-[node name="Door2" parent="." instance=ExtResource("4_27spy")]
+[node name="Model" parent="StairsFloor" index="1"]
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="StairsFloor/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
+
+[node name="SwatDoor" parent="." instance=ExtResource("4_27spy")]
 transform = Transform3D(-8.74228e-08, -1.36454e-06, 0.1, -4.37114e-08, 3.90214, 3.49691e-08, -1, -1.70568e-07, -8.74228e-09, -12.003, 1, -6.03246)
 hasText = true
+message = "Как-то мы услышали грохот и Митя выглянул посмотреть что там происходит, оказалось, за нашими соседями пришел наряд полиции и выбил им дверь. Мы так и не узнали в чем была причина. Загадка."
 
-[node name="Door6" parent="." instance=ExtResource("4_27spy")]
+[node name="Model" parent="SwatDoor" index="1"]
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="SwatDoor/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
+
+[node name="NewNeighbours" parent="." instance=ExtResource("4_27spy")]
 transform = Transform3D(1, 1.70568e-07, 4.37114e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37114e-08, -1.36454e-06, 0.1, -10.003, 1, -8.03246)
 hasText = true
+message = "Кажется эта квартира постоянно перездается, помню что тут живет пара и когда в городе были массовые протесты мы переклись с ними в лифте, а они закупились чипсами."
 
-[node name="Door3" parent="." instance=ExtResource("4_27spy")]
+[node name="Model" parent="NewNeighbours" index="1"]
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="NewNeighbours/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
+
+[node name="NewNeighbours2" parent="." instance=ExtResource("4_27spy")]
+transform = Transform3D(-1, -1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, 1.36454e-06, -0.1, -10.003, 1, -4.03246)
+hasText = true
+message = "Тут живет семья, помню что женшина с дочкой и собакой. Кажется, собаку зовут Кики, а дочку Ники..."
+
+[node name="Model" parent="NewNeighbours2" index="1"]
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="NewNeighbours2/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
+
+[node name="ElevatorDoor" parent="." instance=ExtResource("4_27spy")]
 transform = Transform3D(-1, -1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, 1.36454e-06, -0.1, 5.99702, 1, -4.03246)
 hasText = true
+message = "Лифт не работает. Лучше пойти пешком."
 
-[node name="Door4" parent="." instance=ExtResource("4_27spy")]
+[node name="Model" parent="ElevatorDoor" index="1"]
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="ElevatorDoor/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
+
+[node name="FamilyDoor" parent="." instance=ExtResource("4_27spy")]
 transform = Transform3D(1, 1.70568e-07, 4.37114e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37114e-08, -1.36454e-06, 0.1, 5.99702, 1, -8.03246)
 hasText = true
+message = "Тут живет семья, особо нечего сказать, приветливые, здороваемся как видимся."
 
-[node name="Door5" parent="." instance=ExtResource("4_27spy")]
+[node name="Model" parent="FamilyDoor" index="1"]
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="FamilyDoor/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
+
+[node name="SylvanaDoor" parent="." instance=ExtResource("4_27spy")]
 transform = Transform3D(-2.4869e-14, 1.36454e-06, -0.1, -4.37114e-08, 3.90214, 3.49691e-08, 1, 1.70568e-07, -4.44089e-16, 7.99702, 1, -6.03246)
 hasText = true
+message = "Тут живет наша чудесная соседка Сильвана. Милейшая женщина, очень любит животных. Как-то раз на машине подбросила меня до дома."
+
+[node name="Model" parent="SylvanaDoor" index="1"]
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="SylvanaDoor/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
 
 [node name="Walls&Floors" type="Node3D" parent="."]
 
@@ -685,11 +741,18 @@ shape = SubResource("BoxShape3D_5rsw4")
 transform = Transform3D(-1, -1.70568e-07, 4.37116e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37116e-08, 1.36454e-06, -0.1, -2.003, 1, -4.03246)
 isDoor = true
 finishDoor = true
-nextScenePath = "res://Apartments.tscn"
-nextSceneName = "Home"
-nextSceneTime = "12:51"
-nextSceneMessage = "-sweet hole-"
+nextScenePath = "res://ApartmentsParty.tscn"
+nextSceneName = "Дом милый д..."
+nextSceneTime = "что?"
+nextSceneMessage = "СЮРПРИЗ"
+initialSpawn = true
 player = NodePath("../Player")
+
+[node name="Model" parent="Door2Apartment" index="1"]
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="Door2Apartment/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
 
 [node name="Player" parent="." instance=ExtResource("9_mgcoj")]
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -2, 0, -5)
@@ -710,9 +773,10 @@ shadow_enabled = true
 [connection signal="body_exited" from="Camera5/CameraArea1" to="Camera5/CameraArea1" method="exitTrigger"]
 
 [editable path="StairsFloor"]
-[editable path="Door2"]
-[editable path="Door6"]
-[editable path="Door3"]
-[editable path="Door4"]
-[editable path="Door5"]
+[editable path="SwatDoor"]
+[editable path="NewNeighbours"]
+[editable path="NewNeighbours2"]
+[editable path="ElevatorDoor"]
+[editable path="FamilyDoor"]
+[editable path="SylvanaDoor"]
 [editable path="Door2Apartment"]

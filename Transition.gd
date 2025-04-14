@@ -23,10 +23,10 @@ var isActive: bool = false
 	#get_tree().quit()
 
 func changeScene(
-	scenePath: String, 
-	sceneName: String, 
-	sceneTime: String, 
-	sceneMessage: String
+		scenePath: String, 
+		sceneName: String, 
+		sceneTime: String, 
+		sceneMessage: String
 	) -> void:
 		
 	if isActive:

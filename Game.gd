@@ -11,6 +11,8 @@ var hasBooks = false
 var museumVisited = false
 var canFinish = false
 
+var isKeyClueVisible: bool = false
+
 func _ready():	
 	$AudioStreamPlayer3D.stream.loop = true
 	$AudioStreamPlayer3D.play()

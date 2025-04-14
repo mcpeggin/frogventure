@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dgebkr13xxyp"]
+[gd_scene load_steps=15 format=3 uid="uid://dgebkr13xxyp"]
 
 [ext_resource type="Script" uid="uid://cthbuwa11gvja" path="res://Player.gd" id="1_1lh1s"]
+[ext_resource type="PackedScene" uid="uid://d1t5ejipginf1" path="res://assets/models/characters/irene_test/irene_new_anim.glb" id="2_e80uo"]
 [ext_resource type="Texture2D" uid="uid://c3gjntumds13t" path="res://assets/icons/questionMark.png" id="3_s4lhw"]
 [ext_resource type="Texture2D" uid="uid://dy6ovvy6361x7" path="res://assets/icons/exclamationPoint.png" id="4_lba0b"]
+[ext_resource type="Texture2D" uid="uid://bnuky3jlxs013" path="res://assets/logo/фрог-финал_Монтажная область 1.png" id="5_cxr5p"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ngit5"]
 
@@ -107,8 +109,39 @@ _data = {
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_1lh1s")
 
+[node name="model" type="Node3D" parent="."]
+
+[node name="irene_new_anim" parent="model" instance=ExtResource("2_e80uo")]
+
+[node name="Skeleton3D" parent="model/irene_new_anim/Irene_Armature" index="0"]
+bones/0/position = Vector3(2.20433, -0.294532, -47.1913)
+bones/0/rotation = Quaternion(-0.720228, -0.0887759, 0.0647092, 0.684984)
+bones/1/rotation = Quaternion(0.0163579, 0.0180838, -0.00139226, 0.999702)
+bones/2/rotation = Quaternion(-0.00232368, 0.00411533, -0.0106533, 0.999932)
+bones/3/rotation = Quaternion(-0.00228649, 0.0039748, -0.0107164, 0.999932)
+bones/4/rotation = Quaternion(0.0965731, -0.00791073, 0.0228058, 0.995033)
+bones/5/rotation = Quaternion(0.049232, -0.00681925, 0.0231557, 0.998496)
+bones/7/rotation = Quaternion(-0.556023, -0.437657, 0.566649, -0.422142)
+bones/8/rotation = Quaternion(0.195968, 0.341205, 0.290187, 0.872334)
+bones/9/rotation = Quaternion(0.0169921, -0.110474, 0.186058, 0.97616)
+bones/10/rotation = Quaternion(0.0158428, 0.138792, -0.0249725, 0.98988)
+bones/11/rotation = Quaternion(0.620751, -0.384575, 0.507086, 0.457858)
+bones/12/rotation = Quaternion(0.000228158, -0.267856, -0.144618, 0.952543)
+bones/13/rotation = Quaternion(0.0375907, 0.241661, -0.41315, 0.877208)
+bones/14/position = Vector3(3.34752e-07, 10.6635, 1.14767e-05)
+bones/14/rotation = Quaternion(0.0553835, -0.235744, -0.0590542, 0.968437)
+bones/15/rotation = Quaternion(-0.00695074, 0.0306515, 0.976306, -0.2141)
+bones/16/rotation = Quaternion(-0.201219, -0.0523232, -0.143557, 0.967556)
+bones/17/rotation = Quaternion(0.551064, -0.27517, 0.0846853, 0.783223)
+bones/18/rotation = Quaternion(0.292512, -0.0328579, 0.0100573, 0.955644)
+bones/20/rotation = Quaternion(-0.0793702, 0.0844421, 0.972117, 0.203857)
+bones/21/rotation = Quaternion(-0.198632, 0.0377698, 0.14854, 0.968016)
+bones/22/rotation = Quaternion(0.548826, 0.0304514, 0.004128, 0.835372)
+bones/23/rotation = Quaternion(0.309984, 0.0430156, -0.0110859, 0.949704)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_ngit5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -163,6 +196,12 @@ text = "\"Lorem"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="ControlClue" type="Label" parent="UI/DialogBox"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Press 'E' to close dialog"
+horizontal_alignment = 2
 
 [node name="ColorRect" type="ColorRect" parent="UI"]
 anchors_preset = 15
@@ -230,6 +269,28 @@ theme_override_font_sizes/font_size = 60
 text = "-relax-"
 horizontal_alignment = 1
 
+[node name="StartScreen" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/StartScreen"]
+position = Vector2(591, 225)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_cxr5p")
+
+[node name="ControlClue" type="Label" parent="UI/StartScreen"]
+offset_left = 369.0
+offset_top = 380.0
+offset_right = 800.0
+offset_bottom = 434.0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 39
+text = "Press any button to start"
+horizontal_alignment = 2
+
 [node name="Clue" type="CanvasLayer" parent="."]
 
 [node name="PressCue" type="Label" parent="Clue"]
@@ -249,7 +310,10 @@ libraries = {
 }
 autoplay = "RESET"
 
+[connection signal="animation_finished" from="model/irene_new_anim/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="WarningArea" to="." method="_on_warning_interaction_area_area_entered"]
 [connection signal="area_exited" from="WarningArea" to="." method="_on_warning_interaction_area_area_exited"]
 [connection signal="area_entered" from="InteractionZone" to="." method="_on_interaction_zone_area_entered"]
 [connection signal="area_exited" from="InteractionZone" to="." method="_on_interaction_zone_area_exited"]
+
+[editable path="model/irene_new_anim"]

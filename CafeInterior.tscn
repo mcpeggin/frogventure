@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dn18p33d8phaa"]
+[gd_scene load_steps=92 format=3 uid="uid://dn18p33d8phaa"]
 
 [ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_pp6vl"]
 [ext_resource type="Texture2D" uid="uid://ym4vjiitfyb6" path="res://addons/kenney_prototype_textures/orange/texture_07.png" id="2_axjrb"]
@@ -6,6 +6,35 @@
 [ext_resource type="PackedScene" uid="uid://dhd0u2o78dsh7" path="res://Door.tscn" id="4_axjrb"]
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="5_snw2t"]
 [ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="6_83j8e"]
+[ext_resource type="PackedScene" uid="uid://21aaqw8vgfcd" path="res://assets/models/characters/tagir/tagir.glb" id="7_biy3q"]
+[ext_resource type="Texture2D" uid="uid://buibubid56kr2" path="res://assets/models/characters/tagir/tagir_mBody_Alb.png" id="8_dfjnb"]
+[ext_resource type="Texture2D" uid="uid://cw3qf53g4skro" path="res://assets/models/characters/tagir/tagir_mEye_Alb.png" id="9_2mu8i"]
+[ext_resource type="Texture2D" uid="uid://dx3biqqalt0si" path="res://assets/models/characters/tagir/tagir_mMouth_Alb.png" id="10_0myik"]
+[ext_resource type="PackedScene" uid="uid://dfbi7704d32p8" path="res://assets/models/characters/vika bovsh/vika bovsh.glb" id="11_tf4qh"]
+[ext_resource type="Texture2D" uid="uid://d378g06b6lndx" path="res://assets/models/characters/vika bovsh/vika bovsh_mBody_Alb.png" id="12_2mu8i"]
+[ext_resource type="Texture2D" uid="uid://ns5o0jlwhcfs" path="res://assets/models/characters/vika bovsh/vika bovsh_mEye_Alb.png" id="13_0myik"]
+[ext_resource type="Texture2D" uid="uid://bh4kfi3mlf4e3" path="res://assets/models/characters/vika bovsh/vika bovsh_mMouth_Alb.png" id="14_tf4qh"]
+[ext_resource type="PackedScene" uid="uid://biswadr0ymaac" path="res://assets/models/characters/misha/misha.glb" id="15_n0kxa"]
+[ext_resource type="Texture2D" uid="uid://50jywsftosgp" path="res://assets/models/characters/misha/misha_mBody_Alb.png" id="16_58pqp"]
+[ext_resource type="Texture2D" uid="uid://bh5uh11bh8y2i" path="res://assets/models/characters/misha/misha_mEye_Alb.png" id="17_hitwr"]
+[ext_resource type="Texture2D" uid="uid://diofcfxadgtdp" path="res://assets/models/characters/misha/misha_mMouth_Alb.png" id="18_gyg3m"]
+[ext_resource type="PackedScene" uid="uid://cglny7m7mkitc" path="res://assets/models/characters/mishanya/mishanya.glb" id="19_gelmf"]
+[ext_resource type="Texture2D" uid="uid://ckhs1elyqbxel" path="res://assets/models/characters/mishanya/mishanya_mBody_Alb.png" id="20_805fy"]
+[ext_resource type="Texture2D" uid="uid://bgeql1wtghidm" path="res://assets/models/characters/mishanya/mishanya_mEye_Alb.png" id="21_ojtli"]
+[ext_resource type="Texture2D" uid="uid://c788aq1m3feib" path="res://assets/models/characters/mishanya/mishanya_mMouth_Alb.png" id="22_6tcr6"]
+[ext_resource type="PackedScene" uid="uid://bgdnwdrx4h580" path="res://assets/models/characters/boris/boris.glb" id="23_hl41w"]
+[ext_resource type="Texture2D" uid="uid://7yp1smhk871o" path="res://assets/models/characters/boris/boris_mBody_Alb.png" id="24_edky4"]
+[ext_resource type="Texture2D" uid="uid://cvmj7vhth7msf" path="res://assets/models/characters/boris/boris_mEye_Alb.png" id="25_b8lxx"]
+[ext_resource type="Texture2D" uid="uid://c0qnt550vkr6k" path="res://assets/models/characters/boris/boris_mBeak_Alb.png" id="26_hqgju"]
+[ext_resource type="PackedScene" uid="uid://c2n547g1rnmjf" path="res://assets/models/characters/sereza/sereza.glb" id="27_b8lxx"]
+[ext_resource type="Texture2D" uid="uid://dsy2hjvikk2c2" path="res://assets/models/characters/sereza/sereza_mBody_Alb.png" id="28_hqgju"]
+[ext_resource type="Texture2D" uid="uid://bu4trt4g1mbvt" path="res://assets/models/characters/sereza/sereza_mEye_Alb.png" id="29_hqgju"]
+[ext_resource type="Texture2D" uid="uid://bxdlytmt1dkpd" path="res://assets/models/characters/sereza/sereza_mCap_Alb.png" id="30_i6r8q"]
+[ext_resource type="Texture2D" uid="uid://bpxxevrcw70t1" path="res://assets/models/characters/sereza/sereza_mBeak_Alb.png" id="31_24qk3"]
+[ext_resource type="PackedScene" uid="uid://bklycx88spsy" path="res://assets/models/characters/lexa/lexa.glb" id="32_g5bey"]
+[ext_resource type="Texture2D" uid="uid://o1pda3g6nmmc" path="res://assets/models/characters/lexa/lexa_mBody_Alb.png" id="33_li2ke"]
+[ext_resource type="Texture2D" uid="uid://saq4iyiogiih" path="res://assets/models/characters/lexa/lexa_mEye_Alb.png" id="34_s4buv"]
+[ext_resource type="Texture2D" uid="uid://87rlc6e5axl6" path="res://assets/models/characters/lexa/lexa_mBeak_Alb.png" id="35_x16oh"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h87hw"]
 
@@ -98,6 +127,10 @@ points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ojtli"]
 points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
 
+[sub_resource type="BoxMesh" id="BoxMesh_gmnia"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ekklr"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_snw2t"]
 sky_top_color = Color(1, 0.729715, 0.294115, 1)
 sky_horizon_color = Color(0.744551, 0.628285, 0.561799, 1)
@@ -108,6 +141,72 @@ sky_material = SubResource("ProceduralSkyMaterial_snw2t")
 [sub_resource type="Environment" id="Environment_biy3q"]
 background_mode = 2
 sky = SubResource("Sky_83j8e")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_earml"]
+albedo_texture = ExtResource("8_dfjnb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6aamw"]
+albedo_texture = ExtResource("9_2mu8i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nqajv"]
+albedo_texture = ExtResource("10_0myik")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0myik"]
+albedo_texture = ExtResource("12_2mu8i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tf4qh"]
+albedo_texture = ExtResource("13_0myik")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n0kxa"]
+albedo_texture = ExtResource("14_tf4qh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gelmf"]
+albedo_texture = ExtResource("16_58pqp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_805fy"]
+albedo_texture = ExtResource("17_hitwr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojtli"]
+albedo_texture = ExtResource("18_gyg3m")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hl41w"]
+albedo_texture = ExtResource("20_805fy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_edky4"]
+albedo_texture = ExtResource("21_ojtli")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b8lxx"]
+albedo_texture = ExtResource("22_6tcr6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i6r8q"]
+albedo_texture = ExtResource("24_edky4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24qk3"]
+albedo_texture = ExtResource("25_b8lxx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5bey"]
+albedo_texture = ExtResource("26_hqgju")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_li2ke"]
+albedo_texture = ExtResource("28_hqgju")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4buv"]
+albedo_texture = ExtResource("29_hqgju")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x16oh"]
+albedo_texture = ExtResource("30_i6r8q")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ji16"]
+albedo_texture = ExtResource("31_24qk3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a83t1"]
+albedo_texture = ExtResource("33_li2ke")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oad14"]
+albedo_texture = ExtResource("34_s4buv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2l4sb"]
+albedo_texture = ExtResource("35_x16oh")
 
 [node name="Interior" type="Node3D"]
 
@@ -835,8 +934,12 @@ nextSceneTime = "9:40"
 nextSceneMessage = "-go to the book store-"
 player = NodePath("../Player")
 
-[node name="Model" parent="CafeDoor" index="0"]
+[node name="Model" parent="CafeDoor" index="1"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="CafeDoor/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
 
 [node name="ExitZone" parent="CafeDoor" index="2"]
 transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.42109e-14, 1.13687e-13, 0, 9.9792, -1.42678, 0, 12.1291)
@@ -846,8 +949,12 @@ transform = Transform3D(-1.91847e-13, 1.36454e-06, -0.1, -4.37114e-08, 3.90214, 
 hasText = true
 coffee = true
 
-[node name="Model" parent="CafeDoor2" index="0"]
+[node name="Model" parent="CafeDoor2" index="1"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="CafeDoor2/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
 
 [node name="ExitZone" parent="CafeDoor2" index="2"]
 transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.42109e-14, 1.13687e-13, 0, 9.9792, -1.42678, 0, 12.1291)
@@ -869,12 +976,95 @@ hasText = true
 isCharacter = true
 message = "test"
 
+[node name="tagir" parent="Tagir/ModelScene" index="0" instance=ExtResource("7_biy3q")]
+
+[node name="Skeleton3D" parent="Tagir/ModelScene/tagir/Armature_001" index="0"]
+bones/0/position = Vector3(-1.24114, -0.169578, -12.2297)
+bones/0/rotation = Quaternion(-0.718778, 0.0188055, -0.00832648, 0.694935)
+bones/1/rotation = Quaternion(-0.0377675, -0.00375991, 0.00400944, 0.999271)
+bones/2/rotation = Quaternion(0.0105985, -0.0255111, 0.00694381, 0.999594)
+bones/3/rotation = Quaternion(0.0104583, -0.0253141, 0.00760021, 0.999596)
+bones/4/rotation = Quaternion(0.0427959, 0.0100917, -0.0155555, 0.998912)
+bones/5/rotation = Quaternion(-0.00497787, 0.00912558, -0.0163987, 0.999811)
+bones/7/rotation = Quaternion(-0.506216, -0.485283, 0.555747, -0.446533)
+bones/8/rotation = Quaternion(0.312688, 0.105019, 0.130442, 0.934977)
+bones/9/rotation = Quaternion(0.0198715, -0.12873, 0.217587, 0.967311)
+bones/10/rotation = Quaternion(0.0990192, 0.137105, -0.107198, 0.979748)
+bones/11/rotation = Quaternion(0.158348, 0.00943602, 0.0728253, 0.984649)
+bones/12/rotation = Quaternion(0.0122365, 0.0416127, -0.0323767, 0.998534)
+bones/13/rotation = Quaternion(-0.0241955, 0.000219273, 0.122109, 0.992222)
+bones/15/rotation = Quaternion(0.198084, 0.00318734, 0.0349294, 0.979557)
+bones/16/rotation = Quaternion(0.261167, -0.000170429, -0.0409106, 0.964426)
+bones/17/rotation = Quaternion(0.111175, 0.000355552, -0.0150638, 0.993687)
+bones/19/rotation = Quaternion(0.245374, 0.00725493, 0.0254051, 0.969069)
+bones/20/rotation = Quaternion(0.170415, -3.67717e-05, -0.0287733, 0.984952)
+bones/21/rotation = Quaternion(0.121403, 0.000443292, -0.0154861, 0.992482)
+bones/23/rotation = Quaternion(0.28714, -0.0048975, 0.0226909, 0.957607)
+bones/24/rotation = Quaternion(0.129236, 0.000295483, -0.0209968, 0.991392)
+bones/25/rotation = Quaternion(0.0920535, -0.000331635, -0.00826181, 0.99572)
+bones/27/rotation = Quaternion(0.373126, 0.0165213, -0.027336, 0.927231)
+bones/28/rotation = Quaternion(0.16607, 0.00603458, 0.00735951, 0.986068)
+bones/29/rotation = Quaternion(0.066548, -6.31336e-05, -0.00340265, 0.997777)
+bones/31/rotation = Quaternion(0.547275, -0.462528, 0.504529, 0.481673)
+bones/32/rotation = Quaternion(0.29946, -0.09446, -0.166063, 0.934786)
+bones/33/rotation = Quaternion(0.0183437, 0.119256, -0.201611, 0.972006)
+bones/34/rotation = Quaternion(0.00852085, -0.0707804, 0.142069, 0.987286)
+bones/35/rotation = Quaternion(0.167854, -0.172443, -0.042853, 0.969666)
+bones/36/rotation = Quaternion(0.0111233, -0.0172473, -0.107564, 0.993986)
+bones/37/rotation = Quaternion(-0.0299615, -0.0030179, -0.0542083, 0.998076)
+bones/39/rotation = Quaternion(0.0650537, -0.0186307, -0.0168176, 0.997566)
+bones/40/rotation = Quaternion(0.33676, 0.00035322, 0.0507906, 0.94022)
+bones/41/rotation = Quaternion(0.07761, -0.000224626, 0.011126, 0.996922)
+bones/43/rotation = Quaternion(0.132788, -0.0277161, -0.000194293, 0.990757)
+bones/44/rotation = Quaternion(0.257865, -5.24942e-05, 0.0399323, 0.965355)
+bones/45/rotation = Quaternion(0.0516916, 0.011588, 0.0129822, 0.998512)
+bones/47/rotation = Quaternion(0.221728, -0.00905512, -0.00803633, 0.975033)
+bones/48/rotation = Quaternion(0.194778, -0.000359397, 0.0308331, 0.980363)
+bones/49/rotation = Quaternion(0.0730831, 0.0131516, 0.0158904, 0.997113)
+bones/51/rotation = Quaternion(0.313212, -0.0269131, 0.0124904, 0.94922)
+bones/52/rotation = Quaternion(0.15998, -2.91163e-05, 0.0277916, 0.986729)
+bones/53/rotation = Quaternion(0.068544, -0.000297222, 0.00745976, 0.99762)
+bones/55/rotation = Quaternion(0.0537741, 0.0667664, 0.993769, -0.0712296)
+bones/56/rotation = Quaternion(-0.17618, -0.0805105, 0.00715527, 0.981034)
+bones/57/rotation = Quaternion(0.54674, -0.0856442, -0.00866428, 0.832866)
+bones/58/rotation = Quaternion(0.295989, -0.0336336, 0.0100094, 0.954546)
+bones/60/rotation = Quaternion(-0.106023, 0.0966365, 0.989508, 0.0171871)
+bones/61/rotation = Quaternion(-0.23644, 0.0579425, 0.00662618, 0.969894)
+bones/62/rotation = Quaternion(0.591582, 0.113267, -0.0946598, 0.792617)
+bones/63/rotation = Quaternion(0.2878, 0.0381506, -0.0114289, 0.956862)
+
+[node name="Body__mBody" parent="Tagir/ModelScene/tagir/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_earml")
+
+[node name="Body__mEye" parent="Tagir/ModelScene/tagir/Armature_001/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6aamw")
+
+[node name="Body__mMouth" parent="Tagir/ModelScene/tagir/Armature_001/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nqajv")
+
+[node name="Model" parent="Tagir" index="1"]
+visible = false
+
 [node name="Vika Bovsh" parent="." instance=ExtResource("6_83j8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.2344, 1, 21.6697)
 charId = "Vika Bovsh"
 hasText = true
 isCharacter = true
 message = "test"
+
+[node name="vika bovsh" parent="Vika Bovsh/ModelScene" index="0" instance=ExtResource("11_tf4qh")]
+
+[node name="Body__mBody" parent="Vika Bovsh/ModelScene/vika bovsh/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0myik")
+
+[node name="Body__mEye" parent="Vika Bovsh/ModelScene/vika bovsh/Armature_001/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_tf4qh")
+
+[node name="Body__mMouth" parent="Vika Bovsh/ModelScene/vika bovsh/Armature_001/Skeleton3D" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_n0kxa")
+
+[node name="Model" parent="Vika Bovsh" index="1"]
+visible = false
 
 [node name="Misha" parent="." instance=ExtResource("6_83j8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.8237, 1, 21.6697)
@@ -883,19 +1073,106 @@ hasText = true
 isCharacter = true
 message = "test"
 
+[node name="misha" parent="Misha/ModelScene" index="0" instance=ExtResource("15_n0kxa")]
+
+[node name="Body__mBody" parent="Misha/ModelScene/misha/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_gelmf")
+
+[node name="Body__mEye" parent="Misha/ModelScene/misha/Armature/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_805fy")
+
+[node name="Body__mMouth" parent="Misha/ModelScene/misha/Armature/Skeleton3D" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ojtli")
+
+[node name="Model" parent="Misha" index="1"]
+visible = false
+
 [node name="Mishanya" parent="." instance=ExtResource("6_83j8e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.8237, 1, 32.6697)
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 22.8237, 1, 32.6697)
 charId = "Mishanya"
 hasText = true
 isCharacter = true
 message = "test"
 
+[node name="mishanya" parent="Mishanya/ModelScene" index="0" instance=ExtResource("19_gelmf")]
+
+[node name="Body__mBody" parent="Mishanya/ModelScene/mishanya/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_hl41w")
+
+[node name="Body__mEye" parent="Mishanya/ModelScene/mishanya/Armature_001/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_edky4")
+
+[node name="Body__mMouth" parent="Mishanya/ModelScene/mishanya/Armature_001/Skeleton3D" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_b8lxx")
+
+[node name="Model" parent="Mishanya" index="1"]
+visible = false
+
+[node name="Boris" parent="." instance=ExtResource("6_83j8e")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 22.8237, 1, 27.6697)
+charId = "Boris"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="boris" parent="Boris/ModelScene" index="0" instance=ExtResource("23_hl41w")]
+
+[node name="Body__mBody" parent="Boris/ModelScene/boris/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_i6r8q")
+
+[node name="Body__mEye" parent="Boris/ModelScene/boris/Armature/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_24qk3")
+
+[node name="FaceGood__mBeak" parent="Boris/ModelScene/boris/Armature/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_g5bey")
+
+[node name="Model" parent="Boris" index="1"]
+visible = false
+
+[node name="Sereza" parent="." instance=ExtResource("6_83j8e")]
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 20.8237, 1, 32.6697)
+charId = "Sereza"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="sereza" parent="Sereza/ModelScene" index="0" instance=ExtResource("27_b8lxx")]
+
+[node name="Body__mBody" parent="Sereza/ModelScene/sereza/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_li2ke")
+
+[node name="Body__mEye" parent="Sereza/ModelScene/sereza/Armature/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_s4buv")
+
+[node name="Cap__mCap" parent="Sereza/ModelScene/sereza/Armature/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_x16oh")
+
+[node name="FaceGood__mBeak" parent="Sereza/ModelScene/sereza/Armature/Skeleton3D" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2ji16")
+
+[node name="Model" parent="Sereza" index="1"]
+visible = false
+
 [node name="Lexa" parent="." instance=ExtResource("6_83j8e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8237, 1, 32.6697)
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 16.8237, 1, 32.6697)
 charId = "Lexa"
 hasText = true
 isCharacter = true
 message = "test"
+
+[node name="lexa" parent="Lexa/ModelScene" index="0" instance=ExtResource("32_g5bey")]
+
+[node name="Body__mBody" parent="Lexa/ModelScene/lexa/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_a83t1")
+
+[node name="Body__mEye" parent="Lexa/ModelScene/lexa/Armature_001/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_oad14")
+
+[node name="FaceGood__mBeak" parent="Lexa/ModelScene/lexa/Armature_001/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2l4sb")
+
+[node name="Model" parent="Lexa" index="1"]
+visible = false
 
 [connection signal="body_entered" from="CafeInteriorCamera3/CameraArea1" to="CafeInteriorCamera3/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="CafeInteriorCamera3/CameraArea1" to="CafeInteriorCamera3/CameraArea1" method="exitTrigger"]
@@ -909,7 +1186,16 @@ message = "test"
 [editable path="CafeDoor"]
 [editable path="CafeDoor2"]
 [editable path="Tagir"]
+[editable path="Tagir/ModelScene/tagir"]
 [editable path="Vika Bovsh"]
+[editable path="Vika Bovsh/ModelScene/vika bovsh"]
 [editable path="Misha"]
+[editable path="Misha/ModelScene/misha"]
 [editable path="Mishanya"]
+[editable path="Mishanya/ModelScene/mishanya"]
+[editable path="Boris"]
+[editable path="Boris/ModelScene/boris"]
+[editable path="Sereza"]
+[editable path="Sereza/ModelScene/sereza"]
 [editable path="Lexa"]
+[editable path="Lexa/ModelScene/lexa"]

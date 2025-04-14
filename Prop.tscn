@@ -1,21 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://eptuo3heb4ef"]
+[gd_scene load_steps=3 format=3 uid="uid://eptuo3heb4ef"]
 
 [ext_resource type="Script" uid="uid://bl61a6pwdx6nm" path="res://Prop.gd" id="1_xfnvr"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_gmnia"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ekklr"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jkjxw"]
 
 [node name="Prop" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_xfnvr")
 
+[node name="ModelScene" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
 [node name="Model" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_gmnia")
 
 [node name="InteractArea" type="Area3D" parent="Model" groups=["interactables"]]
 
 [node name="CollisionShape" type="CollisionShape3D" parent="Model/InteractArea"]
-shape = SubResource("BoxShape3D_ekklr")
+shape = SubResource("CapsuleShape3D_jkjxw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

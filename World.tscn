@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://noyo5w3mn81q"]
+[gd_scene load_steps=19 format=3 uid="uid://noyo5w3mn81q"]
 
 [ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_3koha"]
 [ext_resource type="Script" uid="uid://2hyw25pemahj" path="res://World.gd" id="1_silin"]
@@ -10,26 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bpnikvw2m1ft" path="res://Prism.tscn" id="7_xeqoo"]
 [ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="8_nnitm"]
 [ext_resource type="PackedScene" uid="uid://dhd0u2o78dsh7" path="res://Door.tscn" id="9_mr2b0"]
-[ext_resource type="PackedScene" uid="uid://dnaoj5ofifqqg" path="res://assets/models/characters/Nastya Lexa/NastyaLexa.gltf" id="11_kva58"]
-[ext_resource type="PackedScene" uid="uid://bsmh1oqo5d1se" path="res://assets/models/characters/Vasya/Vasya.gltf" id="12_b2ar6"]
-[ext_resource type="PackedScene" uid="uid://bvd4vbbpig0u2" path="res://assets/models/characters/Misha Vagner/MishaVag.gltf" id="12_gn8l5"]
-[ext_resource type="PackedScene" uid="uid://cnptcddvcq3rd" path="res://assets/models/characters/Anya Syrovatskay/AnyaSyrovatskay.gltf" id="13_ee7l0"]
-[ext_resource type="PackedScene" uid="uid://p27y5c6va0b6" path="res://assets/models/characters/Dima Tori/DimaTori.gltf" id="15_6w02q"]
-[ext_resource type="PackedScene" uid="uid://k1cryk206iw0" path="res://assets/models/characters/Polya Kostya/PolyaKostya.gltf" id="16_6w02q"]
-[ext_resource type="PackedScene" uid="uid://cmgnm0awb8d6i" path="res://assets/models/characters/Irene/Irene.gltf" id="17_1fphk"]
-[ext_resource type="PackedScene" uid="uid://r2d7y2o38aj8" path="res://assets/models/characters/Tagir/Tagir.gltf" id="18_sjtuv"]
-[ext_resource type="PackedScene" uid="uid://sgkg7pab5ids" path="res://assets/models/characters/Anya Koroleva/AnyaKoroleva.gltf" id="19_cvq6i"]
-[ext_resource type="PackedScene" uid="uid://bsapha1atcij2" path="res://assets/models/characters/Tori/Tori.gltf" id="20_6tx0c"]
-[ext_resource type="PackedScene" uid="uid://dshah4bsqciw8" path="res://assets/models/characters/Lexa/Lexa.gltf" id="21_0to5b"]
-[ext_resource type="PackedScene" uid="uid://csf5sne6jmtlw" path="res://assets/models/characters/Nastya Semen/NastyaSemen.gltf" id="22_5j71u"]
-[ext_resource type="PackedScene" uid="uid://bnfm011kn5eko" path="res://assets/models/characters/Kostya/Kostya.gltf" id="23_jyqkj"]
-[ext_resource type="PackedScene" uid="uid://nfr7y5drpf05" path="res://assets/models/characters/Dr Tucovic/DrTucovic.gltf" id="24_ydbc3"]
-[ext_resource type="PackedScene" uid="uid://d0kuorary3ta1" path="res://assets/models/characters/Lesya/Lesya.gltf" id="25_aj1ai"]
-[ext_resource type="PackedScene" uid="uid://c4eu2jg1ffl7o" path="res://assets/models/characters/Sasha/Sasha.gltf" id="26_d7dfr"]
-[ext_resource type="PackedScene" uid="uid://cvy2s5kq06f0q" path="res://assets/models/characters/Vika Bovsh/VikaBovsh.gltf" id="27_c2gv2"]
-[ext_resource type="PackedScene" uid="uid://b5pme11eggweg" path="res://assets/models/characters/Anya Haustova/AnyaHaustova.gltf" id="28_rp4qs"]
-[ext_resource type="PackedScene" uid="uid://c0yfxtncjluqy" path="res://assets/models/characters/Katya/Katya.gltf" id="29_rhl3w"]
-[ext_resource type="PackedScene" uid="uid://c4c167y1xiurc" path="res://assets/models/characters/Manas/Manas.gltf" id="30_bun23"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_umwvo"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rstw0"]
 
@@ -53,62 +35,9 @@ sky_material = SubResource("ProceduralSkyMaterial_lrk2b")
 background_mode = 2
 sky = SubResource("Sky_bun23")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_umwvo"]
-
 [node name="World" type="Node3D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_silin")
-player = NodePath("Player")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -4, 0, 4)
-mesh = SubResource("PlaneMesh_rstw0")
-surface_material_override/0 = SubResource("StandardMaterial3D_4dq8k")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4, 0, 12)
-mesh = SubResource("PlaneMesh_rstw0")
-surface_material_override/0 = SubResource("StandardMaterial3D_4dq8k")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4, 0, 12)
-mesh = SubResource("PlaneMesh_rstw0")
-surface_material_override/0 = SubResource("StandardMaterial3D_4dq8k")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4, 0, 4)
-material_override = SubResource("StandardMaterial3D_r1gn6")
-mesh = SubResource("PlaneMesh_rstw0")
-surface_material_override/0 = SubResource("StandardMaterial3D_iyxlp")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3.98754, -0.0200405, 11.985)
-material_override = SubResource("StandardMaterial3D_r1gn6")
-mesh = SubResource("PlaneMesh_rstw0")
-surface_material_override/0 = SubResource("StandardMaterial3D_iyxlp")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4, 0, 20)
-material_override = SubResource("StandardMaterial3D_r1gn6")
-mesh = SubResource("PlaneMesh_rstw0")
-surface_material_override/0 = SubResource("StandardMaterial3D_iyxlp")
-
-[node name="Player" parent="." instance=ExtResource("2_7n7d5")]
-transform = Transform3D(0.762149, 0, 0.647402, 0, 1, 0, -0.647402, 0, 0.762149, 4.56549, 0, 12.6572)
-
-[node name="MeshInstance3D" parent="Player" index="0"]
-visible = false
-
-[node name="Label" parent="Player/UI/DialogBox" index="1"]
-text = ""
-
-[node name="Irene" parent="Player" instance=ExtResource("17_1fphk")]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_1uf3a")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.943662, -0.161876, 0.288613, 0, 0.87218, 0.489185, -0.33091, -0.461625, 0.823044, 0, 4, 0)
-shadow_enabled = true
+player = NodePath("Bedroom/Player")
 
 [node name="Camera1" type="Camera3D" parent="."]
 transform = Transform3D(0.658059, 0, 0.752966, 0, 1, 0, -0.752966, 0, 0.658059, 0.348246, 2, 8)
@@ -121,13 +50,13 @@ script = ExtResource("5_g36pe")
 shape = SubResource("BoxShape3D_umwvo")
 
 [node name="Camera2" type="Camera3D" parent="."]
-transform = Transform3D(0.752967, 0, -0.658059, 0, 1, 0, 0.658059, 0, 0.752967, 0.348246, 2, 8)
+transform = Transform3D(0.997746, 0, 0.0671094, 0, 1, 0, -0.0671094, 0, 0.997746, 16.3482, 2, 8)
 
-[node name="CameraArea2" type="Area3D" parent="Camera2"]
-transform = Transform3D(5.30407, 0, 4.4856, 0, 5.1, 0, -4.74305, 0, 5.01616, 0.513487, 0, -5.45048)
+[node name="CameraArea1" type="Area3D" parent="Camera2"]
+transform = Transform3D(7.10439, 0, -0.375163, 0, 5.1, 0, 0.396701, 0, 6.71876, 0.513487, 0, -5.45048)
 script = ExtResource("5_g36pe")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera2/CameraArea2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera2/CameraArea1"]
 shape = SubResource("BoxShape3D_umwvo")
 
 [node name="Camera3" type="Camera3D" parent="."]
@@ -169,116 +98,148 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 6)
 [node name="Character1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_nnitm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 18)
 hasText = true
-player = NodePath("../Player")
+player = NodePath("../Bedroom/Player")
 isCharacter = true
 
 [node name="Character2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_nnitm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 22)
 hasText = true
-player = NodePath("../Player")
+player = NodePath("../Bedroom/Player")
 isCharacter = true
 
 [node name="Character3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_nnitm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 22)
 hasText = true
-player = NodePath("../Player")
+player = NodePath("../Bedroom/Player")
 isCharacter = true
 
 [node name="Box" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_vls01")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 14)
 finishDay = true
-player = NodePath("../Player")
+player = NodePath("../Bedroom/Player")
 
 [node name="Door" parent="." node_paths=PackedStringArray("exitZone", "player") instance=ExtResource("9_mr2b0")]
 transform = Transform3D(0, 0, 0.1, 0, 3.90214, 0, -1, 0, -3.72529e-09, 0, 0, 15)
 isDoor = true
 exitZone = NodePath("../Door2/ExitZone")
-player = NodePath("../Player")
+player = NodePath("../Bedroom/Player")
 
 [node name="Door3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("9_mr2b0")]
 transform = Transform3D(1, 0, 0, 0, 3.90214, 0, 0, 0, 0.1, -1, 0, 0)
 hasText = true
-player = NodePath("../Player")
+player = NodePath("../Bedroom/Player")
 
 [node name="Door2" parent="." node_paths=PackedStringArray("exitZone", "player") instance=ExtResource("9_mr2b0")]
 transform = Transform3D(-4.37114e-08, 0, 0.1, 0, 3.90214, 0, -1, 0, -4.37114e-09, 0, 0, 10)
 isDoor = true
 exitZone = NodePath("../Door/ExitZone")
-player = NodePath("../Player")
+player = NodePath("../Bedroom/Player")
 
-[node name="Characters" type="Node3D" parent="."]
+[node name="Floor" type="Node3D" parent="."]
 
-[node name="AnyaSyrovatskay" parent="Characters" instance=ExtResource("13_ee7l0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55227, 0, 1.47259)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -4, 0, 4)
+mesh = SubResource("PlaneMesh_rstw0")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4dq8k")
 
-[node name="MishaVag" parent="Characters" instance=ExtResource("12_gn8l5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.53099, 0, 2.64057)
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4, 0, 12)
+mesh = SubResource("PlaneMesh_rstw0")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4dq8k")
 
-[node name="NastyaLexa" parent="Characters" instance=ExtResource("11_kva58")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.41637, 0, 3.60343)
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4, 0, 12)
+mesh = SubResource("PlaneMesh_rstw0")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4dq8k")
 
-[node name="Vasya" parent="Characters" instance=ExtResource("12_b2ar6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.529211, 0, 1.48126)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4, 0, 4)
+material_override = SubResource("StandardMaterial3D_r1gn6")
+mesh = SubResource("PlaneMesh_rstw0")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_iyxlp")
 
-[node name="DimaTori" parent="Characters" instance=ExtResource("15_6w02q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.45885, 0, 2.76763)
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3.98754, -0.0200405, 11.985)
+material_override = SubResource("StandardMaterial3D_r1gn6")
+mesh = SubResource("PlaneMesh_rstw0")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_iyxlp")
 
-[node name="PolyaKostya" parent="Characters" instance=ExtResource("16_6w02q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4628, 0, 1.45784)
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4, 0, 20)
+material_override = SubResource("StandardMaterial3D_r1gn6")
+mesh = SubResource("PlaneMesh_rstw0")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_iyxlp")
 
-[node name="Tagir" parent="Characters" instance=ExtResource("18_sjtuv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61228, 0, 0.47933)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1uf3a")
 
-[node name="AnyaKoroleva" parent="Characters" instance=ExtResource("19_cvq6i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.45842, 0, 2.5019)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.943662, -0.161876, 0.288613, 0, 0.87218, 0.489185, -0.33091, -0.461625, 0.823044, 0, 4, 0)
+shadow_enabled = true
 
-[node name="Tori" parent="Characters" instance=ExtResource("20_6tx0c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.55175, 0, 3.58664)
+[node name="Bedroom" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8704, 0, 0)
 
-[node name="Lexa" parent="Characters" instance=ExtResource("21_0to5b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.57908, 0, 2.49251)
+[node name="Player" parent="Bedroom" instance=ExtResource("2_7n7d5")]
+process_priority = 10
+transform = Transform3D(0.762149, 0, 0.647402, 0, 1, 0, -0.647402, 0, 0.762149, -4.19904, 0, 12.3811)
 
-[node name="NastyaSemen" parent="Characters" instance=ExtResource("22_5j71u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.50179, 0, 4.5782)
+[node name="DialogBox" parent="Bedroom/Player/UI" index="0"]
+offset_top = -23.0
 
-[node name="Kostya" parent="Characters" instance=ExtResource("23_jyqkj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.49697, 0, 0.650038)
+[node name="Label" parent="Bedroom/Player/UI/DialogBox" index="1"]
+text = ""
 
-[node name="DrTucovic" parent="Characters" instance=ExtResource("24_ydbc3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.498, 0, 4.57241)
+[node name="SceneName" parent="Bedroom/Player/UI/ColorRect/Info" index="0"]
+offset_left = -376.0
+offset_top = -166.5
+offset_right = 376.0
+offset_bottom = 166.5
 
-[node name="Lesya" parent="Characters" instance=ExtResource("25_aj1ai")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.611709, 0, 3.47864)
+[node name="Time" parent="Bedroom/Player/UI/ColorRect/Info" index="1"]
+offset_left = -252.0
+offset_top = -93.0
+offset_right = 252.0
+offset_bottom = 0.0
 
-[node name="Sasha" parent="Characters" instance=ExtResource("26_d7dfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52966, 0, 4.45279)
+[node name="Task" parent="Bedroom/Player/UI/ColorRect/Info" index="2"]
+offset_left = -252.0
+offset_top = -93.0
+offset_right = 252.0
+offset_bottom = 0.0
 
-[node name="VikaBovsh" parent="Characters" instance=ExtResource("27_c2gv2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58589, 0, 3.4821)
+[node name="Camera2" type="Camera3D" parent="Bedroom"]
+transform = Transform3D(0.686076, -0.25, 0.683228, -0.0179233, 0.933013, 0.359397, -0.72731, -0.258819, 0.635636, -1.7814, 5, 16)
 
-[node name="AnyaHaustova" parent="Characters" instance=ExtResource("28_rp4qs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.21764, 0, 1.44996)
+[node name="CameraArea1" type="Area3D" parent="Bedroom/Camera2"]
+transform = Transform3D(5.30407, 0, 4.4856, 0, 5.1, 0, -4.74305, 0, 5.01616, 0.513487, 0, -5.45048)
+script = ExtResource("5_g36pe")
 
-[node name="Katya" parent="Characters" instance=ExtResource("29_rhl3w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.32587, 0, 4.50454)
-
-[node name="Manas" parent="Characters" instance=ExtResource("30_bun23")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4675, 0, 0.644863)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bedroom/Camera2/CameraArea1"]
+shape = SubResource("BoxShape3D_umwvo")
 
 [connection signal="body_entered" from="Camera1/CameraArea1" to="Camera1/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Camera1/CameraArea1" to="Camera1/CameraArea1" method="exitTrigger"]
-[connection signal="body_entered" from="Camera2/CameraArea2" to="Camera2/CameraArea2" method="enterTrigger"]
-[connection signal="body_exited" from="Camera2/CameraArea2" to="Camera2/CameraArea2" method="exitTrigger"]
+[connection signal="body_entered" from="Camera2/CameraArea1" to="Camera2/CameraArea1" method="enterTrigger"]
+[connection signal="body_exited" from="Camera2/CameraArea1" to="Camera2/CameraArea1" method="exitTrigger"]
 [connection signal="body_entered" from="Camera3/CameraArea3" to="Camera3/CameraArea3" method="enterTrigger"]
 [connection signal="body_exited" from="Camera3/CameraArea3" to="Camera3/CameraArea3" method="exitTrigger"]
 [connection signal="body_entered" from="Camera5/CameraArea3" to="Camera5/CameraArea3" method="enterTrigger"]
 [connection signal="body_exited" from="Camera5/CameraArea3" to="Camera5/CameraArea3" method="exitTrigger"]
 [connection signal="body_entered" from="Camera4/CameraArea4" to="Camera4/CameraArea4" method="enterTrigger"]
 [connection signal="body_exited" from="Camera4/CameraArea4" to="Camera4/CameraArea4" method="exitTrigger"]
+[connection signal="body_entered" from="Bedroom/Camera2/CameraArea1" to="Bedroom/Camera2/CameraArea1" method="enterTrigger"]
+[connection signal="body_exited" from="Bedroom/Camera2/CameraArea1" to="Bedroom/Camera2/CameraArea1" method="exitTrigger"]
 
-[editable path="Player"]
 [editable path="Character1"]
 [editable path="Door"]
 [editable path="Door3"]
 [editable path="Door2"]
-[editable path="Characters/NastyaSemen"]
+[editable path="Bedroom/Player"]
+[editable path="Bedroom/Player/model/irene_new_anim"]
