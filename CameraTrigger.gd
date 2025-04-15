@@ -20,8 +20,11 @@ func enterTrigger(body):
 
 func exitTrigger(body):
 	if body.is_in_group('player'):
+		if bgImage and bgNode:
+			bgNode.texture = bgImage
 		isTrigger = false
 
 func _process(_delta: float) -> void:
 	if isTrigger && get_parent().current != true:
 		get_parent().current = true
+		cam.current = true
