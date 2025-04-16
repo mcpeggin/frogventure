@@ -54,7 +54,7 @@ func interact(currentInteractable):
 	
 	if isDoor and nextScenePath:
 		if keysDoor and !Game.hasKeys:
-			var message = 'Надо захватить ключи перед тем поеду в центр. Они обычно висят справа от двери.'
+			var message = 'Надо захватить ключи перед тем поеду в центр. Кажется они в кармане плаща. Он должен висить на стенке в коридоре справа.'
 			showKeyClue(message)
 			return
 		if coffeeDoor and !Game.hasCoffee:

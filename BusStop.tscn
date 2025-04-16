@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://wsmo8luoa241"]
+
+[ext_resource type="PackedScene" uid="uid://br0wawpr3crpx" path="res://assets/models/props/busStop/busStop.glb" id="1_31iug"]
+[ext_resource type="Texture2D" uid="uid://1wdpy0av28pt" path="res://assets/models/props/busStop/mReFabric_Alb.png" id="2_ngb2o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r16lo"]
+albedo_texture = ExtResource("2_ngb2o")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_31iug"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fme4o"]
+albedo_texture = ExtResource("2_ngb2o")
+
+[node name="busStop" instance=ExtResource("1_31iug")]
+
+[node name="Galvanized_Iron_01_low__mReBody" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_r16lo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Armature/Skeleton3D/Galvanized_Iron_01_low__mReBody" index="0"]
+transform = Transform3D(2.09, 0, 0, 0, 1, 0, 0, 0, 2.1, 0, 0, -0.958784)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton3D/Galvanized_Iron_01_low__mReBody/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_31iug")
+
+[node name="Signboard_01_low__mReFabric" parent="Armature/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fme4o")

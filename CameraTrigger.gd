@@ -14,12 +14,14 @@ func setBg() -> void:
 
 func enterTrigger(body):
 	if body.is_in_group('player'):
+		print('enter')
 		if bgImage and bgNode:
 			bgNode.texture = bgImage
 		isTrigger = true
 
 func exitTrigger(body):
 	if body.is_in_group('player'):
+		print('exit')
 		if bgImage and bgNode:
 			bgNode.texture = bgImage
 		isTrigger = false

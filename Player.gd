@@ -52,6 +52,9 @@ func _process(delta: float) -> void:
 			isDancing = true
 			modelAnim.play("DANCE")
 	
+	if Input.is_action_pressed("sprint"):
+		speed = 10
+	
 	if Game.isKeyClueVisible and Input.is_action_just_pressed("interact"):
 			Game.player.dialogBox.visible = false
 			Game.player.ui.visible = false
@@ -95,7 +98,7 @@ func _updateIcons():
 		questionIcon.visible = false
 		pressCue.visible = true
 	elif isInWarningArea:
-		questionIcon.visible = true
+		questionIcon.visible = false
 		exclamationIcon.visible = false
 		pressCue.visible = false
 	else:

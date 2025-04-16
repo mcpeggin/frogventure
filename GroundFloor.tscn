@@ -1,170 +1,13 @@
-[gd_scene load_steps=63 format=3 uid="uid://eypnfpfxa30i"]
+[gd_scene load_steps=13 format=3 uid="uid://eypnfpfxa30i"]
 
 [ext_resource type="Script" uid="uid://2bk2ygphkd2f" path="res://Level.gd" id="1_0u17q"]
 [ext_resource type="PackedScene" uid="uid://dhd0u2o78dsh7" path="res://Door.tscn" id="1_lrjmk"]
 [ext_resource type="Script" uid="uid://6dodax6ltd41" path="res://CameraTrigger.gd" id="2_vmmil"]
-[ext_resource type="Script" uid="uid://cb6cclxaie4dj" path="res://Interactable.gd" id="3_0u17q"]
-[ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="4_b3up0"]
-[ext_resource type="Texture2D" uid="uid://b4w300ovhwnv8" path="res://addons/kenney_prototype_textures/orange/wall.png" id="5_ollpu"]
-[ext_resource type="Texture2D" uid="uid://21b0wn2m2emt" path="res://addons/kenney_prototype_textures/orange/stairs.png" id="6_mipmt"]
-[ext_resource type="Texture2D" uid="uid://sy1qvvva2eum" path="res://addons/kenney_prototype_textures/orange/door.png" id="7_v16rt"]
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="8_vmmil"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5rsw4"]
-size = Vector3(1.19971, 1, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_hiu1g"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3k5v"]
-shading_mode = 0
-albedo_texture = ExtResource("4_b3up0")
-uv1_triplanar = true
-uv1_world_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl40s"]
-shading_mode = 0
-albedo_texture = ExtResource("5_ollpu")
-uv1_triplanar = true
-uv1_world_triplanar = true
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vmmil"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0u17q"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b3up0"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ollpu"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mipmt"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_v16rt"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cb1be"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r25ii"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c5pkj"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5hmiv"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_07vgh"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xh843"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u55ee"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4lpt2"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b7h6e"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_we6e6"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jrovp"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4422c"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fygmn"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w1ss0"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p3v54"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u30eg"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_idwt2"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8x6m5"]
-shading_mode = 0
-albedo_texture = ExtResource("6_mipmt")
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ni6ao"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jxdge"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_raovh"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5com3"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xweio"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ybk35"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4jmfd"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hw3vg"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eb7sy"]
-albedo_texture = ExtResource("7_v16rt")
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dpki0"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_aupn4"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8oere"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gsvg7"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_11qjc"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r0b0v"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y2ma5"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_md8t0"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_avnkm"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gcmyx"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sa0x2"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6g1g7"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hdehe"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
+[ext_resource type="Script" uid="uid://biu7k7ygvjmsx" path="res://CameraManager.gd" id="10_ollpu"]
+[ext_resource type="Texture2D" uid="uid://sawo0n7s514" path="res://assets/backgrounds/groundFloor/fromStairs.jpg" id="12_mipmt"]
+[ext_resource type="PackedScene" uid="uid://b4splxsbkhdrw" path="res://WallTile.tscn" id="13_cb1be"]
+[ext_resource type="Texture2D" uid="uid://4vlbwgir3sd0" path="res://assets/backgrounds/groundFloor/toExit.jpg" id="13_v16rt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vmmil"]
 sky_top_color = Color(0.896311, 0.929735, 0.996621, 1)
@@ -177,803 +20,18 @@ sky_material = SubResource("ProceduralSkyMaterial_vmmil")
 background_mode = 2
 sky = SubResource("Sky_vmmil")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ollpu"]
+
 [node name="GroundFloor" type="Node3D" node_paths=PackedStringArray("player1", "player2")]
 script = ExtResource("1_0u17q")
 player1 = NodePath("Player")
 player2 = NodePath("Player2")
 
-[node name="StairsGround" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_lrjmk")]
-transform = Transform3D(1, 1.70568e-07, 4.37114e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37114e-08, -1.36454e-06, 0.1, -1, 1, -8)
-isDoor = true
-hasText = true
-finishDoor = true
-nextScenePath = "res://Floor5.tscn"
-nextSceneName = "Пятый этаж"
-nextSceneTime = "12:50"
-nextSceneMessage = "-иди домой-"
-player = NodePath("../Player")
-
-[node name="SnowmanDoor" parent="." instance=ExtResource("1_lrjmk")]
-transform = Transform3D(-8.74228e-08, -1.36454e-06, 0.1, -4.37114e-08, 3.90214, 3.49691e-08, -1, -1.70568e-07, -8.74228e-09, -12.003, 1, -6.03246)
-hasText = true
-message = "Кажется тут салон красоты, но самое забавное, что на новый год тут вешают снеговика, как и на двери напротив, они смотрят друг на друга через весь коридор."
-
-[node name="UnknownDoor" parent="." instance=ExtResource("1_lrjmk")]
-transform = Transform3D(1, 1.70568e-07, 4.37114e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37114e-08, -1.36454e-06, 0.1, -10.003, 1, -8.03246)
-hasText = true
-message = "Без понятия что тут."
-
-[node name="ElevatorDoor" parent="." instance=ExtResource("1_lrjmk")]
-transform = Transform3D(-1, -1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, 1.36454e-06, -0.1, 5.99702, 1, -4.03246)
-hasText = true
-message = "Лифт не работает. Надо идти пешком."
-
-[node name="DoorOutside" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_lrjmk")]
-transform = Transform3D(-1, -1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, 1.36454e-06, -0.1, -1.00298, 1, 7.96754)
-isDoor = true
-nextScenePath = "res://Entrance.tscn"
-nextSceneName = "Cvetanova Cuprija"
-nextSceneTime = "09:03"
-nextSceneMessage = "-иди на оставку автобуса (тут она напротив рампы)-"
-initialSpawn = true
-player = NodePath("../Player")
-
-[node name="ConstructionDoor" parent="." instance=ExtResource("1_lrjmk")]
-transform = Transform3D(1, 1.70568e-07, 4.37114e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37114e-08, -1.36454e-06, 0.1, 5.99702, 1, -8.03246)
-hasText = true
-message = "Я так и не поняла, кажется что это административная часть стоматологии справа, но там сейчас ремонт, может еще какое-то коммерческое помещение."
-
-[node name="DentistDoor" parent="." instance=ExtResource("1_lrjmk")]
-transform = Transform3D(-2.4869e-14, 1.36454e-06, -0.1, -4.37114e-08, 3.90214, 3.49691e-08, 1, 1.70568e-07, -4.44089e-16, 7.99702, 1, -6.03246)
-hasText = true
-message = "Тут стомоталогия с чудесным названием Dr. S. Ну поняли, как ASS. У них еще был стенд с зубом на улице, но он сейчас просто валяется на обочине из-за ремонта."
-
-[node name="Camera5" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.878355, 1.37699, -1.05619)
-
-[node name="CameraArea1" type="Area3D" parent="Camera5"]
-transform = Transform3D(5.30407, 0, 4.4856, 0, 5.1, 0, -4.74305, 0, 5.01616, 0.513487, 0, -5.45048)
-script = ExtResource("2_vmmil")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera5/CameraArea1"]
-transform = Transform3D(0.30812, 0, -0.972371, 0, 0.569735, 0, 0.30812, 0, 0.972371, -0.0123985, 0.160301, -0.0359095)
-shape = SubResource("BoxShape3D_5rsw4")
-
-[node name="Camera6" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.878355, 1.37699, -1.05619)
-
-[node name="CameraArea1" type="Area3D" parent="Camera6"]
-transform = Transform3D(5.30407, 0, 4.4856, 0, 5.1, 0, -4.74305, 0, 5.01616, 0.513487, 0, -5.45048)
-script = ExtResource("2_vmmil")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera6/CameraArea1"]
-transform = Transform3D(0.30812, 0, -0.972371, 0, 0.569735, 0, 0.30812, 0, 0.972371, -0.0123985, 0.160301, -0.0359095)
-shape = SubResource("BoxShape3D_5rsw4")
-
-[node name="Camera7" type="Camera3D" parent="."]
-transform = Transform3D(-8.9407e-08, 0, -1, 0, 1, 0, 1, 0, -8.9407e-08, 0.121645, 1.37699, -6.05619)
-
-[node name="CameraArea1" type="Area3D" parent="Camera7"]
-transform = Transform3D(5.30407, 0, 4.4856, 0, 5.1, 0, -4.74305, 0, 5.01616, 0.513487, 0, -5.45048)
-script = ExtResource("2_vmmil")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera7/CameraArea1"]
-transform = Transform3D(0.30812, 0, -0.972371, 0, 0.569735, 0, 0.30812, 0, 0.972371, -0.0123985, 0.160301, -0.0359095)
-shape = SubResource("BoxShape3D_5rsw4")
-
-[node name="Camera8" type="Camera3D" parent="."]
-transform = Transform3D(1.98418e-09, 0, 1, 0, 1, 0, -1, 0, 1.98418e-09, -1.87836, 1.37699, -6.05619)
-
-[node name="CameraArea1" type="Area3D" parent="Camera8"]
-transform = Transform3D(5.30407, 0, 4.4856, 0, 5.1, 0, -4.74305, 0, 5.01616, 0.513487, 0, -5.45048)
-script = ExtResource("2_vmmil")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera8/CameraArea1"]
-transform = Transform3D(0.30812, 0, -0.972371, 0, 0.569735, 0, 0.30812, 0, 0.972371, -0.0123985, 0.160301, -0.0359095)
-shape = SubResource("BoxShape3D_5rsw4")
-
-[node name="Interactable2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.16822, 0, -3.51072)
-script = ExtResource("3_0u17q")
-
-[node name="Kućni red" parent="." instance=ExtResource("1_lrjmk")]
-transform = Transform3D(7.15256e-08, 2.55852e-07, -0.1, 2.62268e-08, -0.585321, -4.37113e-08, -0.6, -2.55852e-08, -1.11759e-08, 0.935593, 1, -3.46537)
-hasText = true
-message = "Kućni red"
-
-[node name="MessageBoard" parent="." instance=ExtResource("1_lrjmk")]
-transform = Transform3D(7.15256e-08, 2.55852e-07, -0.1, 2.62268e-08, -0.585321, -4.37113e-08, -0.6, -2.55852e-08, -1.11759e-08, 0.938503, 1.00695, -2.47257)
-hasText = true
-message = "Тут обычно висят всякие петиции, но обычно Митя мне просто пересказывает, то что обсуждают в домовом чате в вайбере."
-
-[node name="PostBox6" parent="." instance=ExtResource("1_lrjmk")]
-transform = Transform3D(7.15256e-08, 2.55852e-07, -0.1, 2.62268e-08, -0.585321, -4.37113e-08, -0.6, -2.55852e-08, -1.11759e-08, 0.935593, 1, 4.53463)
-hasText = true
-message = "Наш почтовый ящик. Живем тут почти 2 года, а поменять фамилию никак рука не доходит. Митя говорит, что в ящике приходит только плохое, он имеет в виду счета, которые нужно оплачивать. Но в прошлом году мне присылали открытки со всего мира с поздравлениями, они еще приходили с задержкой после др, это было очень мило."
-
-[node name="Floor" type="Node3D" parent="."]
-
-[node name="FloorTile21" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -5)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile41" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile42" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile43" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile44" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile45" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile46" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile47" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile48" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile49" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile50" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile51" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 5)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile52" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 7)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile22" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -5)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile23" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -7)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile24" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -7)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile25" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile26" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -5)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile27" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -7)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile28" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -7)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile37" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -5)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile38" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -5)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile39" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -7)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile40" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -7)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile29" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile30" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -5)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile31" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -7)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile32" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -7)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile33" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -5)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile34" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile35" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -7)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="FloorTile36" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -7)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
-
-[node name="WallTile17" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(0, -2.98023e-08, 0.5, -1, -4.37114e-08, 0, 4.37114e-08, -1, -1.49012e-08, 7.49302, 1, -4)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile17"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile17/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_vmmil")
-
-[node name="WallTile49" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(0, -2.98023e-08, 0.5, -1, -4.37114e-08, 0, 4.37114e-08, -1, -1.49012e-08, 0.493019, 1, 8)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile49"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile49/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_0u17q")
-
-[node name="WallTile50" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(0, -2.98023e-08, 0.5, -1, -4.37114e-08, 0, 4.37114e-08, -1, -1.49012e-08, -2.50698, 1, 8)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile50"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile50/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_b3up0")
-
-[node name="WallTile18" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(4.37114e-08, -1, -3.67569e-08, -1, -4.37114e-08, 0, 1.64203e-15, 7.35137e-08, -0.5, 7.99934, 1, -4.50081)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile18"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile18/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_ollpu")
-
-[node name="WallTile38" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(4.37114e-08, -1, -3.67569e-08, -1, -4.37114e-08, 0, 1.64203e-15, 7.35137e-08, -0.5, 7.99934, 1, -7.50081)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile38"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile38/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_mipmt")
-
-[node name="WallTile39" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-2.68658e-16, 1.17225e-07, -0.5, -1, -4.37114e-08, 1.30587e-22, -4.37114e-08, 1, 5.86125e-08, 7.49493, 1, -7.98806)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile39"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile39/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_v16rt")
-
-[node name="WallTile41" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-2.68658e-16, 1.17225e-07, -0.5, -1, -4.37114e-08, 1.30587e-22, -4.37114e-08, 1, 5.86125e-08, 4.49493, 1, -7.98806)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile41"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile41/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_cb1be")
-
-[node name="WallTile13" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(9.55343e-15, -2.18557e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -2.18557e-07, 2, 1, -4)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile13"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile13/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_r25ii")
-
-[node name="WallTile15" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(4.37114e-08, -1, -2.62268e-07, -1, -4.37114e-08, 0, -1.14641e-14, 2.62268e-07, -1, 1, 1, -3)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile15"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile15/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_c5pkj")
-
-[node name="WallTile16" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(4.37114e-08, -1, -2.62268e-07, -1, -4.37114e-08, 0, -1.14641e-14, 2.62268e-07, -1, 1, 1, -1)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile16"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile16/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_5hmiv")
-
-[node name="WallTile19" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(4.37114e-08, -1, -2.62268e-07, -1, -4.37114e-08, 0, -1.14641e-14, 2.62268e-07, -1, 1, 1, 1)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile19"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile19/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_07vgh")
-
-[node name="WallTile20" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(4.37114e-08, -1, -2.62268e-07, -1, -4.37114e-08, 0, -1.14641e-14, 2.62268e-07, -1, 1, 1, 3)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile20"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile20/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_xh843")
-
-[node name="WallTile21" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(4.37114e-08, -1, -2.62268e-07, -1, -4.37114e-08, 0, -1.14641e-14, 2.62268e-07, -1, 1, 1, 5)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile21"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile21/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_u55ee")
-
-[node name="WallTile25" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(4.37114e-08, -1, -2.62268e-07, -1, -4.37114e-08, 0, -1.14641e-14, 2.62268e-07, -1, 1, 1, 7)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile25"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile25/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_4lpt2")
-
-[node name="WallTile26" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-4.37114e-08, 1, 3.49691e-07, -1, -4.37114e-08, 0, 1.52855e-14, -3.49691e-07, 1, -3, 1, 7)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile26"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile26/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_b7h6e")
-
-[node name="WallTile27" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-4.37114e-08, 1, 3.49691e-07, -1, -4.37114e-08, 0, 1.52855e-14, -3.49691e-07, 1, -3, 1, 5)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile27"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile27/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_we6e6")
-
-[node name="WallTile28" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-4.37114e-08, 1, 3.49691e-07, -1, -4.37114e-08, 0, 1.52855e-14, -3.49691e-07, 1, -3, 1, 3)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile28"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile28/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_jrovp")
-
-[node name="WallTile29" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-4.37114e-08, 1, 3.49691e-07, -1, -4.37114e-08, 0, 1.52855e-14, -3.49691e-07, 1, -3, 1, 1)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile29"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile29/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_4422c")
-
-[node name="WallTile30" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-4.37114e-08, 1, 3.49691e-07, -1, -4.37114e-08, 0, 1.52855e-14, -3.49691e-07, 1, -3, 1, -1)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile30"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile30/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_fygmn")
-
-[node name="WallTile34" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-4.37114e-08, 1, 3.49691e-07, -1, -4.37114e-08, 0, 1.52855e-14, -3.49691e-07, 1, -3, 1, -3)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile34"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile34/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_w1ss0")
-
-[node name="WallTile14" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(9.55343e-15, -2.18557e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -2.18557e-07, 4, 1, -4)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile14"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile14/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_p3v54")
-
-[node name="WallTile22" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-1.33748e-14, 3.0598e-07, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, 3.0598e-07, 1, 1, -8)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile22"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile22/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_u30eg")
-
-[node name="WallTile40" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-1.33748e-14, 3.0598e-07, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, 3.0598e-07, 3, 1, -8)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile40"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile40/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_idwt2")
-
-[node name="WallTile37" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 4.37114e-08, 4.37114e-08, 4.37114e-08, 3.0598e-07, -1, -4.37114e-08, 1, 3.0598e-07, -1, 1, -8)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_8x6m5")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile37"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile37/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_ni6ao")
-
-[node name="WallTile23" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-1.33748e-14, 3.0598e-07, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, 3.0598e-07, -5, 1, -8)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile23"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile23/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_jxdge")
-
-[node name="WallTile36" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-1.33748e-14, 3.0598e-07, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, 3.0598e-07, -3, 1, -8)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile36"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile36/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_raovh")
-
-[node name="WallTile24" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-1.33748e-14, 3.0598e-07, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, 3.0598e-07, -7, 1, -8)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile24"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile24/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_5com3")
-
-[node name="WallTile31" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1.71962e-14, -3.93402e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -3.93402e-07, -7, 1, -4)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile31"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile31/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_xweio")
-
-[node name="WallTile48" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1.71962e-14, -3.93402e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -3.93402e-07, -10, 1, -4)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile48"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile48/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_ybk35")
-
-[node name="WallTile32" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1.71962e-14, -3.93402e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -3.93402e-07, -5, 1, -4)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile32"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile32/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_4jmfd")
-
-[node name="WallTile33" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1.71962e-14, -3.93402e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -3.93402e-07, -5, 1, -4)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile33"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile33/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_hw3vg")
-
-[node name="DoorTile12" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1.31134e-07, 1, 7.64275e-15, 4.37114e-08, 1.91069e-15, -1, -1, 1.31134e-07, -4.37114e-08, -11.9931, 0.994796, -6.00242)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_eb7sy")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/DoorTile12"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/DoorTile12/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_dpki0")
-
-[node name="DoorTile13" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, -1.33118e-07, 4.37114e-08, 4.37114e-08, 1.91069e-15, -1, 1.33118e-07, 1, 5.4634e-15, -9.99305, 0.994796, -8.00242)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_eb7sy")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/DoorTile13"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/DoorTile13/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_aupn4")
-
-[node name="DoorTile8" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-1, 8.74228e-08, -4.37114e-08, 4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, -5.73206e-15, 6.00695, 0.994796, -4.00242)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_eb7sy")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/DoorTile8"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/DoorTile8/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_8oere")
-
-[node name="DoorTile11" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-1, 8.74228e-08, -4.37114e-08, 4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, -5.73206e-15, -0.99305, 0.994796, 7.99758)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_eb7sy")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/DoorTile11"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/DoorTile11/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_gsvg7")
-
-[node name="DoorTile9" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-8.9407e-08, -1, -6.21725e-15, 4.37114e-08, 2.7686e-15, -1, 1, -8.9407e-08, 4.37114e-08, 8.00695, 0.994796, -6.00242)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_eb7sy")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/DoorTile9"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/DoorTile9/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_11qjc")
-
-[node name="DoorTile10" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, -4.56956e-08, 4.37114e-08, 4.37114e-08, 2.7686e-15, -1, 4.56956e-08, 1, 7.85928e-15, 6.00695, 0.994796, -8.00242)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_eb7sy")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/DoorTile10"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/DoorTile10/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_r0b0v")
-
-[node name="WallTile35" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1.91069e-15, -4.37112e-08, 0.5, -1, -4.37114e-08, 0, 4.37114e-08, -1, -2.18557e-08, -3.50698, 1, -4)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile35"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile35/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_y2ma5")
-
-[node name="WallTile42" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1.91069e-15, -4.37112e-08, 0.5, -1, -4.37114e-08, 0, 4.37114e-08, -1, -2.18557e-08, -8.50698, 1, -4)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile42"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile42/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_md8t0")
-
-[node name="WallTile43" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1.91069e-15, -4.37112e-08, 0.5, -1, -4.37114e-08, 0, 4.37114e-08, -1, -2.18557e-08, -11.507, 1, -4)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile43"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile43/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_avnkm")
-
-[node name="WallTile44" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, 2.66454e-15, -5.96046e-08, 0.5, -12.0094, 1, -4.50188)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile44"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile44/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_gcmyx")
-
-[node name="WallTile45" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, 2.66454e-15, -5.96046e-08, 0.5, -12.0094, 1, -7.50188)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile45"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile45/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_sa0x2")
-
-[node name="WallTile46" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-7.5385e-16, 1.58933e-08, -0.5, -1, -4.37114e-08, 0, -4.37114e-08, 1, 7.94663e-09, -11.4921, 1, -7.99659)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile46"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile46/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_6g1g7")
-
-[node name="WallTile47" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(-7.5385e-16, 1.58933e-08, -0.5, -1, -4.37114e-08, 0, -4.37114e-08, 1, 7.94663e-09, -8.49205, 1, -7.99659)
-mesh = SubResource("PlaneMesh_hiu1g")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/WallTile47"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/WallTile47/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_hdehe")
-
 [node name="Player" parent="." instance=ExtResource("8_vmmil")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -38.5677)
 
 [node name="Player2" parent="." instance=ExtResource("8_vmmil")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1, 0, 7)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4, 0, -25)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0u17q")
@@ -982,22 +40,238 @@ environment = SubResource("Environment_0u17q")
 transform = Transform3D(0.943662, -0.161876, 0.288613, 0, 0.87218, 0.489185, -0.33091, -0.461625, 0.823044, 0, 4, 0)
 shadow_enabled = true
 
-[connection signal="body_entered" from="Camera5/CameraArea1" to="Camera5/CameraArea1" method="enterTrigger"]
-[connection signal="body_exited" from="Camera5/CameraArea1" to="Camera5/CameraArea1" method="exitTrigger"]
-[connection signal="body_entered" from="Camera6/CameraArea1" to="Camera6/CameraArea1" method="enterTrigger"]
-[connection signal="body_exited" from="Camera6/CameraArea1" to="Camera6/CameraArea1" method="exitTrigger"]
-[connection signal="body_entered" from="Camera7/CameraArea1" to="Camera7/CameraArea1" method="enterTrigger"]
-[connection signal="body_exited" from="Camera7/CameraArea1" to="Camera7/CameraArea1" method="exitTrigger"]
-[connection signal="body_entered" from="Camera8/CameraArea1" to="Camera8/CameraArea1" method="enterTrigger"]
-[connection signal="body_exited" from="Camera8/CameraArea1" to="Camera8/CameraArea1" method="exitTrigger"]
+[node name="CumManager" type="Node3D" parent="." node_paths=PackedStringArray("cameras")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
+script = ExtResource("10_ollpu")
+cameras = [NodePath("SubViewportContainer/Geometry/StairsCam/CameraArea1"), NodePath("SubViewportContainer/Geometry/ExitCam/CameraArea1")]
 
-[editable path="StairsGround"]
-[editable path="SnowmanDoor"]
-[editable path="UnknownDoor"]
-[editable path="ElevatorDoor"]
-[editable path="DoorOutside"]
-[editable path="ConstructionDoor"]
-[editable path="DentistDoor"]
-[editable path="Kućni red"]
-[editable path="MessageBoard"]
-[editable path="PostBox6"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CumManager"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="Canvas" type="SubViewport" parent="CumManager/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CumManager/SubViewportContainer/Canvas"]
+
+[node name="TextureRect" type="TextureRect" parent="CumManager/SubViewportContainer/Canvas/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_mipmt")
+
+[node name="Geometry" type="SubViewport" parent="CumManager/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="StairsCam" type="Camera3D" parent="CumManager/SubViewportContainer/Geometry"]
+transform = Transform3D(0.997746, 0, 0.0671094, 0, 1, 0, -0.0671094, 0, 0.997746, 4.95152, 2, -32.9843)
+current = true
+
+[node name="CameraArea1" type="Area3D" parent="CumManager/SubViewportContainer/Geometry/StairsCam" node_paths=PackedStringArray("bgNode", "cam")]
+transform = Transform3D(7.10439, 0, -0.375163, 0, 5.1, 0, 0.396701, 0, 6.71876, 0.513487, 0, -5.45048)
+script = ExtResource("2_vmmil")
+bgNode = NodePath("../../../Canvas/CanvasLayer/TextureRect")
+bgImage = ExtResource("12_mipmt")
+cam = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CumManager/SubViewportContainer/Geometry/StairsCam/CameraArea1"]
+shape = SubResource("BoxShape3D_ollpu")
+
+[node name="StairsGround2" parent="CumManager/SubViewportContainer/Geometry/StairsCam" node_paths=PackedStringArray("player") instance=ExtResource("1_lrjmk")]
+transform = Transform3D(0.997746, 2.61757e-07, -0.00671093, -4.37114e-08, 3.90214, 3.49691e-08, 0.0671093, -1.35002e-06, 0.0997746, -1.72594, -1, -6.56195)
+isDoor = true
+hasText = true
+finishDoor = true
+nextScenePath = "res://Floor5.tscn"
+nextSceneName = "Пятый этаж"
+nextSceneTime = "12:50"
+nextSceneMessage = "-иди домой-"
+player = NodePath("../../../../../Player")
+
+[node name="ExitCam" type="Camera3D" parent="CumManager/SubViewportContainer/Geometry"]
+transform = Transform3D(-0.997746, -7.0246e-10, -0.0671095, -0.0175965, 0.965012, 0.261615, 0.0647614, 0.262206, -0.962837, 3.3482, 3.05712, -35.4459)
+current = true
+
+[node name="CameraArea1" type="Area3D" parent="CumManager/SubViewportContainer/Geometry/ExitCam" node_paths=PackedStringArray("bgNode", "cam")]
+transform = Transform3D(7.10439, 0, -0.375163, 0, 5.1, 0, 0.396701, 0, 6.71876, 0.513487, 0, -5.45048)
+script = ExtResource("2_vmmil")
+bgNode = NodePath("../../../Canvas/CanvasLayer/TextureRect")
+bgImage = ExtResource("13_v16rt")
+cam = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CumManager/SubViewportContainer/Geometry/ExitCam/CameraArea1"]
+shape = SubResource("BoxShape3D_ollpu")
+
+[node name="PostBox6" parent="CumManager/SubViewportContainer/Geometry/ExitCam" instance=ExtResource("1_lrjmk")]
+transform = Transform3D(-0.0132726, 0.0102994, 0.09996, -0.15718, -0.564842, 0.00111899, 0.578894, -0.153129, 0.00259566, -2.61692, 0.360938, -9.37057)
+hasText = true
+message = "Наш почтовый ящик. Живем тут почти 2 года, а поменять фамилию никак рука не доходит. Митя говорит, что в ящике приходит только плохое, он имеет в виду счета, которые нужно оплачивать. Но в прошлом году мне присылали открытки со всего мира с поздравлениями, они еще приходили с задержкой после др, это было очень мило."
+
+[node name="DoorOutside2" parent="CumManager/SubViewportContainer/Geometry/ExitCam" node_paths=PackedStringArray("player") instance=ExtResource("1_lrjmk")]
+transform = Transform3D(0.997746, -0.0686638, -0.00647613, -9.66055e-09, 3.76561, -0.0262206, 0.0671093, 1.02086, 0.0962836, -0.429337, 1.30651, -12.7113)
+isDoor = true
+nextScenePath = "res://Entrance.tscn"
+nextSceneName = "Cvetanova Cuprija"
+nextSceneTime = "09:03"
+nextSceneMessage = "-иди на оставку автобуса (тут она напротив рампы)-"
+initialSpawn = true
+player = NodePath("../../../../../Player")
+
+[node name="GroundFloor" type="Node3D" parent="CumManager/SubViewportContainer/Geometry"]
+visible = false
+
+[node name="WallTile22" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(-4.32766e-08, 0.990053, -0.140694, -1, -4.37114e-08, 7.45389e-20, -6.14993e-09, 0.140694, 0.990053, 1.22873, 1.14872, -37.5363)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile32" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(-4.32766e-08, 0.990053, -0.140694, -1, -4.37114e-08, 7.45389e-20, -6.14993e-09, 0.140694, 0.990053, 0.914461, 1.14872, -35.7189)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile51" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(-3.1614e-08, 0.723244, 0.690592, -1, -4.37114e-08, 1.49078e-19, 3.01868e-08, -0.690592, 0.723244, 2.91446, 1.14872, -35.7189)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile54" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(-3.01868e-08, 0.690592, -0.723244, -1, -4.37114e-08, 2.56978e-15, -3.1614e-08, 0.723244, 0.690592, 2.8916, 1.14872, -34.3254)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile55" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(-3.01868e-08, 0.690592, -0.723244, -1, -4.37114e-08, 2.56978e-15, -3.1614e-08, 0.723244, 0.690592, 1.70611, 1.14872, -33.2377)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile52" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(-3.1614e-08, 0.723244, 0.690592, -1, -4.37114e-08, 1.49078e-19, 3.01868e-08, -0.690592, 0.723244, 1.67652, 1.14872, -37.0376)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile53" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(-3.1614e-08, 0.723244, 0.690592, -1, -4.37114e-08, 1.49078e-19, 3.01868e-08, -0.690592, 0.723244, 1.67652, 1.14872, -37.0376)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile23" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(-4.33937e-08, 0.992732, 0.120345, -1, -4.37114e-08, 1.49078e-19, 5.26044e-09, -0.120345, 0.992732, 1.22873, 1.14872, -39.5363)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile24" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(1.62897e-08, -0.372664, -0.927966, -1, -4.37114e-08, 1.2527e-15, -4.05627e-08, 0.927966, -0.372664, 2.09228, 1.14872, -39.6585)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile25" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(1.32374e-08, -0.302836, -0.953043, -1, -4.37114e-08, -4.93045e-16, -4.16588e-08, 0.953043, -0.302836, 3.78072, 1.14872, -38.9559)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile27" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(1.88733e-08, -0.431771, -0.901983, -1, -4.37114e-08, -2.79234e-16, -3.94269e-08, 0.901983, -0.431771, 5.49004, 1.14872, -38.25)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile28" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(1.55728e-08, -0.356265, -0.934385, -1, -4.37114e-08, -4.90183e-16, -4.08433e-08, 0.934385, -0.356265, 7.16246, 1.14872, -37.5401)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile29" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(1.55728e-08, -0.356265, -0.934385, -1, -4.37114e-08, -4.90183e-16, -4.08433e-08, 0.934385, -0.356265, 8.89928, 1.14872, -36.8964)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile30" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(3.20231e-08, -0.732602, 0.680657, -1, -4.37114e-08, -1.20372e-15, 2.97525e-08, -0.680657, -0.732602, 7.28407, 1.14872, -36.3238)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile31" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(3.20231e-08, -0.732602, 0.680657, -1, -4.37114e-08, -1.20372e-15, 2.97525e-08, -0.680657, -0.732602, 6.02153, 1.14872, -34.9576)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile33" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(4.36987e-08, -0.99971, 0.0240659, -1, -4.37114e-08, -2.27084e-15, 1.05195e-09, -0.0240659, -0.99971, 5.38574, 1.14872, -33.306)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile34" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(4.34369e-08, -0.993721, -0.111885, -1, -4.37114e-08, -2.31353e-15, -4.89065e-09, 0.111885, -0.993721, 5.55693, 1.14872, -31.3545)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile35" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(4.34369e-08, -0.993721, -0.111885, -1, -4.37114e-08, -2.31353e-15, -4.89065e-09, 0.111885, -0.993721, 5.70517, 1.14872, -29.6452)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile36" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(4.34369e-08, -0.993721, -0.111885, -1, -4.37114e-08, -2.31353e-15, -4.89065e-09, 0.111885, -0.993721, 5.89466, 1.14872, -27.8494)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile37" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(4.34369e-08, -0.993721, -0.111885, -1, -4.37114e-08, -2.31353e-15, -4.89065e-09, 0.111885, -0.993721, 6.09326, 1.14872, -26.0801)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile38" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(4.34369e-08, -0.993721, -0.111885, -1, -4.37114e-08, -2.31353e-15, -4.89065e-09, 0.111885, -0.993721, 6.25456, 1.14872, -24.3936)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile39" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(4.89064e-09, -0.111885, 0.993721, -1, -4.37114e-08, -2.63461e-15, 4.34369e-08, -0.993721, -0.111885, 5.41282, 1.14872, -23.4612)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile40" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(4.89064e-09, -0.111885, 0.993721, -1, -4.37114e-08, -2.63461e-15, 4.34369e-08, -0.993721, -0.111885, 3.43898, 1.14872, -23.4612)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile41" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(4.89064e-09, -0.111885, 0.993721, -1, -4.37114e-08, -2.63461e-15, 4.34369e-08, -0.993721, -0.111885, 2.01752, 1.14872, -23.4612)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile42" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(-4.34369e-08, 0.993721, 0.111885, -1, -4.37114e-08, -2.62141e-15, 4.89064e-09, -0.111885, 0.993721, 2.01752, 1.14872, -24.0649)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile43" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(-4.23206e-08, 0.968183, -0.250245, -1, -4.37114e-08, -2.59502e-15, -1.09386e-08, 0.250245, 0.968183, 2.01752, 1.14872, -25.8752)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile44" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(-4.23206e-08, 0.968183, -0.250245, -1, -4.37114e-08, -2.59502e-15, -1.09386e-08, 0.250245, 0.968183, 2.01752, 1.14872, -25.8752)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile45" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(-4.33741e-08, 0.992284, 0.123982, -1, -4.37114e-08, -1.72123e-15, 5.41942e-09, -0.123982, 0.992284, 2.01752, 1.14872, -27.6383)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile46" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(-4.37095e-08, 0.999957, 0.00923246, -1, -4.37114e-08, -1.67962e-15, 4.03552e-10, -0.00923246, 0.999957, 2.01752, 1.14872, -29.5138)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile47" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(-4.35894e-08, 0.99721, 0.0746478, -1, -4.37114e-08, -1.69397e-15, 3.26295e-09, -0.0746478, 0.99721, 1.98453, 1.14872, -31.4252)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile48" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(-3.94792e-08, 0.903178, 0.429266, -1, -4.37114e-08, -1.61654e-15, 1.87638e-08, -0.429266, 0.903178, 1.51026, 1.14872, -33.2617)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile49" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(-3.94792e-08, 0.903178, 0.429266, -1, -4.37114e-08, -1.61654e-15, 1.87638e-08, -0.429266, 0.903178, 0.958892, 1.14872, -34.4454)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile50" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(-3.94792e-08, 0.903178, 0.429266, -1, -4.37114e-08, -1.61654e-15, 1.87638e-08, -0.429266, 0.903178, 0.958892, 1.14872, -34.4454)
+skeleton = NodePath("../../../../../../..")
+
+[node name="WallTile26" parent="CumManager/SubViewportContainer/Geometry/GroundFloor" instance=ExtResource("13_cb1be")]
+transform = Transform3D(1.32374e-08, -0.302836, -0.953043, -1, -4.37114e-08, -4.93045e-16, -4.16588e-08, 0.953043, -0.302836, 3.78072, 1.14872, -38.9559)
+skeleton = NodePath("../../../../../../..")
+
+[connection signal="body_entered" from="CumManager/SubViewportContainer/Geometry/StairsCam/CameraArea1" to="CumManager/SubViewportContainer/Geometry/StairsCam/CameraArea1" method="enterTrigger"]
+[connection signal="body_exited" from="CumManager/SubViewportContainer/Geometry/StairsCam/CameraArea1" to="CumManager/SubViewportContainer/Geometry/StairsCam/CameraArea1" method="exitTrigger"]
+[connection signal="body_entered" from="CumManager/SubViewportContainer/Geometry/ExitCam/CameraArea1" to="CumManager/SubViewportContainer/Geometry/ExitCam/CameraArea1" method="enterTrigger"]
+[connection signal="body_exited" from="CumManager/SubViewportContainer/Geometry/ExitCam/CameraArea1" to="CumManager/SubViewportContainer/Geometry/ExitCam/CameraArea1" method="exitTrigger"]
+
+[editable path="CumManager/SubViewportContainer/Geometry/StairsCam/StairsGround2"]
+[editable path="CumManager/SubViewportContainer/Geometry/ExitCam/PostBox6"]
+[editable path="CumManager/SubViewportContainer/Geometry/ExitCam/DoorOutside2"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk6hq4jwmdglu"]
+
+[ext_resource type="Texture2D" uid="uid://sy1qvvva2eum" path="res://addons/kenney_prototype_textures/orange/door.png" id="1_4xllx"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hiu1g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eb7sy"]
+albedo_texture = ExtResource("1_4xllx")
+
+[node name="TransitionMarker" type="Node3D"]
+
+[node name="DoorTile2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 1.06581e-14, 4.37114e-08, 4.37114e-08, 1.91069e-15, -1, -1.06581e-14, 1, 1.91069e-15, 17.2206, 1, 14.2522)
+mesh = SubResource("PlaneMesh_hiu1g")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_eb7sy")
+
+[node name="DoorTile3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, -4.37114e-08, 4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, -5.73206e-15, 17.2206, 1, 14.2522)
+mesh = SubResource("PlaneMesh_hiu1g")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_eb7sy")

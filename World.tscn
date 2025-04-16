@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://noyo5w3mn81q"]
+[gd_scene load_steps=20 format=3 uid="uid://noyo5w3mn81q"]
 
 [ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_3koha"]
 [ext_resource type="Script" uid="uid://2hyw25pemahj" path="res://assets/models/characters/katya/World.gd" id="1_silin"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://6dodax6ltd41" path="res://CameraTrigger.gd" id="5_g36pe"]
 [ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="8_nnitm"]
 [ext_resource type="PackedScene" uid="uid://dhd0u2o78dsh7" path="res://Door.tscn" id="9_mr2b0"]
-[ext_resource type="Texture2D" uid="uid://d4cmfw78iwi32" path="res://assets/backgrounds/apartments/bedroom.jpg" id="10_kva58"]
 [ext_resource type="Texture2D" uid="uid://cg176py50dv2h" path="res://assets/backgrounds/apartments/livingroom1.jpg" id="11_f5c0m"]
 [ext_resource type="Script" uid="uid://biu7k7ygvjmsx" path="res://CameraManager.gd" id="11_kva58"]
 
@@ -256,10 +255,10 @@ offset_top = 0.0
 offset_right = 431.0
 offset_bottom = 54.0
 
-[node name="test" type="Node3D" parent="."]
+[node name="CumManager" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="test"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CumManager"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -267,14 +266,14 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
-[node name="Canvas" type="SubViewport" parent="test/SubViewportContainer"]
+[node name="Canvas" type="SubViewport" parent="CumManager/SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="CanvasLayer" type="CanvasLayer" parent="test/SubViewportContainer/Canvas"]
+[node name="CanvasLayer" type="CanvasLayer" parent="CumManager/SubViewportContainer/Canvas"]
 
-[node name="TextureRect" type="TextureRect" parent="test/SubViewportContainer/Canvas/CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="CumManager/SubViewportContainer/Canvas/CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -282,39 +281,15 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("11_f5c0m")
 
-[node name="Geometry" type="SubViewport" parent="test/SubViewportContainer"]
+[node name="Geometry" type="SubViewport" parent="CumManager/SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="Camera7" type="Camera3D" parent="test/SubViewportContainer/Geometry"]
-transform = Transform3D(0.997746, 0, 0.0671094, -0.0174484, 0.965609, 0.259413, -0.0648014, -0.259999, 0.963432, 16.3482, 4.13837, -18)
-
-[node name="CameraArea1" type="Area3D" parent="test/SubViewportContainer/Geometry/Camera7" node_paths=PackedStringArray("bgNode")]
-transform = Transform3D(7.10439, 0, -0.375163, 0, 5.1, 0, 0.396701, 0, 6.71876, 0.513487, 0, -5.45048)
-script = ExtResource("5_g36pe")
-bgNode = NodePath("../../../Canvas/CanvasLayer/TextureRect")
-bgImage = ExtResource("10_kva58")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="test/SubViewportContainer/Geometry/Camera7/CameraArea1"]
-shape = SubResource("BoxShape3D_umwvo")
-
-[node name="Camera8" type="Camera3D" parent="test/SubViewportContainer/Geometry"]
-transform = Transform3D(-0.0648015, -0.259999, 0.963432, -0.0174484, 0.965609, 0.259413, -0.997746, 1.12011e-08, -0.0671094, 26.3482, 4.13837, -24)
-
-[node name="CameraArea1" type="Area3D" parent="test/SubViewportContainer/Geometry/Camera8" node_paths=PackedStringArray("bgNode")]
-transform = Transform3D(7.10439, 0, -0.375163, 0, 5.1, 0, 0.396701, 0, 6.71876, 0.513487, 0, -5.45048)
-script = ExtResource("5_g36pe")
-bgNode = NodePath("../../../Canvas/CanvasLayer/TextureRect")
-bgImage = ExtResource("11_f5c0m")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="test/SubViewportContainer/Geometry/Camera8/CameraArea1"]
-shape = SubResource("BoxShape3D_umwvo")
-
 [node name="CameraManager" type="Node3D" parent="." node_paths=PackedStringArray("cameras")]
 script = ExtResource("11_kva58")
-cameras = [NodePath("../test/SubViewportContainer/Geometry/Camera7/CameraArea1"), NodePath("../test/SubViewportContainer/Geometry/Camera8/CameraArea1")]
+cameras = [NodePath(""), NodePath("")]
 index = 1
 
 [node name="Camera2" type="Camera3D" parent="CameraManager"]
@@ -339,10 +314,6 @@ shape = SubResource("BoxShape3D_umwvo")
 [connection signal="body_exited" from="Camera6/CameraArea4" to="Camera6/CameraArea4" method="exitTrigger"]
 [connection signal="body_entered" from="Bedroom/Camera2/CameraArea1" to="Bedroom/Camera2/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Bedroom/Camera2/CameraArea1" to="Bedroom/Camera2/CameraArea1" method="exitTrigger"]
-[connection signal="body_entered" from="test/SubViewportContainer/Geometry/Camera7/CameraArea1" to="test/SubViewportContainer/Geometry/Camera7/CameraArea1" method="enterTrigger"]
-[connection signal="body_exited" from="test/SubViewportContainer/Geometry/Camera7/CameraArea1" to="test/SubViewportContainer/Geometry/Camera7/CameraArea1" method="exitTrigger"]
-[connection signal="body_entered" from="test/SubViewportContainer/Geometry/Camera8/CameraArea1" to="test/SubViewportContainer/Geometry/Camera8/CameraArea1" method="enterTrigger"]
-[connection signal="body_exited" from="test/SubViewportContainer/Geometry/Camera8/CameraArea1" to="test/SubViewportContainer/Geometry/Camera8/CameraArea1" method="exitTrigger"]
 [connection signal="body_entered" from="CameraManager/Camera2/CameraArea1" to="CameraManager/Camera2/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="CameraManager/Camera2/CameraArea1" to="CameraManager/Camera2/CameraArea1" method="exitTrigger"]
 

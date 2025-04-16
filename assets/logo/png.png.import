@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c18jy2dusx8i3"
-path="res://.godot/imported/фрог-финал-02-02.png-698b364e3593890e9a2b33dd2c4171a4.ctex"
+uid="uid://cq56e42eebid7"
+path="res://.godot/imported/png.png-9ea8d5f98f65cbfa9f1e03cf436a83aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/logo/фрог-финал-02-02.png"
-dest_files=["res://.godot/imported/фрог-финал-02-02.png-698b364e3593890e9a2b33dd2c4171a4.ctex"]
+source_file="res://assets/logo/png.png"
+dest_files=["res://.godot/imported/png.png-9ea8d5f98f65cbfa9f1e03cf436a83aa.ctex"]
 
 [params]
 

@@ -160,8 +160,10 @@ texture = ExtResource("4_lba0b")
 
 [node name="WarningArea" type="Area3D" parent="."]
 transform = Transform3D(3.99344, 0, 0, 0, 1, 0, 0, 0, 3.98841, 0, 1, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WarningArea"]
+visible = false
 shape = SubResource("CylinderShape3D_u2jje")
 
 [node name="InteractionZone" type="Area3D" parent="."]
