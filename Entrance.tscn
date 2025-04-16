@@ -38,12 +38,12 @@
 sky_top_color = Color(1, 1, 1, 1)
 sky_horizon_color = Color(0.744551, 0.628285, 0.561799, 1)
 
-[sub_resource type="Sky" id="Sky_cxqx6"]
+[sub_resource type="Sky" id="Sky_1hjit"]
 sky_material = SubResource("ProceduralSkyMaterial_cxqx6")
 
 [sub_resource type="Environment" id="Environment_b3hrg"]
 background_mode = 2
-sky = SubResource("Sky_cxqx6")
+sky = SubResource("Sky_1hjit")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_30r84"]
 
@@ -644,7 +644,6 @@ message = "test"
 transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 0, 0, 0)
 
 [node name="polina buzinova" parent="CumManager/SubViewportContainer/Geometry/BusStop/Katya/Polya Bu/ModelScene" index="0" instance=ExtResource("13_ucsv0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Body__mBody" parent="CumManager/SubViewportContainer/Geometry/BusStop/Katya/Polya Bu/ModelScene/polina buzinova/Armature/Skeleton3D" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_am77c")

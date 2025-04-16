@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://dn18p33d8phaa"]
+[gd_scene load_steps=101 format=3 uid="uid://dn18p33d8phaa"]
 
 [ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_pp6vl"]
 [ext_resource type="Texture2D" uid="uid://ym4vjiitfyb6" path="res://addons/kenney_prototype_textures/orange/texture_07.png" id="2_axjrb"]
@@ -35,6 +35,13 @@
 [ext_resource type="Texture2D" uid="uid://o1pda3g6nmmc" path="res://assets/models/characters/lexa/lexa_mBody_Alb.png" id="33_li2ke"]
 [ext_resource type="Texture2D" uid="uid://saq4iyiogiih" path="res://assets/models/characters/lexa/lexa_mEye_Alb.png" id="34_s4buv"]
 [ext_resource type="Texture2D" uid="uid://87rlc6e5axl6" path="res://assets/models/characters/lexa/lexa_mBeak_Alb.png" id="35_x16oh"]
+[ext_resource type="Script" uid="uid://biu7k7ygvjmsx" path="res://CameraManager.gd" id="36_a83t1"]
+[ext_resource type="Texture2D" uid="uid://0d7ron4sacv" path="res://assets/backgrounds/cafe/entrance1_main.png" id="37_2l4sb"]
+[ext_resource type="Texture2D" uid="uid://dfh4cjr8rmqjl" path="res://assets/backgrounds/cafe/entrance1_table.png" id="38_oad14"]
+[ext_resource type="PackedScene" uid="uid://b4splxsbkhdrw" path="res://WallTile.tscn" id="39_2l4sb"]
+[ext_resource type="Texture2D" uid="uid://crfiqax3v7ht1" path="res://assets/backgrounds/cafe/entrance1_lady.png" id="39_ep7ul"]
+[ext_resource type="Texture2D" uid="uid://40ntmfh2t5sw" path="res://assets/backgrounds/cafe/interior2_peopless.png" id="42_dpd4u"]
+[ext_resource type="PackedScene" uid="uid://drbymng8cfjfo" path="res://assets/models/characters/brewster/brewster.glb" id="42_vwr7g"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h87hw"]
 
@@ -142,6 +149,15 @@ sky_material = SubResource("ProceduralSkyMaterial_snw2t")
 background_mode = 2
 sky = SubResource("Sky_83j8e")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i6r8q"]
+albedo_texture = ExtResource("24_edky4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24qk3"]
+albedo_texture = ExtResource("25_b8lxx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5bey"]
+albedo_texture = ExtResource("26_hqgju")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_earml"]
 albedo_texture = ExtResource("8_dfjnb")
 
@@ -169,6 +185,8 @@ albedo_texture = ExtResource("17_s4buv")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m0o4c"]
 albedo_texture = ExtResource("18_x16oh")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_a83t1"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hl41w"]
 albedo_texture = ExtResource("20_805fy")
 
@@ -177,15 +195,6 @@ albedo_texture = ExtResource("21_ojtli")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b8lxx"]
 albedo_texture = ExtResource("22_6tcr6")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i6r8q"]
-albedo_texture = ExtResource("24_edky4")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24qk3"]
-albedo_texture = ExtResource("25_b8lxx")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5bey"]
-albedo_texture = ExtResource("26_hqgju")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ji16"]
 albedo_texture = ExtResource("24_g5bey")
@@ -207,6 +216,8 @@ albedo_texture = ExtResource("34_s4buv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2l4sb"]
 albedo_texture = ExtResource("35_x16oh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ep7ul"]
 
 [node name="Interior" type="Node3D"]
 
@@ -944,23 +955,8 @@ shape = SubResource("BoxShape3D_ekklr")
 [node name="ExitZone" parent="CafeDoor" index="2"]
 transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.42109e-14, 1.13687e-13, 0, 9.9792, -1.42678, 0, 12.1291)
 
-[node name="CafeDoor2" parent="." instance=ExtResource("4_axjrb")]
-transform = Transform3D(-1.91847e-13, 1.36454e-06, -0.1, -4.37114e-08, 3.90214, 3.49691e-08, 1, 1.70568e-07, -1.95399e-14, 20.7623, 1, 21.0541)
-hasText = true
-coffee = true
-
-[node name="Model" parent="CafeDoor2" index="1"]
-transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
-mesh = SubResource("BoxMesh_gmnia")
-
-[node name="CollisionShape" parent="CafeDoor2/Model/InteractArea" index="0"]
-shape = SubResource("BoxShape3D_ekklr")
-
-[node name="ExitZone" parent="CafeDoor2" index="2"]
-transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.42109e-14, 1.13687e-13, 0, 9.9792, -1.42678, 0, 12.1291)
-
 [node name="Player" parent="." instance=ExtResource("5_snw2t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 19)
+transform = Transform3D(0.898311, 0, 0.439359, 0, 1, 0, -0.439359, 0, 0.898311, 35.1682, 0, 8.27126)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_biy3q")
@@ -969,155 +965,403 @@ environment = SubResource("Environment_biy3q")
 transform = Transform3D(0.943662, -0.161876, 0.288613, 0, 0.87218, 0.489185, -0.33091, -0.461625, 0.823044, 0, 4, 0)
 shadow_enabled = true
 
-[node name="Tagir" parent="." instance=ExtResource("6_83j8e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6214, 1, 24.6109)
-charId = "Tagir"
-hasText = true
-isCharacter = true
-message = "test"
+[node name="CumManager" type="Node3D" parent="." node_paths=PackedStringArray("cameras")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
+script = ExtResource("36_a83t1")
+cameras = [NodePath("SubViewportContainer/Geometry/InteriorCam/CameraArea1"), NodePath("SubViewportContainer/Geometry/InteriorCam2/CameraArea1")]
+index = 1
 
-[node name="tagir" parent="Tagir/ModelScene" index="0" instance=ExtResource("7_biy3q")]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CumManager"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
 
-[node name="Body__mBody" parent="Tagir/ModelScene/tagir/Armature_001/Skeleton3D" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_earml")
+[node name="Canvas" type="SubViewport" parent="CumManager/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
 
-[node name="Body__mEye" parent="Tagir/ModelScene/tagir/Armature_001/Skeleton3D" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_6aamw")
+[node name="CanvasLayer" type="CanvasLayer" parent="CumManager/SubViewportContainer/Canvas"]
 
-[node name="Body__mMouth" parent="Tagir/ModelScene/tagir/Armature_001/Skeleton3D" index="2"]
-surface_material_override/0 = SubResource("StandardMaterial3D_nqajv")
+[node name="TextureRect" type="TextureRect" parent="CumManager/SubViewportContainer/Canvas/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("42_dpd4u")
 
-[node name="Model" parent="Tagir" index="1"]
-visible = false
+[node name="Geometry" type="SubViewport" parent="CumManager/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
 
-[node name="Vika Bovsh" parent="." instance=ExtResource("6_83j8e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.2344, 1, 21.6697)
-charId = "Vika Bovsh"
-hasText = true
-isCharacter = true
-message = "test"
+[node name="InteriorCam" type="Camera3D" parent="CumManager/SubViewportContainer/Geometry"]
+transform = Transform3D(0.0671093, 0, -0.997746, 0, 1, 0, 0.997746, 0, 0.0671093, 30.3482, 2, 12)
+current = true
 
-[node name="vika bovsh" parent="Vika Bovsh/ModelScene" index="0" instance=ExtResource("11_tf4qh")]
-
-[node name="Body__mBody" parent="Vika Bovsh/ModelScene/vika bovsh/Armature_001/Skeleton3D" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_0myik")
-
-[node name="Body__mEye" parent="Vika Bovsh/ModelScene/vika bovsh/Armature_001/Skeleton3D" index="2"]
-surface_material_override/0 = SubResource("StandardMaterial3D_tf4qh")
-
-[node name="Body__mMouth" parent="Vika Bovsh/ModelScene/vika bovsh/Armature_001/Skeleton3D" index="3"]
-surface_material_override/0 = SubResource("StandardMaterial3D_n0kxa")
-
-[node name="Model" parent="Vika Bovsh" index="1"]
-visible = false
-
-[node name="Misha" parent="." instance=ExtResource("6_83j8e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.6987, 1, 21.6697)
-charId = "Misha"
-hasText = true
-isCharacter = true
-message = "test"
-
-[node name="misha" parent="Misha/ModelScene" index="0" instance=ExtResource("15_li2ke")]
-
-[node name="Body__mBody" parent="Misha/ModelScene/misha/Armature/Skeleton3D" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_x16oh")
-
-[node name="Body__mEye" parent="Misha/ModelScene/misha/Armature/Skeleton3D" index="2"]
-surface_material_override/0 = SubResource("StandardMaterial3D_dpd4u")
-
-[node name="Body__mMouth" parent="Misha/ModelScene/misha/Armature/Skeleton3D" index="3"]
-surface_material_override/0 = SubResource("StandardMaterial3D_m0o4c")
-
-[node name="Model" parent="Misha" index="1"]
-visible = false
-
-[node name="Mishanya" parent="." instance=ExtResource("6_83j8e")]
-transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 22.8237, 1, 32.6697)
-charId = "Mishanya"
-hasText = true
-isCharacter = true
-message = "test"
-
-[node name="mishanya" parent="Mishanya/ModelScene" index="0" instance=ExtResource("19_gelmf")]
-
-[node name="Body__mBody" parent="Mishanya/ModelScene/mishanya/Armature_001/Skeleton3D" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_hl41w")
-
-[node name="Body__mEye" parent="Mishanya/ModelScene/mishanya/Armature_001/Skeleton3D" index="2"]
-surface_material_override/0 = SubResource("StandardMaterial3D_edky4")
-
-[node name="Body__mMouth" parent="Mishanya/ModelScene/mishanya/Armature_001/Skeleton3D" index="3"]
-surface_material_override/0 = SubResource("StandardMaterial3D_b8lxx")
-
-[node name="Model" parent="Mishanya" index="1"]
-visible = false
-
-[node name="Boris" parent="." instance=ExtResource("6_83j8e")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 22.8237, 1, 27.6697)
+[node name="Boris" parent="CumManager/SubViewportContainer/Geometry/InteriorCam" instance=ExtResource("6_83j8e")]
+transform = Transform3D(0.57716, 0, -0.816631, 0, 1, 0, 0.816631, 0, 0.57716, 4.07014, -1, -5.79758)
 charId = "Boris"
 hasText = true
 isCharacter = true
 message = "test"
 
-[node name="boris" parent="Boris/ModelScene" index="0" instance=ExtResource("23_hl41w")]
+[node name="boris" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Boris/ModelScene" index="0" instance=ExtResource("23_hl41w")]
 
-[node name="Body__mBody" parent="Boris/ModelScene/boris/Armature/Skeleton3D" index="0"]
+[node name="Body__mBody" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Boris/ModelScene/boris/Armature/Skeleton3D" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_i6r8q")
 
-[node name="Body__mEye" parent="Boris/ModelScene/boris/Armature/Skeleton3D" index="1"]
+[node name="Body__mEye" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Boris/ModelScene/boris/Armature/Skeleton3D" index="1"]
 surface_material_override/0 = SubResource("StandardMaterial3D_24qk3")
 
-[node name="FaceGood__mBeak" parent="Boris/ModelScene/boris/Armature/Skeleton3D" index="2"]
+[node name="FaceGood__mBeak" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Boris/ModelScene/boris/Armature/Skeleton3D" index="2"]
 surface_material_override/0 = SubResource("StandardMaterial3D_g5bey")
 
-[node name="Model" parent="Boris" index="1"]
+[node name="Model" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Boris" index="1"]
 visible = false
 
-[node name="Sereza" parent="." instance=ExtResource("6_83j8e")]
-transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 20.8237, 1, 32.6697)
+[node name="Tagir" parent="CumManager/SubViewportContainer/Geometry/InteriorCam" instance=ExtResource("6_83j8e")]
+transform = Transform3D(0.830518, 0, -0.556991, 0, 1, 0, 0.556991, 0, 0.830518, 1.99314, -1, -6.71154)
+charId = "Tagir"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="tagir" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Tagir/ModelScene" index="0" instance=ExtResource("7_biy3q")]
+
+[node name="Body__mBody" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Tagir/ModelScene/tagir/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_earml")
+
+[node name="Body__mEye" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Tagir/ModelScene/tagir/Armature_001/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6aamw")
+
+[node name="Body__mMouth" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Tagir/ModelScene/tagir/Armature_001/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nqajv")
+
+[node name="Model" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Tagir" index="1"]
+visible = false
+
+[node name="Vika Bovsh" parent="CumManager/SubViewportContainer/Geometry/InteriorCam" instance=ExtResource("6_83j8e")]
+transform = Transform3D(0.97822, 0, 0.207571, 0, 1, 0, -0.207571, 0, 0.97822, -2.52978, -1, -7.28425)
+charId = "Vika Bovsh"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="vika bovsh" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Vika Bovsh/ModelScene" index="0" instance=ExtResource("11_tf4qh")]
+
+[node name="Body__mBody" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Vika Bovsh/ModelScene/vika bovsh/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0myik")
+
+[node name="Body__mEye" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Vika Bovsh/ModelScene/vika bovsh/Armature_001/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_tf4qh")
+
+[node name="Body__mMouth" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Vika Bovsh/ModelScene/vika bovsh/Armature_001/Skeleton3D" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_n0kxa")
+
+[node name="Model" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Vika Bovsh" index="1"]
+visible = false
+
+[node name="Misha" parent="CumManager/SubViewportContainer/Geometry/InteriorCam" instance=ExtResource("6_83j8e")]
+transform = Transform3D(0.984762, 0, -0.173906, 0, 1, 0, 0.173906, 0, 0.984762, -0.156282, -1, -6.58954)
+charId = "Misha"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="misha" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Misha/ModelScene" index="0" instance=ExtResource("15_li2ke")]
+
+[node name="Body__mBody" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Misha/ModelScene/misha/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_x16oh")
+
+[node name="Body__mEye" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Misha/ModelScene/misha/Armature/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_dpd4u")
+
+[node name="Body__mMouth" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Misha/ModelScene/misha/Armature/Skeleton3D" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_m0o4c")
+
+[node name="Model" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/Misha" index="1"]
+visible = false
+
+[node name="CameraArea1" type="Area3D" parent="CumManager/SubViewportContainer/Geometry/InteriorCam" node_paths=PackedStringArray("bgNode", "cam")]
+transform = Transform3D(7.10439, 0, -0.375163, 0, 5.1, 0, 0.396701, 0, 6.71876, 0.513487, 0, -5.45048)
+script = ExtResource("3_snw2t")
+bgNode = NodePath("../../../Canvas/CanvasLayer/TextureRect")
+bgImage = ExtResource("37_2l4sb")
+cam = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/CameraArea1"]
+shape = SubResource("BoxShape3D_a83t1")
+
+[node name="Table" type="Sprite3D" parent="CumManager/SubViewportContainer/Geometry/InteriorCam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.056592, 0, -4.34172)
+texture = ExtResource("38_oad14")
+
+[node name="Lady" type="Sprite3D" parent="CumManager/SubViewportContainer/Geometry/InteriorCam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7518, 0, -3.40442)
+texture = ExtResource("39_ep7ul")
+
+[node name="interior1" type="Node3D" parent="CumManager/SubViewportContainer/Geometry/InteriorCam"]
+visible = false
+
+[node name="WallTile38" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior1" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(5.85372e-09, -0.133916, -0.990993, -1, -4.37114e-08, 9.5288e-16, -4.33177e-08, 0.990993, -0.133916, -3.62874, -1, -4.82264)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile39" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior1" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(5.85372e-09, -0.133916, -0.990993, -1, -4.37114e-08, 9.5288e-16, -4.33177e-08, 0.990993, -0.133916, -1.76122, -1, -4.69703)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile40" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior1" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(5.85372e-09, -0.133916, -0.990993, -1, -4.37114e-08, 9.5288e-16, -4.33177e-08, 0.990993, -0.133916, -0.905937, -1, -4.6395)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile41" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior1" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(4.33567e-08, -0.991885, -0.127135, -1, -4.37114e-08, 1.01958e-15, -5.55718e-09, 0.127135, -0.991885, 0.167159, -1, -3.56506)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile42" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior1" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(5.85372e-09, -0.133916, -0.990993, -1, -4.37114e-08, 1.16776e-15, -4.33177e-08, 0.990993, -0.133916, 1.0978, -1, -2.50021)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile43" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior1" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(-4.00671e-08, 0.916628, -0.39974, -1, -4.37114e-08, 3.58547e-16, -1.74733e-08, 0.39974, 0.916628, 2.27286, -1, -2.61423)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile44" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior1" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(5.85372e-09, -0.133916, -0.990993, -1, -4.37114e-08, 1.01971e-15, -4.33177e-08, 0.990993, -0.133916, 3.53288, -1, -3.30313)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile45" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior1" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(2.66474e-09, -0.0609607, -0.998141, -1, -4.37114e-08, -3.28676e-15, -4.36301e-08, 0.998141, -0.0609607, 5.39598, -1, -3.06235)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile46" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior1" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(3.59351e-10, -0.00821967, -0.999967, -1, -4.37114e-08, -2.16773e-15, -4.37099e-08, 0.999967, -0.00821967, 7.23713, -2, -3.09805)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile47" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior1" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(3.59351e-10, -0.00821968, -0.999967, -1, -4.37114e-08, -2.16773e-15, -4.37099e-08, 0.999967, -0.00821968, 9.23262, -2, -2.96383)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile48" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior1" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(3.59351e-10, -0.00821969, -0.999967, -1, -4.37114e-08, -2.16773e-15, -4.37099e-08, 0.999967, -0.00821969, 11.2343, -2, -2.92189)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile49" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior1" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(3.59351e-10, -0.00821969, -0.999967, -1, -4.37114e-08, -2.16773e-15, -4.37099e-08, 0.999967, -0.00821969, 13.2364, -2, -2.88601)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile50" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior1" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(4.37099e-08, -0.999967, 0.00821955, -1, -4.37114e-08, -2.11793e-15, 3.59349e-10, -0.00821955, -0.999967, 14.3013, -2, -3.81665)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile51" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior1" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(4.37099e-08, -0.999967, 0.00821954, -1, -4.37114e-08, -2.11793e-15, 3.59349e-10, -0.00821954, -0.999967, 14.2941, -2, -4.81939)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="interior2" type="Node3D" parent="CumManager/SubViewportContainer/Geometry/InteriorCam"]
+visible = false
+
+[node name="WallTile38" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior2" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(5.85372e-09, -0.133916, -0.990993, -1, -4.37114e-08, 9.5288e-16, -4.33177e-08, 0.990993, -0.133916, -3.43805, -1, -7.65778)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile39" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior2" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(5.85372e-09, -0.133916, -0.990993, -1, -4.37114e-08, 9.5288e-16, -4.33177e-08, 0.990993, -0.133916, -5.14753, -1, -7.77276)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile48" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior2" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(5.85372e-09, -0.133916, -0.990993, -1, -4.37114e-08, 1.17019e-15, -4.33177e-08, 0.990993, -0.133916, -6.85442, -1, -7.88757)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile49" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior2" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(-4.33177e-08, 0.990993, -0.133916, -1, -4.37114e-08, 1.04261e-16, -5.85371e-09, 0.133916, 0.990993, -4.92604, -1, -6.7556)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile50" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior2" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(-4.33177e-08, 0.990993, -0.133916, -1, -4.37114e-08, 1.04261e-16, -5.85371e-09, 0.133916, 0.990993, -5.06026, -1, -4.76011)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile51" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior2" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(-4.33177e-08, 0.990993, -0.133916, -1, -4.37114e-08, 1.04261e-16, -5.85371e-09, 0.133916, 0.990993, -5.06026, -1, -4.76011)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile40" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior2" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(5.85372e-09, -0.133916, -0.990993, -1, -4.37114e-08, 9.5288e-16, -4.33177e-08, 0.990993, -0.133916, -1.63014, -1, -7.41115)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile41" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior2" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(5.85372e-09, -0.133916, -0.990993, -1, -4.37114e-08, 9.5288e-16, -4.33177e-08, 0.990993, -0.133916, 0.345757, -1, -6.98571)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile42" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior2" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(5.85372e-09, -0.133916, -0.990993, -1, -4.37114e-08, 9.5288e-16, -4.33177e-08, 0.990993, -0.133916, 2.15793, -1, -6.86382)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile43" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior2" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(5.85372e-09, -0.133916, -0.990993, -1, -4.37114e-08, 9.5288e-16, -4.33177e-08, 0.990993, -0.133916, 3.91739, -1, -6.74547)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile44" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior2" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(2.22233e-08, -0.612864, -1.21273, -1, -5.2692e-08, 1.70229e-15, -3.76405e-08, 1.03803, -0.716003, 5.66504, -1, -6.07034)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile45" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior2" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(5.85372e-09, -0.133916, -0.990993, -1, -4.37114e-08, 9.5288e-16, -4.33177e-08, 0.990993, -0.133916, 7.43543, -1, -5.14333)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile47" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior2" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(5.85372e-09, -0.133916, -0.990993, -1, -4.37114e-08, 9.5288e-16, -4.33177e-08, 0.990993, -0.133916, 8.64728, -1, -4.97847)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile57" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior2" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(5.85372e-09, -0.133916, -0.990993, -1, -4.37114e-08, 9.5288e-16, -4.33177e-08, 0.990993, -0.133916, 10.6428, -1, -4.84426)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile58" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior2" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(5.85372e-09, -0.133916, -0.990993, -1, -4.37114e-08, 9.5288e-16, -4.33177e-08, 0.990993, -0.133916, 12.6383, -1, -4.71004)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="WallTile59" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/interior2" instance=ExtResource("39_2l4sb")]
+transform = Transform3D(5.85372e-09, -0.133916, -0.990993, -1, -4.37114e-08, 9.5288e-16, -4.33177e-08, 0.990993, -0.133916, 12.9117, -1, -4.69165)
+skeleton = NodePath("../../../../../../../../../../../../../../../../..")
+
+[node name="CafeDoor3" parent="CumManager/SubViewportContainer/Geometry/InteriorCam" node_paths=PackedStringArray("player") instance=ExtResource("4_axjrb")]
+transform = Transform3D(0.0671093, -1.35002e-06, 0.0997746, -4.37114e-08, 3.90214, 3.49691e-08, -0.997746, -2.61757e-07, 0.00671093, -5.39692, -1, -8.40487)
+visible = false
+isDoor = true
+hasText = true
+coffeeDoor = true
+nextScenePath = "res://CafeOutside.tscn"
+nextSceneName = "Шумице"
+nextSceneTime = "9:40"
+nextSceneMessage = "-иди на остановку-"
+player = NodePath("../../../../../Player")
+
+[node name="Model" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/CafeDoor3" index="1"]
+transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/CafeDoor3/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
+
+[node name="ExitZone" parent="CumManager/SubViewportContainer/Geometry/InteriorCam/CafeDoor3" index="2"]
+transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.42109e-14, 1.13687e-13, 0, 9.9792, -1.42678, 0, 12.1291)
+
+[node name="InteriorCam2" type="Camera3D" parent="CumManager/SubViewportContainer/Geometry"]
+transform = Transform3D(0.0671093, 0, -0.997746, 0, 1, 0, 0.997746, 0, 0.0671093, 32.8188, 2, 22.3613)
+current = true
+
+[node name="Mishanya" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2" instance=ExtResource("6_83j8e")]
+transform = Transform3D(0.752966, 0, 0.658059, 0, 1, 0, -0.658059, 0, 0.752966, -2.69663, -1.19005, -3.74232)
+charId = "Mishanya"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="mishanya" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/Mishanya/ModelScene" index="0" instance=ExtResource("19_gelmf")]
+
+[node name="Body__mBody" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/Mishanya/ModelScene/mishanya/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_hl41w")
+
+[node name="Body__mEye" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/Mishanya/ModelScene/mishanya/Armature_001/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_edky4")
+
+[node name="Body__mMouth" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/Mishanya/ModelScene/mishanya/Armature_001/Skeleton3D" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_b8lxx")
+
+[node name="Model" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/Mishanya" index="1"]
+visible = false
+
+[node name="Sereza" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2" instance=ExtResource("6_83j8e")]
+transform = Transform3D(0.997746, 0, -0.0671092, 0, 1, 0, 0.0671092, 0, 0.997746, -1.48503, -1.19389, -3.82673)
 charId = "Sereza"
 hasText = true
 isCharacter = true
 message = "test"
 
-[node name="sereza" parent="Sereza/ModelScene" index="0" instance=ExtResource("23_24qk3")]
+[node name="sereza" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/Sereza/ModelScene" index="0" instance=ExtResource("23_24qk3")]
 
-[node name="Body__mBody" parent="Sereza/ModelScene/sereza/Armature/Skeleton3D" index="0"]
+[node name="Body__mBody" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/Sereza/ModelScene/sereza/Armature/Skeleton3D" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_2ji16")
 
-[node name="Body__mEye" parent="Sereza/ModelScene/sereza/Armature/Skeleton3D" index="1"]
+[node name="Body__mEye" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/Sereza/ModelScene/sereza/Armature/Skeleton3D" index="1"]
 surface_material_override/0 = SubResource("StandardMaterial3D_ep7ul")
 
-[node name="Cap__mCap" parent="Sereza/ModelScene/sereza/Armature/Skeleton3D" index="2"]
+[node name="Cap__mCap" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/Sereza/ModelScene/sereza/Armature/Skeleton3D" index="2"]
 surface_material_override/0 = SubResource("StandardMaterial3D_n7n5w")
 
-[node name="FaceGood__mBeak" parent="Sereza/ModelScene/sereza/Armature/Skeleton3D" index="3"]
+[node name="FaceGood__mBeak" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/Sereza/ModelScene/sereza/Armature/Skeleton3D" index="3"]
 surface_material_override/0 = SubResource("StandardMaterial3D_vwr7g")
 
-[node name="Model" parent="Sereza" index="1"]
+[node name="Model" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/Sereza" index="1"]
 visible = false
 
-[node name="Lexa" parent="." instance=ExtResource("6_83j8e")]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 16.8237, 1, 32.6697)
+[node name="Lexa" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2" instance=ExtResource("6_83j8e")]
+transform = Transform3D(0.997511, 0, -0.0705219, 0, 1, 0, 0.0705219, 0, 0.997511, 0.341675, -1, -5.05664)
 charId = "Lexa"
 hasText = true
 isCharacter = true
 message = "test"
 
-[node name="lexa" parent="Lexa/ModelScene" index="0" instance=ExtResource("32_g5bey")]
+[node name="lexa" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/Lexa/ModelScene" index="0" instance=ExtResource("32_g5bey")]
 
-[node name="Body__mBody" parent="Lexa/ModelScene/lexa/Armature_001/Skeleton3D" index="0"]
+[node name="Body__mBody" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/Lexa/ModelScene/lexa/Armature_001/Skeleton3D" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_a83t1")
 
-[node name="Body__mEye" parent="Lexa/ModelScene/lexa/Armature_001/Skeleton3D" index="1"]
+[node name="Body__mEye" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/Lexa/ModelScene/lexa/Armature_001/Skeleton3D" index="1"]
 surface_material_override/0 = SubResource("StandardMaterial3D_oad14")
 
-[node name="FaceGood__mBeak" parent="Lexa/ModelScene/lexa/Armature_001/Skeleton3D" index="2"]
+[node name="FaceGood__mBeak" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/Lexa/ModelScene/lexa/Armature_001/Skeleton3D" index="2"]
 surface_material_override/0 = SubResource("StandardMaterial3D_2l4sb")
 
-[node name="Model" parent="Lexa" index="1"]
+[node name="Model" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/Lexa" index="1"]
 visible = false
+
+[node name="CafeDoor2" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2" instance=ExtResource("4_axjrb")]
+transform = Transform3D(0.484306, 1.27644e-06, -0.0874899, -4.37114e-08, 3.90214, 3.49691e-08, 0.874899, -5.11626e-07, 0.0484306, 2.53034, -1, -1.46164)
+visible = false
+hasText = true
+coffee = true
+
+[node name="Model" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/CafeDoor2" index="1"]
+transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
+mesh = SubResource("BoxMesh_gmnia")
+
+[node name="CollisionShape" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/CafeDoor2/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ekklr")
+
+[node name="ExitZone" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/CafeDoor2" index="2"]
+transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.42109e-14, 1.13687e-13, 0, 9.9792, -1.42678, 0, 12.1291)
+
+[node name="Brewster" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2" instance=ExtResource("6_83j8e")]
+transform = Transform3D(-0.752966, 0, -0.658059, 0, 1, 0, 0.658059, 0, -0.752966, 9.21174, -1, 16.6508)
+charId = "Lexa"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="brewster" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/Brewster/ModelScene" index="0" instance=ExtResource("42_vwr7g")]
+transform = Transform3D(0.1059, 0, 0.994377, 0, 1, 0, -0.994377, 0, 0.1059, -7.15874, 0, 19.461)
+
+[node name="Model" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/Brewster" index="1"]
+visible = false
+
+[node name="CameraArea1" type="Area3D" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2" node_paths=PackedStringArray("bgNode", "cam")]
+transform = Transform3D(7.10439, 0, -0.375163, 0, 5.1, 0, 0.396701, 0, 6.71876, -0.349625, 0, -3.46244)
+script = ExtResource("3_snw2t")
+bgNode = NodePath("../../../Canvas/CanvasLayer/TextureRect")
+bgImage = ExtResource("42_dpd4u")
+cam = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CumManager/SubViewportContainer/Geometry/InteriorCam2/CameraArea1"]
+shape = SubResource("BoxShape3D_ep7ul")
 
 [connection signal="body_entered" from="CafeInteriorCamera3/CameraArea1" to="CafeInteriorCamera3/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="CafeInteriorCamera3/CameraArea1" to="CafeInteriorCamera3/CameraArea1" method="exitTrigger"]
@@ -1127,20 +1371,26 @@ visible = false
 [connection signal="body_exited" from="CafeInteriorCamera6/CameraArea1" to="CafeInteriorCamera6/CameraArea1" method="exitTrigger"]
 [connection signal="body_entered" from="CafeInteriorCamera4/CameraArea1" to="CafeInteriorCamera4/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="CafeInteriorCamera4/CameraArea1" to="CafeInteriorCamera4/CameraArea1" method="exitTrigger"]
+[connection signal="body_entered" from="CumManager/SubViewportContainer/Geometry/InteriorCam/CameraArea1" to="CumManager/SubViewportContainer/Geometry/InteriorCam/CameraArea1" method="enterTrigger"]
+[connection signal="body_exited" from="CumManager/SubViewportContainer/Geometry/InteriorCam/CameraArea1" to="CumManager/SubViewportContainer/Geometry/InteriorCam/CameraArea1" method="exitTrigger"]
+[connection signal="body_entered" from="CumManager/SubViewportContainer/Geometry/InteriorCam2/CameraArea1" to="CumManager/SubViewportContainer/Geometry/InteriorCam2/CameraArea1" method="enterTrigger"]
+[connection signal="body_exited" from="CumManager/SubViewportContainer/Geometry/InteriorCam2/CameraArea1" to="CumManager/SubViewportContainer/Geometry/InteriorCam2/CameraArea1" method="exitTrigger"]
 
 [editable path="CafeDoor"]
-[editable path="CafeDoor2"]
-[editable path="Tagir"]
-[editable path="Tagir/ModelScene/tagir"]
-[editable path="Vika Bovsh"]
-[editable path="Vika Bovsh/ModelScene/vika bovsh"]
-[editable path="Misha"]
-[editable path="Misha/ModelScene/misha"]
-[editable path="Mishanya"]
-[editable path="Mishanya/ModelScene/mishanya"]
-[editable path="Boris"]
-[editable path="Boris/ModelScene/boris"]
-[editable path="Sereza"]
-[editable path="Sereza/ModelScene/sereza"]
-[editable path="Lexa"]
-[editable path="Lexa/ModelScene/lexa"]
+[editable path="CumManager/SubViewportContainer/Geometry/InteriorCam/Boris"]
+[editable path="CumManager/SubViewportContainer/Geometry/InteriorCam/Boris/ModelScene/boris"]
+[editable path="CumManager/SubViewportContainer/Geometry/InteriorCam/Tagir"]
+[editable path="CumManager/SubViewportContainer/Geometry/InteriorCam/Tagir/ModelScene/tagir"]
+[editable path="CumManager/SubViewportContainer/Geometry/InteriorCam/Vika Bovsh"]
+[editable path="CumManager/SubViewportContainer/Geometry/InteriorCam/Vika Bovsh/ModelScene/vika bovsh"]
+[editable path="CumManager/SubViewportContainer/Geometry/InteriorCam/Misha"]
+[editable path="CumManager/SubViewportContainer/Geometry/InteriorCam/Misha/ModelScene/misha"]
+[editable path="CumManager/SubViewportContainer/Geometry/InteriorCam/CafeDoor3"]
+[editable path="CumManager/SubViewportContainer/Geometry/InteriorCam2/Mishanya"]
+[editable path="CumManager/SubViewportContainer/Geometry/InteriorCam2/Mishanya/ModelScene/mishanya"]
+[editable path="CumManager/SubViewportContainer/Geometry/InteriorCam2/Sereza"]
+[editable path="CumManager/SubViewportContainer/Geometry/InteriorCam2/Sereza/ModelScene/sereza"]
+[editable path="CumManager/SubViewportContainer/Geometry/InteriorCam2/Lexa"]
+[editable path="CumManager/SubViewportContainer/Geometry/InteriorCam2/Lexa/ModelScene/lexa"]
+[editable path="CumManager/SubViewportContainer/Geometry/InteriorCam2/CafeDoor2"]
+[editable path="CumManager/SubViewportContainer/Geometry/InteriorCam2/Brewster"]

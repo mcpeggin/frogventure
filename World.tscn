@@ -256,7 +256,7 @@ offset_right = 431.0
 offset_bottom = 54.0
 
 [node name="CumManager" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -15, -17)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CumManager"]
 anchors_preset = 15
@@ -289,7 +289,7 @@ render_target_update_mode = 4
 
 [node name="CameraManager" type="Node3D" parent="." node_paths=PackedStringArray("cameras")]
 script = ExtResource("11_kva58")
-cameras = [NodePath(""), NodePath("")]
+cameras = [null, null]
 index = 1
 
 [node name="Camera2" type="Camera3D" parent="CameraManager"]
