@@ -392,7 +392,7 @@ transform = Transform3D(1, 1.70568e-07, 4.37112e-09, -4.37114e-08, 3.90214, 3.49
 hasText = true
 message = "To the cafe"
 
-[node name="Model" parent="Entrance/CafeDoor" index="0"]
+[node name="Model" parent="Entrance/CafeDoor" index="1"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
 
 [node name="ExitZone" parent="Entrance/CafeDoor" index="2"]
@@ -403,7 +403,7 @@ transform = Transform3D(-1, -1.70568e-07, 7.45058e-09, -4.37114e-08, 3.90214, 3.
 hasText = true
 message = "To the cafe"
 
-[node name="Model" parent="Entrance/CafeDoor2" index="0"]
+[node name="Model" parent="Entrance/CafeDoor2" index="1"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
 
 [node name="ExitZone" parent="Entrance/CafeDoor2" index="2"]
@@ -428,10 +428,15 @@ shape = SubResource("BoxShape3D_h87hw")
 [connection signal="body_exited" from="Entrance/CafeEntranceCamera2/CameraArea1" to="Entrance/CafeEntranceCamera2/CameraArea1" method="exitTrigger"]
 
 [editable path="CafeBusStop"]
-[editable path="CafeBusStop/BusStop/CafeBusStop"]
-[editable path="CafeBusStop/Entrance/Door2Cafe"]
-[editable path="CafeBusStop/Dima"]
-[editable path="CafeBusStop/Nastya Semen"]
-[editable path="CafeBusStop/Tori"]
+[editable path="CafeBusStop/CumManager/SubViewportContainer/Geometry/EntranceCam/busStop"]
+[editable path="CafeBusStop/CumManager/SubViewportContainer/Geometry/EntranceCam/CafeBusStop"]
+[editable path="CafeBusStop/CumManager/SubViewportContainer/Geometry/EntranceCam/Door2Cafe2"]
+[editable path="CafeBusStop/CumManager/SubViewportContainer/Geometry/EntranceCam/Nastya Semen"]
+[editable path="CafeBusStop/CumManager/SubViewportContainer/Geometry/EntranceCam/Nastya Semen/ModelScene/nastya semen"]
+[editable path="CafeBusStop/CumManager/SubViewportContainer/Geometry/EntranceCam/Tori"]
+[editable path="CafeBusStop/CumManager/SubViewportContainer/Geometry/EntranceCam/Tori/ModelScene/tori"]
+[editable path="CafeBusStop/CumManager/SubViewportContainer/Geometry/EntranceCam/Dima Tori"]
+[editable path="CafeBusStop/CumManager/SubViewportContainer/Geometry/EntranceCam/Kirusha"]
+[editable path="CafeBusStop/CumManager/SubViewportContainer/Geometry/EntranceCam/Kirusha/ModelScene/kirusha"]
 [editable path="Entrance/CafeDoor"]
 [editable path="Entrance/CafeDoor2"]

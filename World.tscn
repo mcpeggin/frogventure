@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://noyo5w3mn81q"]
 
 [ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_3koha"]
-[ext_resource type="Script" uid="uid://2hyw25pemahj" path="res://assets/models/characters/katya/World.gd" id="1_silin"]
+[ext_resource type="Script" uid="uid://2hyw25pemahj" path="res://World.gd" id="1_silin"]
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="2_7n7d5"]
 [ext_resource type="Texture2D" uid="uid://d1ycujafxw825" path="res://addons/kenney_prototype_textures/purple/texture_09.png" id="2_lghue"]
 [ext_resource type="Texture2D" uid="uid://cr4meoh8hbttl" path="res://addons/kenney_prototype_textures/purple/texture_10.png" id="3_c8wud"]
@@ -248,12 +248,6 @@ offset_left = -252.0
 offset_top = -93.0
 offset_right = 252.0
 offset_bottom = 0.0
-
-[node name="ControlClue" parent="Player/UI/StartScreen" index="1"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 431.0
-offset_bottom = 54.0
 
 [node name="CumManager" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -15, -17)

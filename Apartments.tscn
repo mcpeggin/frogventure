@@ -53,7 +53,6 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
 script = ExtResource("12_ecno4")
 cameras = [NodePath("SubViewportContainer/Geometry/BedroomCam2/CameraArea1"), NodePath("SubViewportContainer/Geometry/LivingRoomCam1/CameraArea1"), NodePath("SubViewportContainer/Geometry/Hall/CameraArea1")]
-index = 2
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CumManager"]
 anchors_preset = 15
@@ -76,7 +75,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("15_g84h8")
+texture = ExtResource("9_lha0y")
 
 [node name="Geometry" type="SubViewport" parent="CumManager/SubViewportContainer"]
 transparent_bg = true

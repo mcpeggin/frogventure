@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://5dp5lyb80q7q"
+path="res://.godot/imported/synth frogventure.mp3-5692d38e8f97457c969f7aab8e00872e.mp3str"
+
+[deps]
+
+source_file="res://assets/music/synth frogventure.mp3"
+dest_files=["res://.godot/imported/synth frogventure.mp3-5692d38e8f97457c969f7aab8e00872e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

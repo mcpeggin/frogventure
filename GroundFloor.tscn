@@ -104,7 +104,7 @@ transform = Transform3D(-0.997746, -7.0246e-10, -0.0671095, -0.0175965, 0.965012
 current = true
 
 [node name="CameraArea1" type="Area3D" parent="CumManager/SubViewportContainer/Geometry/ExitCam" node_paths=PackedStringArray("bgNode", "cam")]
-transform = Transform3D(7.10439, 0, -0.375163, 0, 5.1, 0, 0.396701, 0, 6.71876, 0.513487, 0, -5.45048)
+transform = Transform3D(7.07316, 1.49012e-08, -0.520108, 1.11759e-08, 4.56459, 4.76837e-07, 0.394957, 2.38419e-07, 9.31456, 0.60405, 0.366672, -6.79692)
 script = ExtResource("2_vmmil")
 bgNode = NodePath("../../../Canvas/CanvasLayer/TextureRect")
 bgImage = ExtResource("13_v16rt")

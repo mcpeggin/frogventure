@@ -15,6 +15,8 @@ extends CharacterBody3D
 @onready var label: Label = $UI/DialogBox/Label
 @onready var labelName: Label = $UI/DialogBox/LabelName
 
+@onready var startScreen: CanvasLayer = $StartScreen
+
 @onready var pressCue: Label = $Clue/PressCue
 
 @onready var info: Control = $UI/ColorRect/Info

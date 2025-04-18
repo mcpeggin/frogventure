@@ -1,13 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://dy7dbyvsa14ug"]
+[gd_scene load_steps=11 format=3 uid="uid://dy7dbyvsa14ug"]
 
 [ext_resource type="Script" uid="uid://d2uvvgye51vs6" path="res://Game.gd" id="1_wbfu4"]
-[ext_resource type="AudioStream" uid="uid://d4baxqt15yg3c" path="res://assets/music/piano frogventure.mp3" id="2_xkndl"]
+[ext_resource type="AudioStream" uid="uid://bew46mnw4bvlf" path="res://assets/music/piano frogventure.mp3" id="2_xkndl"]
+[ext_resource type="AudioStream" uid="uid://bqmo6sucova4i" path="res://assets/music/bass frogventure.mp3" id="3_u44n3"]
+[ext_resource type="AudioStream" uid="uid://du0iqn6ijd2xq" path="res://assets/music/bell frogventure.mp3" id="4_t88pq"]
+[ext_resource type="AudioStream" uid="uid://bngtdhv52sqyl" path="res://assets/music/cowbell frogventure.mp3" id="5_r0x5m"]
+[ext_resource type="AudioStream" uid="uid://cxtrubn5kli0d" path="res://assets/music/kick frogventure.mp3" id="6_3mrqo"]
+[ext_resource type="AudioStream" uid="uid://chwy8sa68d8wu" path="res://assets/music/hihat frogventure.mp3" id="6_r0x5m"]
+[ext_resource type="AudioStream" uid="uid://5dp5lyb80q7q" path="res://assets/music/synth frogventure.mp3" id="7_joorw"]
+[ext_resource type="AudioStream" uid="uid://cg6d4of6o66bx" path="res://assets/music/tambourine frogventure.mp3" id="8_2vekm"]
+[ext_resource type="AudioStream" uid="uid://hw63ot4ma1pw" path="res://assets/music/snare frogventure.mp3" id="9_yx171"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_wbfu4")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="piano" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_xkndl")
+volume_db = 20.0
 
-[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("2_xkndl")
+[node name="bass" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_u44n3")
+volume_db = 20.0
+
+[node name="bell" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_t88pq")
+volume_db = 20.0
+
+[node name="cowbell" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_r0x5m")
+volume_db = 20.0
+
+[node name="kick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_3mrqo")
+volume_db = 20.0
+
+[node name="synth" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_joorw")
+volume_db = 20.0
+
+[node name="tamb" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_2vekm")
+volume_db = 20.0
+
+[node name="snare" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_yx171")
+volume_db = 20.0
+
+[node name="ht" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_r0x5m")
+volume_db = 20.0

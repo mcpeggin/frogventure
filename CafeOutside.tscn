@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dgir3likowdob"]
+[gd_scene load_steps=39 format=3 uid="uid://dgir3likowdob"]
 
 [ext_resource type="Script" uid="uid://2bk2ygphkd2f" path="res://Level.gd" id="1_ryrrj"]
 [ext_resource type="Script" uid="uid://6dodax6ltd41" path="res://CameraTrigger.gd" id="2_8cc15"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="5_j6ct1"]
 [ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="7_nk2aw"]
 [ext_resource type="PackedScene" uid="uid://c3ybqdv5lbrvm" path="res://assets/models/characters/tori/tori.glb" id="8_3aulr"]
+[ext_resource type="Texture2D" uid="uid://dw0skvl6365j2" path="res://assets/backgrounds/cafe/entrance_bucket;ess.png" id="9_3un6r"]
 [ext_resource type="Texture2D" uid="uid://lwwwk6tvl46s" path="res://assets/models/characters/tori/tori_mBody_Alb.png" id="9_ek4pc"]
 [ext_resource type="Texture2D" uid="uid://bltop7spfuw0g" path="res://assets/models/characters/tori/tori_mEye_Alb.png" id="10_ah6xd"]
 [ext_resource type="Texture2D" uid="uid://cj3y8dgiiwdw" path="res://assets/models/characters/tori/tori_mMouth_Alb.png" id="11_2wgub"]
@@ -16,20 +17,24 @@
 [ext_resource type="PackedScene" uid="uid://xw45vy1ecg34" path="res://assets/models/characters/dima_tori/dima tori.glb" id="16_no4we"]
 [ext_resource type="Script" uid="uid://biu7k7ygvjmsx" path="res://CameraManager.gd" id="17_2dgcx"]
 [ext_resource type="Script" uid="uid://b3g40kimiy4de" path="res://CamVisible.gd" id="19_3un6r"]
-[ext_resource type="Texture2D" uid="uid://bobh7b80p3qcd" path="res://assets/backgrounds/cafe/entrance.jpg" id="20_3un6r"]
+[ext_resource type="Texture2D" uid="uid://ubd2mf45s1ih" path="res://assets/backgrounds/cafe/buckets.png" id="20_3un6r"]
+[ext_resource type="PackedScene" uid="uid://cg882oeiu5o7e" path="res://assets/models/characters/kirusha/kirusha.glb" id="20_n6m4d"]
+[ext_resource type="Texture2D" uid="uid://dwkq4uamy1kpr" path="res://assets/models/characters/kirusha/kirusha_mBody_Alb.png" id="21_ltk2q"]
 [ext_resource type="PackedScene" uid="uid://wsmo8luoa241" path="res://BusStop.tscn" id="21_n6m4d"]
 [ext_resource type="PackedScene" uid="uid://b4splxsbkhdrw" path="res://WallTile.tscn" id="21_sqhep"]
+[ext_resource type="Texture2D" uid="uid://57yxd1jkkvdp" path="res://assets/models/characters/kirusha/kirusha_mEye_Alb.png" id="22_my8rp"]
+[ext_resource type="Texture2D" uid="uid://begy602hcpvut" path="res://assets/models/characters/kirusha/kirusha_mMouth_Alb.png" id="23_6mo4d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n6m4d"]
 sky_top_color = Color(1, 1, 1, 1)
 sky_horizon_color = Color(0.744551, 0.628285, 0.561799, 1)
 
-[sub_resource type="Sky" id="Sky_cxqx6"]
+[sub_resource type="Sky" id="Sky_2dgcx"]
 sky_material = SubResource("ProceduralSkyMaterial_n6m4d")
 
 [sub_resource type="Environment" id="Environment_sqhep"]
 background_mode = 2
-sky = SubResource("Sky_cxqx6")
+sky = SubResource("Sky_2dgcx")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1lhp3"]
 
@@ -53,6 +58,15 @@ albedo_texture = ExtResource("10_ah6xd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1lhp3"]
 albedo_texture = ExtResource("11_2wgub")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m8rsf"]
+albedo_texture = ExtResource("21_ltk2q")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svedh"]
+albedo_texture = ExtResource("22_my8rp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ju72u"]
+albedo_texture = ExtResource("23_6mo4d")
 
 [node name="CafeOutside" type="Node3D" node_paths=PackedStringArray("player1", "player2")]
 script = ExtResource("1_ryrrj")
@@ -98,7 +112,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("20_3un6r")
+texture = ExtResource("9_3un6r")
 
 [node name="Geometry" type="SubViewport" parent="CumManager/SubViewportContainer"]
 transparent_bg = true
@@ -116,7 +130,7 @@ script = ExtResource("19_3un6r")
 transform = Transform3D(-0.0646054, 0, -1.39126, 0, 1.44, 0, 1.35938, 0, -0.0661206, 8.88389, -3, -9.00425)
 
 [node name="CafeBusStop" parent="CumManager/SubViewportContainer/Geometry/EntranceCam" node_paths=PackedStringArray("player") instance=ExtResource("3_2fcy6")]
-transform = Transform3D(-0.997746, -0.104748, -1.13627e-08, -8.74228e-08, -6.14044e-07, 0.1, -0.0671094, 1.55734, 3.86648e-08, 8.6109, -2.05811, -8.6087)
+transform = Transform3D(-0.997746, -0.104748, -1.13627e-08, -8.74228e-08, -6.14044e-07, 0.1, -0.0671093, 1.55734, 3.86648e-08, 8.01943, -2.26311, -8.97677)
 isDoor = true
 coffeeDoor = true
 nextScenePath = "res://BookStoreBusStop.tscn"
@@ -130,7 +144,7 @@ player = NodePath("../../../../../Player")
 transform = Transform3D(14.0467, 0, -0.758839, 0, 5.1, 0, 0.784349, 0, 13.59, 0.983252, 0, -12.4347)
 script = ExtResource("2_8cc15")
 bgNode = NodePath("../../../Canvas/CanvasLayer/TextureRect")
-bgImage = ExtResource("20_3un6r")
+bgImage = ExtResource("9_3un6r")
 cam = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/CameraArea1"]
@@ -154,66 +168,6 @@ transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.421
 
 [node name="cafeEntrance" type="Node3D" parent="CumManager/SubViewportContainer/Geometry/EntranceCam"]
 visible = false
-
-[node name="WallTile38" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/cafeEntrance" instance=ExtResource("21_sqhep")]
-transform = Transform3D(-4.36129e-08, 0.997746, -0.0671094, -1, -4.37114e-08, 9.19528e-16, -2.93349e-09, 0.0671094, 0.997746, 5.42982, -3, -9.01202)
-skeleton = NodePath("../../../../../../../../../../../..")
-
-[node name="WallTile39" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/cafeEntrance" instance=ExtResource("21_sqhep")]
-transform = Transform3D(4.36129e-08, -0.997746, 0.0671093, -1, -4.37114e-08, 9.19528e-16, 2.93349e-09, -0.0671093, -0.997746, 5.42982, -3, -9.01202)
-skeleton = NodePath("../../../../../../../../../../../..")
-
-[node name="WallTile56" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/cafeEntrance" instance=ExtResource("21_sqhep")]
-transform = Transform3D(2.93349e-09, -0.0671093, -0.498873, -1, -4.37114e-08, 4.7644e-16, -4.36129e-08, 0.997746, -0.0335546, 5.90546, -3, -9.27036)
-skeleton = NodePath("../../../../../../../../../../../..")
-
-[node name="WallTile57" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/cafeEntrance" instance=ExtResource("21_sqhep")]
-transform = Transform3D(-4.36129e-08, 0.997746, -0.0335546, -1, -4.37114e-08, 5.09792e-16, -2.93349e-09, 0.0671092, 0.498873, 6.41423, -3, -9.83542)
-skeleton = NodePath("../../../../../../../../../../../..")
-
-[node name="WallTile58" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/cafeEntrance" instance=ExtResource("21_sqhep")]
-transform = Transform3D(-2.93349e-09, 0.0671092, 0.498873, -1, -4.37114e-08, 4.65724e-16, 4.36129e-08, -0.997746, 0.0335546, 5.98133, -3, -10.5062)
-skeleton = NodePath("../../../../../../../../../../../..")
-
-[node name="WallTile40" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/cafeEntrance" instance=ExtResource("21_sqhep")]
-transform = Transform3D(-4.36129e-08, 0.997746, -0.0671094, -1, -4.37114e-08, 9.19528e-16, -2.9335e-09, 0.0671094, 0.997746, 5.56377, -2.99813, -11.0073)
-skeleton = NodePath("../../../../../../../../../../../..")
-
-[node name="WallTile41" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/cafeEntrance" instance=ExtResource("21_sqhep")]
-transform = Transform3D(4.36129e-08, -0.997746, 0.0671093, -1, -4.37114e-08, 9.19528e-16, 2.93349e-09, -0.0671093, -0.997746, 5.56404, -3, -11.0075)
-skeleton = NodePath("../../../../../../../../../../../..")
-
-[node name="WallTile42" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/cafeEntrance" instance=ExtResource("21_sqhep")]
-transform = Transform3D(-4.36129e-08, 0.997746, -0.0671094, -1, -4.37114e-08, 9.19528e-16, -2.9335e-09, 0.0671094, 0.997746, 5.69826, -3, -13.003)
-skeleton = NodePath("../../../../../../../../../../../..")
-
-[node name="WallTile43" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/cafeEntrance" instance=ExtResource("21_sqhep")]
-transform = Transform3D(4.36129e-08, -0.997746, 0.0671093, -1, -4.37114e-08, 9.19528e-16, 2.93349e-09, -0.0671093, -0.997746, 5.69826, -3, -13.003)
-skeleton = NodePath("../../../../../../../../../../../..")
-
-[node name="WallTile44" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/cafeEntrance" instance=ExtResource("21_sqhep")]
-transform = Transform3D(-4.36129e-08, 0.997746, -0.0671094, -1, -4.37114e-08, 9.19528e-16, -2.9335e-09, 0.0671094, 0.997746, 5.2956, -3, -7.01653)
-skeleton = NodePath("../../../../../../../../../../../..")
-
-[node name="WallTile45" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/cafeEntrance" instance=ExtResource("21_sqhep")]
-transform = Transform3D(4.36129e-08, -0.997746, 0.0671093, -1, -4.37114e-08, 9.19528e-16, 2.93349e-09, -0.0671093, -0.997746, 5.2956, -3, -7.01653)
-skeleton = NodePath("../../../../../../../../../../../..")
-
-[node name="WallTile46" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/cafeEntrance" instance=ExtResource("21_sqhep")]
-transform = Transform3D(0.997746, -0.0335547, -0.0581184, 0, 0.866025, -0.5, 0.0671094, 0.498873, 0.864073, 4.29786, -3.30857, -7.08364)
-skeleton = NodePath("../../../../../../../../../../../..")
-
-[node name="WallTile47" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/cafeEntrance" instance=ExtResource("21_sqhep")]
-transform = Transform3D(0.997746, -0.0335547, -0.0581184, 0, 0.866025, -0.5, 0.0671094, 0.498873, 0.864073, 2.30237, -3.30857, -7.21786)
-skeleton = NodePath("../../../../../../../../../../../..")
-
-[node name="WallTile48" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/cafeEntrance" instance=ExtResource("21_sqhep")]
-transform = Transform3D(0.997746, -0.0335547, -0.0581184, 0, 0.866025, -0.5, 0.0671094, 0.498873, 0.864073, 0.306878, -3.30857, -7.35208)
-skeleton = NodePath("../../../../../../../../../../../..")
-
-[node name="WallTile49" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/cafeEntrance" instance=ExtResource("21_sqhep")]
-transform = Transform3D(0.997746, -0.0335547, -0.0581184, 0, 0.866025, -0.5, 0.0671094, 0.498873, 0.864073, -1.68861, -3.30857, -7.4863)
-skeleton = NodePath("../../../../../../../../../../../..")
 
 [node name="WallTile54" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/cafeEntrance" instance=ExtResource("21_sqhep")]
 transform = Transform3D(0.0671093, 0.997746, -1.20191e-07, 3.72529e-09, -1.19209e-07, -1, -0.997746, 0.0671093, 1.05844e-08, -2.68636, -3, -7.55342)
@@ -409,9 +363,44 @@ visible = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/Dima Tori/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_n6m4d")
 
+[node name="Kirusha" parent="CumManager/SubViewportContainer/Geometry/EntranceCam" instance=ExtResource("7_nk2aw")]
+transform = Transform3D(-0.691438, 0, -0.722437, 0, 1, 0, 0.722437, 0, -0.691438, -2.13044, -2, -9.18092)
+charId = "Kirusha"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="kirusha" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/Kirusha/ModelScene" index="0" instance=ExtResource("20_n6m4d")]
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 0, 0, 0)
+
+[node name="Body__mBody" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/Kirusha/ModelScene/kirusha/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_m8rsf")
+
+[node name="Body__mEye" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/Kirusha/ModelScene/kirusha/Armature_001/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_svedh")
+
+[node name="Body__mMouth" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/Kirusha/ModelScene/kirusha/Armature_001/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ju72u")
+
+[node name="Model" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/Kirusha" index="1"]
+visible = false
+
+[node name="InteractArea" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/Kirusha/Model" index="0"]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/Kirusha"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CumManager/SubViewportContainer/Geometry/EntranceCam/Kirusha/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_n6m4d")
+
+[node name="Sprite3D" type="Sprite3D" parent="CumManager/SubViewportContainer/Geometry/EntranceCam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0765663, 0.122266, -5.35792)
+texture = ExtResource("20_3un6r")
+
 [connection signal="body_entered" from="CumManager/SubViewportContainer/Geometry/EntranceCam/CameraArea1" to="CumManager/SubViewportContainer/Geometry/EntranceCam/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="CumManager/SubViewportContainer/Geometry/EntranceCam/CameraArea1" to="CumManager/SubViewportContainer/Geometry/EntranceCam/CameraArea1" method="exitTrigger"]
 
+[editable path="CumManager/SubViewportContainer/Geometry/EntranceCam/busStop"]
 [editable path="CumManager/SubViewportContainer/Geometry/EntranceCam/CafeBusStop"]
 [editable path="CumManager/SubViewportContainer/Geometry/EntranceCam/Door2Cafe2"]
 [editable path="CumManager/SubViewportContainer/Geometry/EntranceCam/Nastya Semen"]
@@ -419,3 +408,5 @@ shape = SubResource("ConcavePolygonShape3D_n6m4d")
 [editable path="CumManager/SubViewportContainer/Geometry/EntranceCam/Tori"]
 [editable path="CumManager/SubViewportContainer/Geometry/EntranceCam/Tori/ModelScene/tori"]
 [editable path="CumManager/SubViewportContainer/Geometry/EntranceCam/Dima Tori"]
+[editable path="CumManager/SubViewportContainer/Geometry/EntranceCam/Kirusha"]
+[editable path="CumManager/SubViewportContainer/Geometry/EntranceCam/Kirusha/ModelScene/kirusha"]

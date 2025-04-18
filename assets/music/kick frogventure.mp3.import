@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxtrubn5kli0d"
+path="res://.godot/imported/kick frogventure.mp3-2f95257d075ac3d4caec606903e8010d.mp3str"
+
+[deps]
+
+source_file="res://assets/music/kick frogventure.mp3"
+dest_files=["res://.godot/imported/kick frogventure.mp3-2f95257d075ac3d4caec606903e8010d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

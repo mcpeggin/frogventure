@@ -77,15 +77,6 @@ albedo_texture = ExtResource("11_l4pq7")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ya4n1"]
 albedo_texture = ExtResource("12_pun1y")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rih3w"]
-albedo_texture = ExtResource("14_30r84")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hjit"]
-albedo_texture = ExtResource("15_uvqxp")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lw437"]
-albedo_texture = ExtResource("16_ip4qk")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_am77c"]
 albedo_texture = ExtResource("14_wjgdg")
 
@@ -94,6 +85,15 @@ albedo_texture = ExtResource("15_ya4n1")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lsk38"]
 albedo_texture = ExtResource("16_am77c")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rih3w"]
+albedo_texture = ExtResource("14_30r84")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hjit"]
+albedo_texture = ExtResource("15_uvqxp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lw437"]
+albedo_texture = ExtResource("16_ip4qk")
 
 [node name="Entrance" type="Node3D" node_paths=PackedStringArray("player1", "player2")]
 script = ExtResource("1_j8v0v")
@@ -607,6 +607,36 @@ cam = NodePath("..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CumManager/SubViewportContainer/Geometry/BusStop/CameraArea1"]
 shape = SubResource("BoxShape3D_30r84")
 
+[node name="Polya Bu" parent="CumManager/SubViewportContainer/Geometry/BusStop" instance=ExtResource("8_b3hrg")]
+transform = Transform3D(0.761085, 0, -0.648651, 0, 1, 0, 0.648651, 0, 0.761085, 2.01709, -2, -4.99196)
+charId = "Polina Bu"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="ModelScene" parent="CumManager/SubViewportContainer/Geometry/BusStop/Polya Bu" index="0"]
+transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 0, 0, 0)
+
+[node name="polina buzinova" parent="CumManager/SubViewportContainer/Geometry/BusStop/Polya Bu/ModelScene" index="0" instance=ExtResource("13_ucsv0")]
+
+[node name="Body__mBody" parent="CumManager/SubViewportContainer/Geometry/BusStop/Polya Bu/ModelScene/polina buzinova/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_am77c")
+
+[node name="Body__mEye" parent="CumManager/SubViewportContainer/Geometry/BusStop/Polya Bu/ModelScene/polina buzinova/Armature/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_22rhs")
+
+[node name="FaceGood__mBeak" parent="CumManager/SubViewportContainer/Geometry/BusStop/Polya Bu/ModelScene/polina buzinova/Armature/Skeleton3D" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_lsk38")
+
+[node name="Model" parent="CumManager/SubViewportContainer/Geometry/BusStop/Polya Bu" index="1"]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CumManager/SubViewportContainer/Geometry/BusStop/Polya Bu"]
+transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CumManager/SubViewportContainer/Geometry/BusStop/Polya Bu/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_1hjit")
+
 [node name="Katya" parent="CumManager/SubViewportContainer/Geometry/BusStop" instance=ExtResource("8_b3hrg")]
 transform = Transform3D(0.95589, 0, -0.293723, 0, 1, 0, 0.293723, 0, 0.95589, 0.402836, -1, -5.91972)
 charId = "Katya"
@@ -633,36 +663,6 @@ visible = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CumManager/SubViewportContainer/Geometry/BusStop/Katya/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_1hjit")
 
-[node name="Polya Bu" parent="CumManager/SubViewportContainer/Geometry/BusStop/Katya" instance=ExtResource("8_b3hrg")]
-transform = Transform3D(0.918038, 0, -0.396491, 0, 1, 0, 0.396491, 0, 0.918038, 1.81556, -1, 0.412695)
-charId = "Polina Bu"
-hasText = true
-isCharacter = true
-message = "test"
-
-[node name="ModelScene" parent="CumManager/SubViewportContainer/Geometry/BusStop/Katya/Polya Bu" index="0"]
-transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 0, 0, 0)
-
-[node name="polina buzinova" parent="CumManager/SubViewportContainer/Geometry/BusStop/Katya/Polya Bu/ModelScene" index="0" instance=ExtResource("13_ucsv0")]
-
-[node name="Body__mBody" parent="CumManager/SubViewportContainer/Geometry/BusStop/Katya/Polya Bu/ModelScene/polina buzinova/Armature/Skeleton3D" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_am77c")
-
-[node name="Body__mEye" parent="CumManager/SubViewportContainer/Geometry/BusStop/Katya/Polya Bu/ModelScene/polina buzinova/Armature/Skeleton3D" index="2"]
-surface_material_override/0 = SubResource("StandardMaterial3D_22rhs")
-
-[node name="FaceGood__mBeak" parent="CumManager/SubViewportContainer/Geometry/BusStop/Katya/Polya Bu/ModelScene/polina buzinova/Armature/Skeleton3D" index="3"]
-surface_material_override/0 = SubResource("StandardMaterial3D_lsk38")
-
-[node name="Model" parent="CumManager/SubViewportContainer/Geometry/BusStop/Katya/Polya Bu" index="1"]
-visible = false
-
-[node name="StaticBody3D" type="StaticBody3D" parent="CumManager/SubViewportContainer/Geometry/BusStop/Katya/Polya Bu"]
-transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 0, 1, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CumManager/SubViewportContainer/Geometry/BusStop/Katya/Polya Bu/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_1hjit")
-
 [connection signal="body_entered" from="CumManager/SubViewportContainer/Geometry/EntraneCam/CameraArea1" to="CumManager/SubViewportContainer/Geometry/EntraneCam/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="CumManager/SubViewportContainer/Geometry/EntraneCam/CameraArea1" to="CumManager/SubViewportContainer/Geometry/EntraneCam/CameraArea1" method="exitTrigger"]
 [connection signal="body_entered" from="CumManager/SubViewportContainer/Geometry/Parking1/CameraArea1" to="CumManager/SubViewportContainer/Geometry/Parking1/CameraArea1" method="enterTrigger"]
@@ -680,7 +680,7 @@ shape = SubResource("ConcavePolygonShape3D_1hjit")
 [editable path="CumManager/SubViewportContainer/Geometry/Parking2/Vasya"]
 [editable path="CumManager/SubViewportContainer/Geometry/Parking2/Vasya/ModelScene/vasya"]
 [editable path="CumManager/SubViewportContainer/Geometry/BusStop/BusToCafe2"]
+[editable path="CumManager/SubViewportContainer/Geometry/BusStop/Polya Bu"]
+[editable path="CumManager/SubViewportContainer/Geometry/BusStop/Polya Bu/ModelScene/polina buzinova"]
 [editable path="CumManager/SubViewportContainer/Geometry/BusStop/Katya"]
 [editable path="CumManager/SubViewportContainer/Geometry/BusStop/Katya/ModelScene/katya"]
-[editable path="CumManager/SubViewportContainer/Geometry/BusStop/Katya/Polya Bu"]
-[editable path="CumManager/SubViewportContainer/Geometry/BusStop/Katya/Polya Bu/ModelScene/polina buzinova"]
