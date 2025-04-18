@@ -9,6 +9,7 @@ class_name Prop extends Interactable
 @export var hasText: bool
 @export var finishDay: bool
 @export var exitZone: Area3D
+@export var isCake: bool
 
 @export var keysDoor: bool
 @export var keys: bool

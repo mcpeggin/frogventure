@@ -22,7 +22,6 @@ func _ready():
 	$snare.play()
 	
 	var current = get_tree().current_scene
-	print("Scene file path:", current.scene_file_path)
 	
 	if current.scene_file_path == 'res://ApartmentsParty.tscn':
 		$bell.stream.loop = true
@@ -35,8 +34,13 @@ func _ready():
 		$synth.play()
 		$cowbell.stream.loop = true
 		$cowbell.play()
-	
-	
+
+func init_player():
+	var current = get_tree().current_scene
+	if player and current.scene_file_path == 'res://Apartments.tscn':
+		player.startScreen.visible = true
+		player.isFrozen = true
+
 func toggleUi(state: bool) -> void:
 	if player:
 		player.ui.visible = state

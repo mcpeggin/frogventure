@@ -1,4 +1,4 @@
-[gd_scene load_steps=234 format=3 uid="uid://dx2xt81yyk7oj"]
+[gd_scene load_steps=240 format=3 uid="uid://dx2xt81yyk7oj"]
 
 [ext_resource type="Script" uid="uid://2bk2ygphkd2f" path="res://Level.gd" id="1_sf7tu"]
 [ext_resource type="Script" uid="uid://biu7k7ygvjmsx" path="res://CameraManager.gd" id="3_lltfa"]
@@ -70,9 +70,12 @@
 [ext_resource type="Texture2D" uid="uid://buibubid56kr2" path="res://assets/models/characters/tagir/tagir_mBody_Alb.png" id="56_45mvo"]
 [ext_resource type="Texture2D" uid="uid://dsryfvfgom8y3" path="res://assets/models/characters/polina mayrudova/polina mayrudova_mMouth_Alb.png" id="57_g06s6"]
 [ext_resource type="Texture2D" uid="uid://cw3qf53g4skro" path="res://assets/models/characters/tagir/tagir_mEye_Alb.png" id="57_mxhul"]
+[ext_resource type="PackedScene" uid="uid://q3b8hvgrfln4" path="res://assets/models/props/cake/cake.glb" id="58_c2rwg"]
 [ext_resource type="Texture2D" uid="uid://dx3biqqalt0si" path="res://assets/models/characters/tagir/tagir_mMouth_Alb.png" id="58_le450"]
 [ext_resource type="PackedScene" uid="uid://dfbi7704d32p8" path="res://assets/models/characters/vika bovsh/vika bovsh.glb" id="59_45mvo"]
+[ext_resource type="Texture2D" uid="uid://cf5tjep425p0" path="res://assets/models/props/cake/mReBody_Alb.png" id="59_irbju"]
 [ext_resource type="Texture2D" uid="uid://d378g06b6lndx" path="res://assets/models/characters/vika bovsh/vika bovsh_mBody_Alb.png" id="60_mxhul"]
+[ext_resource type="PackedScene" uid="uid://dhd0u2o78dsh7" path="res://Door.tscn" id="60_xd4f7"]
 [ext_resource type="Texture2D" uid="uid://ns5o0jlwhcfs" path="res://assets/models/characters/vika bovsh/vika bovsh_mEye_Alb.png" id="61_le450"]
 [ext_resource type="Texture2D" uid="uid://bh4kfi3mlf4e3" path="res://assets/models/characters/vika bovsh/vika bovsh_mMouth_Alb.png" id="62_i6o72"]
 [ext_resource type="PackedScene" uid="uid://jxy44ncc0x7d" path="res://assets/models/characters/misha/misha.glb" id="63_mpv4h"]
@@ -270,6 +273,13 @@ albedo_texture = ExtResource("56_7nqot")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nabey"]
 albedo_texture = ExtResource("57_g06s6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gaqfn"]
+albedo_texture = ExtResource("59_irbju")
+
+[sub_resource type="BoxMesh" id="BoxMesh_nabey"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gaqfn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4pfpy"]
 albedo_texture = ExtResource("47_v52d1")
@@ -658,7 +668,7 @@ current = true
 script = ExtResource("5_3meti")
 
 [node name="Mitya" parent="CumManager/SubViewportContainer/Geometry/partyCam1" instance=ExtResource("7_8fpl6")]
-transform = Transform3D(-0.919982, -0.383215, -0.0823414, -0.306053, 0.571065, 0.76172, -0.24488, 0.72597, -0.642654, -6.15362, -0.242112, -7.06777)
+transform = Transform3D(-0.467559, -0.408625, 0.783848, 0.390686, 0.699909, 0.597907, -0.792942, 0.585796, -0.167604, -7.36845, 0.416647, -8.17066)
 charId = "Mitya"
 lineKey = "second"
 hasText = true
@@ -1003,6 +1013,25 @@ visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CumManager/SubViewportContainer/Geometry/partyCam1/Polina Mayrudova/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_us35c")
+
+[node name="Cake" parent="CumManager/SubViewportContainer/Geometry/partyCam1" instance=ExtResource("60_xd4f7")]
+transform = Transform3D(0.0392703, -0.720071, -0.00360358, 0.610291, -1.93715e-07, 0.0514861, -0.583848, -0.0484327, 0.0535757, -6.84013, -0.682951, -7.19122)
+hasText = true
+message = "ТОРТ"
+
+[node name="cake" parent="CumManager/SubViewportContainer/Geometry/partyCam1/Cake/ModelScene" index="0" instance=ExtResource("58_c2rwg")]
+transform = Transform3D(0.305963, -0.0350069, -1.14194, -1.1701, -0.682067, -0.292598, -6.30467, 11.6942, -2.04772, -0.387331, 1.35135, -2.55382)
+
+[node name="Cake__mReBody" parent="CumManager/SubViewportContainer/Geometry/partyCam1/Cake/ModelScene/cake/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_gaqfn")
+
+[node name="Model" parent="CumManager/SubViewportContainer/Geometry/partyCam1/Cake" index="1"]
+transform = Transform3D(1.06663, 5.96046e-08, -7.45058e-09, 0, 1.84022, -6.0536e-09, -5.96046e-08, -7.6741e-07, 9.36887, -0.427254, 0.109178, -0.118795)
+visible = false
+mesh = SubResource("BoxMesh_nabey")
+
+[node name="CollisionShape" parent="CumManager/SubViewportContainer/Geometry/partyCam1/Cake/Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_gaqfn")
 
 [node name="partyCam2" type="Camera3D" parent="CumManager/SubViewportContainer/Geometry"]
 transform = Transform3D(-0.490193, -0.692067, 0.529862, -0.242059, 0.692087, 0.680017, -0.837328, 0.205081, -0.506777, -2.98972, 3.63301, -4.14806)
@@ -1582,6 +1611,8 @@ shape = SubResource("ConcavePolygonShape3D_v5jeu")
 [editable path="CumManager/SubViewportContainer/Geometry/partyCam1/Anya Koroleva/ModelScene/anya"]
 [editable path="CumManager/SubViewportContainer/Geometry/partyCam1/Polina Mayrudova"]
 [editable path="CumManager/SubViewportContainer/Geometry/partyCam1/Polina Mayrudova/ModelScene/polina mayrudova"]
+[editable path="CumManager/SubViewportContainer/Geometry/partyCam1/Cake"]
+[editable path="CumManager/SubViewportContainer/Geometry/partyCam1/Cake/ModelScene/cake"]
 [editable path="CumManager/SubViewportContainer/Geometry/partyCam2/Kirusha"]
 [editable path="CumManager/SubViewportContainer/Geometry/partyCam2/Kirusha/ModelScene/kirusha"]
 [editable path="CumManager/SubViewportContainer/Geometry/partyCam2/Boris"]

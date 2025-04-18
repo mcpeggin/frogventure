@@ -39,9 +39,14 @@ var isDancing: bool = false
 
 func _ready():
 	Game.player = self
+	Game.init_player()
 	ui.visible = false
 
 func _process(delta: float) -> void:
+	
+	if startScreen.visible and Input.is_anything_pressed():
+		startScreen.visible = false
+		isFrozen = false
 	
 	if Input.is_action_just_pressed("endSession"):
 		get_tree().quit()
