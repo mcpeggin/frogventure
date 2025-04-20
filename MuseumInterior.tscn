@@ -3395,7 +3395,7 @@ shape = SubResource("ConcavePolygonShape3D_76uh8")
 
 [node name="Polina Mayrudova" parent="CumManager/SubViewportContainer/Geometry/Interior" instance=ExtResource("7_nmg8o")]
 transform = Transform3D(-0.624016, 0, -0.781412, 0, 1, 0, 0.781412, 0, -0.624016, 4.73846, -1.52, -3.73203)
-charId = "Polina Mayrudova"
+charId = "Polina Maydurova"
 hasText = true
 isCharacter = true
 message = "test"

@@ -988,8 +988,8 @@ transform = Transform3D(1, 2.98023e-08, -1.49012e-07, 0, 1, 1.49012e-08, 2.98023
 shape = SubResource("ConcavePolygonShape3D_us35c")
 
 [node name="Polina Mayrudova" parent="CumManager/SubViewportContainer/Geometry/partyCam1" instance=ExtResource("7_8fpl6")]
-transform = Transform3D(-0.965788, -0.231513, -0.116865, -0.250066, 0.711927, 0.656222, -0.0687244, 0.662995, -0.745464, -0.562339, -2.15809, -3.42087)
-charId = "Polina Mayrudova"
+transform = Transform3D(-0.965788, -0.231513, -0.116865, -0.250066, 0.711927, 0.656222, -0.0687244, 0.662995, -0.745464, -0.670974, -2.46337, -3.14884)
+charId = "Polina Maydurova"
 lineKey = "second"
 hasText = true
 isCharacter = true
